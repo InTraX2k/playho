@@ -1,0 +1,8 @@
+[14-Mar-2017 14:16:29] NOTICE: "Undefined variable: database"
+File: /home/web385/danq49/ftproot/perfektshisha.de/includes/dbtables.php | Line: 34
+URL: http://perfektshisha.de/ | Version: 1.7.2749 (FILE)
+Stack trace:
+#0 /includes/dbtables.php(34): errorHandler()
+#1 /includes/common.php(99): require('/home/web385/da...')
+#2 /index.php(35): require('/home/web385/da...')
+#3 {main}
