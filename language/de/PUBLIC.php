@@ -140,12 +140,12 @@ $LNG['passwordErrorMailEmpty']		= 'Du hast keine E-Mail-Adresse angegeben!';
 $LNG['passwordErrorUnknown']		= 'Es könnte kein Benutzterkonto mit den Daten gefunden werden.';
 $LNG['passwordErrorOnePerDay']		= 'Das Kennwort für dieses Benutzerkonto wurde in den letzten 24 Stunden bereits einmal angefordert. Aus Sicherheitsgründen kann das Kennwort eines Benutzers nur einmal pro Tag angefordert werden. Sie können das Kennwort für dieses Benutzerkonto in 24 Stunde(n) erneut anfordern. ';
 
-$LNG['passwordValidMailTitle']		= 'Kennwort vergessen auf der Website: %s';
+$LNG['passwordValidMailTitle']		= 'Kennwort vergessen: %s';
 $LNG['passwordValidMailSend']		= 'Du erhälst in Kürze eine E-Mail mit weiteren Informationen.';
 
 $LNG['passwordValidInValid']		= 'Ungültiger Anfrage!';
 $LNG['passwordChangedMailSend']		= 'Du erhälst in Kürze eine E-Mail mit deinem neuen Kennwort.';
-$LNG['passwordChangedMailTitle']	= 'Neues Kennwort auf der Website: %s';
+$LNG['passwordChangedMailTitle']	= 'Neues Kennwort: %s';
 
 $LNG['passwordBack']				= 'Zurück';
 $LNG['passwordNext']				= 'Weiter';
@@ -153,7 +153,7 @@ $LNG['passwordNext']				= 'Weiter';
 //case default
 
 $LNG['login_error_1']				= 'Falscher Benutzername/Passwort!';
-$LNG['login_error_2']				= 'Jemand hat sich von einem anderem PC in deinem Account eingeloggt!';
+$LNG['login_error_2']				= 'Anmelde Fehler, bitte versuchen Sie es erneut!';
 $LNG['login_error_3']				= 'Deine Session ist abgelaufen!';
 $LNG['login_error_4']				= 'Es gab einen Fehler bei der externen Autorisierung, bitte versuche Sie es später noch einmal!';
 
@@ -189,7 +189,7 @@ $LNG['footer_block3_menu1']			= "Forum";
 $LNG['footer_block3_menu2']			= "Kontakt";
 $LNG['footer_block3_menu3']			= "Galerien";
 $LNG['footer_block3_menu4']			= "Arbeitsplätze";
-$LNG['footer_copy']					= "2015 &copy; %s ! - Alle Rechte vorbehalten";
+$LNG['footer_copy']					= "2010 - 2017 &copy; %s ! - Alle Rechte vorbehalten";
 // pour le popup pour le login
 $LNG['popup_login_title']			= "Login";
 $LNG['popup_login_login']			= "Mail-Adresse";
