@@ -177,16 +177,16 @@ $LNG['disclamerLabelNotice']		= 'Weitere Informationen';
 
 /** main.footer.tpl **/
 $LNG['footer_title_block1']			= "Spielen";
-$LNG['footer_block1_menu1']			= "Um sich anzumelden";
+$LNG['footer_block1_menu1']			= "Registrieren";
 $LNG['footer_block1_menu2']			= "Regeln";
 $LNG['footer_block1_menu3']			= "Nachrichten";
 $LNG['footer_block1_menu4']			= "Über uns";
 $LNG['footer_title_block2']			= "Konto";
 $LNG['footer_block2_menu1']			= "Ein Konto erstellen";
-$LNG['footer_block2_menu2']			= "Gewinnen Sie Ihr Passwort";
+$LNG['footer_block2_menu2']			= "Passwort vergessen?";
 $LNG['footer_title_block3']			= "Gemeinde";
 $LNG['footer_block3_menu1']			= "Forum";
-$LNG['footer_block3_menu2']			= "Wir kontaktierten";
+$LNG['footer_block3_menu2']			= "Kontakt";
 $LNG['footer_block3_menu3']			= "Galerien";
 $LNG['footer_block3_menu4']			= "Arbeitsplätze";
 $LNG['footer_copy']					= "2015 &copy; %s ! - Alle Rechte vorbehalten";
@@ -205,8 +205,8 @@ $LNG['header_meta_description']		= "ist ein Management-Spiel / Massen-Mehrspiele
 
 /** main.navigation.tpl **/
 $LNG['main_navigation_menu_head1']	= "Willkommen bei Battle the Galaxy";
-$LNG['main_navigation_menu_head2']	= "Login";
-$LNG['main_navigation_menu_head3']	= "Registrieren";
+$LNG['main_navigation_menu_head2']	= "Registrieren";
+$LNG['main_navigation_menu_head3']	= "Login";
 $LNG['main_navigation_menu1']		= "Registrieren";
 $LNG['main_navigation_menu2']		= "Start";
 $LNG['main_navigation_menu3']		= "Über Uns";
