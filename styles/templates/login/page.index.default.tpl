@@ -3,8 +3,8 @@
 <div id="content">
 	<div id="right_side">
 		<div class="browser">
-			<h3>Junte-se a nós agora!</h3>
-			<p>Para jogar, você irá precisar apenas de um navegador.</p>
+			<h3>Jetzt Anmelden!</h3>
+			<p>Um zu spielen, benötigen Sie lediglich einen Browser.</p>
 				<div class="links">
 					<a href="http://www.opera.com/">
 					<img src="./media/images/opera.png" width="22px" height="26px"/>
@@ -15,15 +15,15 @@
 					<a href="http://www.google.com/intl/en/chrome/browser/">
 					<img src="./media/images/hrom.png" width="26px" height="27px"/>
 					</a>
-					<div style="float: right;">Nós recomendamos:</div>
+					<div style="float: right;">Wir empfehlen:</div>
 				</div>
 		</div>
 
 		<div class="socials">
 			<div class="black_bg">
-				<h3>Redes Sociais</h3>
-				<a style="background: url(./media/images/fb.png) no-repeat;" href="#" target="_BLANK"></a>
-				<span>Inscreva-se e Siga.</span>
+				<h3>Social Network</h3>
+				<a style="background: url(./media/images/fb.png) no-repeat;" href="https://de-de.facebook.com/Battlethegalaxy/" target="_BLANK"></a>
+				<span>Folgen sie uns.</span>
 			</div>
 		</div>
 
@@ -31,25 +31,25 @@
 			<div class="black_bg">
 			<div class="">
 				<div class="hr"></div>
-				<h3>Status do Servidor</h3> Jogadores: <span>{$users_amount}</span>
-				<br>Novos este mês: <span>{$new_member}</span>
-				<br>Novo SdC: <span>{$total_hof}</span>
-				<br>Jogadores ativos: <span>{$active}</span>
+				<h3>Server Status</h3> Spieler: <span>{$users_amount}</span>
+				<br>Neu in diesem Monat: <span>{$new_member}</span>
+				<br>Beste HOF: <span>{$total_hof}</span>
+				<br>Spieler Aktiv: <span>{$active}</span>
 			</div>
 			</div>
 		</div>
 
 		<div class="forums">
-			<h3>Últimos tópicos</h3>
+			<h3>Top News</h3>
 			<div class="hr"></div>
 			{foreach $topicsList as $topicsRow}
-				<a title="" href="#" target="_blank">{$topicsRow.title}
+				<a title="" href="forum.battlethegalaxy.de" target="_blank">{$topicsRow.title}
 				<br><span>{$topicsRow.date}</span>
 				</a>
 			{foreachelse}
 				<h1>{$LNG.news_does_not_exist}</h1>
 			{/foreach}
-			<a title="" href="#" class="more" target="_blank">Ir para o Forum ...</a>
+			<a title="" href="#" class="more" target="_blank">Zum Forum ...</a>
 		</div>
 
 	</div>
