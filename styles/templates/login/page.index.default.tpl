@@ -79,7 +79,7 @@
 		{foreachelse}
 			<h2 class="title" style="padding: 15px;">{$LNG.news_does_not_exist}</h2>
 		{/foreach}
-		<a class="news_all" title="" href="index.php?page=news&mode=all">Show all news</a>
+		<a class="news_all" title="" href="index.php?page=news&mode=all">News Archiv</a>
 	</div>
 
 	<div class="clear"></div>
