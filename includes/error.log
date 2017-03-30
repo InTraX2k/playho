@@ -1,0 +1,9 @@
+[29-Mar-2017 13:19:47] USER ERROR: "sh: 1: cannot create includes/backups/2MoonsBackup_29_03_2017_13_19_47.sql: Directory nonexistent
+"
+File: /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/classes/SQLDumper.class.php | Line: 60
+URL: http://beta.battlethegalaxy.de/admin.php?page=dump | Version: V 1.0
+Stack trace:
+#0 /includes/classes/SQLDumper.class.php(35): SQLDumper-&gt;nativeDumpToFile(Array, 'includes/backup...')
+#1 /includes/pages/adm/ShowDumpPage.php(53): SQLDumper-&gt;dumpTablesToFile(Array, 'includes/backup...')
+#2 /admin.php(216): ShowDumpPage()
+#3 {main}
