@@ -39,8 +39,8 @@
 </script>
 {/literal}
 
-<h1 class="top_title">Create an account</h1>
-<div class="confid"> We guarantee the confidentiality of the data you entered.</div>
+<h1 class="top_title">Account erstellen</h1>
+<div class="confid"> Wir gehen Verantwortungsvoll mit deinen Daten um. </div>
 
 <form id="registerForm" method="post" action="index.php?page=register" data-action="index.php?page=register">
     <input type="hidden" value="send" name="mode">
@@ -54,7 +54,7 @@
         {if !empty($error.email)}
             <span class="error errorEmail"></span>
         {/if}
-        <div id="regemailcption" class="reg_caption"> Must be valid. <br>Required when entering. </div>
+        <div id="regemailcption" class="reg_caption"> Gültige Email Adresse. <br>Wird zum Login benötigt. </div>
     </div>
 	
 	{if count($raceSelect) > 1}<div class="blocks">
@@ -67,25 +67,25 @@
     </div>{/if}
 	
     <div class="blocks">
-        <span class="lable">Login to game</span>
+        <span class="lable">Account Name</span>
         <input type="text" class="input" name="username" id="username" maxlenght="32">
         {if !empty($error.username)}
             <span class="error errorUsername"></span>
         {/if}
-        <div id="regnamecption" class="reg_caption"> Under this name, you will know the other players. Use letters and numbers. </div>
+        <div id="regnamecption" class="reg_caption"> Unter diesem Namen wirst du den anderen Spieler angezeigt. Verwenden Sie bitte nur Buchstaben und Zahlen. </div>
     </div>
 
     <div class="blocks">
-        <span class="lable">Password for the game</span>
+        <span class="lable">Passwort</span>
         <input type="password" class="input" name="password" id="password">
         {if !empty($error.password)}
             <span class="error errorPassword"></span>
         {/if}
-        <div id="regpasswcption" class="reg_caption"> At least 6 characters. <br>Use letters and numbers. </div>
+        <div id="regpasswcption" class="reg_caption"> Mindestens 6 Zeichen. </div>
     </div>
 
     <div class="blocks">
-        <span class="lable">Universe</span>
+        <span class="lable">Universum</span>
         <select name="uni" id="universe" class="sel_uni">{html_options options=$universeSelect selected=$UNI}</select>
         {if !empty($error.uni)}
             <span class="error errorUni"></span>
@@ -94,7 +94,7 @@
     </div>
 
     <div class="blocks">
-        <span class="lable">Language</span>
+        <span class="lable">Sprache</span>
         <select name="lang" id="language" class="sel_uni">
             {html_options options=$languages selected=$lang}
         </select>
@@ -117,14 +117,14 @@
                 	<td style="width:50%;"> 
                         <h4 style="font-size:16px;">Test - open 01.03.15</h4>
                         <p style="font-size:14px; margin-bottom:10px;">
-                            <b>Speed ​​of resource extraction:</b> high (x(BDD))
-    						<br><b>Speed of construction:</b> very high (x(BDD))
-    						<br><b>The speed of research:</b> very high (x(BDD))
-                            <br><b>speed expedition:</b> high (x(BDD))
-                            <br><b>Flight speed of the fleet:</b> average  (x(BDD))
-                            <br><b>The difference in points for the protection of the noobs:</b> (x(BDD))
-                            <br><b>Navy falls in fragments:</b> ((BDD)%)
-                            <br><b>Defense falls in fragments:</b> ((BDD)%)
+                            <b>Geschwindigkeit der Rohstoffgewinnung:</b> high (x(BDD))
+    						<br><b>Baugeschwindigkeit:</b> very high (x(BDD))
+    						<br><b>Die Geschwindigkeit der Forschung:</b> very high (x(BDD))
+                            <br><b>Geschwindigkeit Expedition:</b> high (x(BDD))
+                            <br><b>Fluggeschwindigkeit der Flotte:</b> average  (x(BDD))
+                            <br><b>Noobschutz:</b> (x(BDD))
+                            <br><b>Folltenanteile Trümmerfeld:</b> ((BDD)%)
+                            <br><b>Verteidigungsanlagenanteile Trümmerfeld:</b> ((BDD)%)
                         </p>
             		</td>
     				{* <td style="width:50%;"> 
@@ -146,8 +146,8 @@
     <div class="clear"></div>
 
     <span class="lable"></span>
-    <input class="button" id="form1" type="submit" value="PLAY" name="data[submit]">
-    <div id="form2" style="display:none;" class="reg_caption"> Clicking on Play, you agree to <a href="index.php?page=rules" target="_blank">the rules</a> . </div>
+    <input class="button" id="form1" type="submit" value="Sarten" name="data[submit]">
+    <div id="form2" style="display:none;" class="reg_caption"> Wenn du auf Start klickst, stimmst du den <a href="index.php?page=rules" target="_blank">Regeln</a> zu. </div>
 
     <div class="clear"></div>
 </form>
