@@ -31,7 +31,7 @@ $LNG['Version']     = 'Version';
 $LNG['Description'] = 'Beschreibung';
 
 $LNG['changelog']   = array(
-'v1.7.3' => 'Jan 19.05.2013
+'v5.0.0' => 'InTraX 30.03.2017
 - 0000461: [User errors] Inexplicable errors (Jan) - resolved.
 - 0000459: [Admin Panal] Undefined variable: CONFIG (Jan) - resolved.
 - 0000429: [Langauge] Custom lang keys dont work (Jan) - resolved.
