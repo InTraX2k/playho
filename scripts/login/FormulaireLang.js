@@ -13,7 +13,7 @@ $(function() {
 							if (Lang == 'fr') {text = "French"}
 							if (Lang == 'en') {text = "English"}
 							if (Lang == 'de') {text = "Deutsch"}
-							alert("Vous avez changer de lang avec succès : "+ text);
+							alert("Sprache Erfolgreich geändert : "+ text);
 							document.location.href = "index.php";
 						}
 					});
