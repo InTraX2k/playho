@@ -42,13 +42,17 @@
 		<div class="forums">
 			<h3>Top News</h3>
 			<div class="hr"></div>
-			{foreach $topicsList as $topicsRow}
-				<a title="" href="forum.battlethegalaxy.de" target="_blank">{$topicsRow.title}
-				<br><span>{$topicsRow.date}</span>
-				</a>
-			{foreachelse}
-				<h1>{$LNG.news_does_not_exist}</h1>
-			{/foreach}
+			{foreach $newsList as $newsRow}
+      <a href="index.php?page=news&id={$newsRow.id}">
+        {$newsRow.title}
+      </a>
+      <div class="clear">
+      </div>
+      {foreachelse}
+      <h1>
+        {$LNG.news_does_not_exist}
+      </h1>
+      {/foreach}
 			<a title="" href="#" class="more" target="_blank">Zum Forum ...</a>
 		</div>
 

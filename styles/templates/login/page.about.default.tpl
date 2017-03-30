@@ -28,7 +28,7 @@
         </li>
         <li>
           <a href="index.php?page=news&mode=update">
-            Updates
+            News
           </a>
         </li>
         <li>
@@ -76,35 +76,24 @@
         <br/>
         <p align="justify">
           <span>
-            Welcome to the {$gameName} game. Game speed will relax and enjoy the gameplay, and not long to wait for new developments in the gaming world. Fight with hundreds, or even thousands of players in the universe at the same time to get the title of Emperor and become the most experienced players in order to play this exciting and entertaining strategy you need to have an Internet browser. Try all the efforts to create a unique economic and military structure built on this and win new research Suck. Fight against other players and alliances. Create alliances and make alliances with other alliances.
+            Willkommen zu {$gameName}. Die Spielgeschwindigkeit wird angepasst unm das Gameplay zu genießen und nicht lange auf neue Entwicklungen in der Spielwelt zu warten. Kämpfe mit Hunderten oder sogar Tausenden von Spielern im Universum zur gleichen Zeit, um den Titel des besten Spielers, um dieses spannende und unterhaltsame Strategiespiel zu spielen, brauchst du nur einen Internetbrowser. Testen Sie Ihr können und Versuchen Sie alles, um die einzigartige wirtschaftliche und militärische Struktur zu verbessern.n Behaupten Sie sich imKampf gegen andere Spieler und Allianzen. Gehen Sie Bündnisse ein gründen Sie Allianzen.
           </span>
         </p>
         <p align="justify">
           &nbsp;
         </p>
         <p align="justify">
-          The game begins with one small planet, which in the future will be the capital of the whole empire. For the development of the empire at your disposal will open new technology, new buildings, new ships and defense. In the game, there are several ways to develop Empire. The first way you can become a miner, send resources to all my friends. The second way to be a professional fighter, which produces resources with the help of its powerful fleet. The third way to be hired spy who has intelligence probes and undertakes any work.
+          Das Spiel beginnt mit einem kleinen Planeten, der in Zukunft die Hauptstadt des ganzen Imperiums wird. Für die Weiterentwicklung Ihres Imperiums steht Ihnen die neuste Technologie, neue Gebäude, neue Schiffe und Verteidigungsanlagen zu Verfügung. Im Spiel gibt es mehrere Möglichkeiten, Imperium aufzubauen. Werden Sie Miner, senden Sie Ressourcen an alle Freunde oder werden Sie ein professioneller Kämpfer, der Ressourcen mit Hilfe seiner starken Flotte produziert.
         </p>
         <p align="justify">
           &nbsp;
         </p>
         <p align="justify">
-          To survive in 
+          Um in 
           <span>
             {$gameName}
           </span>
-          have to simultaneously monitor the many things: develop construction empire build defense, constantly update the fleet, and all this under the supervision of aggressive neighbors. One to survive 
-          <span>
-            {$gameName}
-          </span>
-          &nbsp;extremely difficult. Not to die game you will have to join in alliances. Alliance has many of its advantages. for example, just so you can participate in interesting and top battles involving thousands and even millions of 
-          <span>
-            units
-          </span>
-          <span>
-            &nbsp;
-          </span>
-          fleet.
+          zu überleben müssen Sie gleichzeitig viele Dinge überwachen: entwickeln, bauen, Verteidigen, Flotte vergrößern, und all dies unter der Aufsicht von aggressiven mitspielern. Um erfolgreich zu sein, müssen Sie Allianzen beitreten.
         </p>
         <p align="justify">
           &nbsp;
