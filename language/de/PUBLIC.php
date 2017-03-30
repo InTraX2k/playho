@@ -191,11 +191,11 @@ $LNG['footer_block3_menu3']			= "Galerien";
 $LNG['footer_block3_menu4']			= "Arbeitsplätze";
 $LNG['footer_copy']					= "2015 &copy; %s ! - Alle Rechte vorbehalten";
 // pour le popup pour le login
-$LNG['popup_login_title']			= "Login auf Ihr Konto";
+$LNG['popup_login_title']			= "Login";
 $LNG['popup_login_login']			= "Mail-Adresse";
 $LNG['popup_login_mdp']				= "Passwort";
-$LNG['popup_login_souvient']		= "Erinnere dich an mich";
-$LNG['popup_login_button']			= "Diese Verbunden";
+$LNG['popup_login_souvient']		= "Login Speichern";
+$LNG['popup_login_button']			= "Anmelden";
 $LNG['popup_login_account']			= "Ein Konto erstellen";
 $LNG['popup_login_recover']			= "Passwort vergessen";
 
@@ -204,11 +204,11 @@ $LNG['header_meta_keywords']		= "Xnova Revolution, XNova, 2Moons, Space, Private
 $LNG['header_meta_description']		= "ist ein Management-Spiel / Massen-Mehrspieler-Strategie-Browser auf einem Science-Fiction-Universum völlig erfunden.";
 
 /** main.navigation.tpl **/
-$LNG['main_navigation_menu_head1']	= "Willkommen in der wunderbaren Welt des Raumes!";
-$LNG['main_navigation_menu_head2']	= "Anmelden";
-$LNG['main_navigation_menu_head3']	= "Anmeldung";
+$LNG['main_navigation_menu_head1']	= "Willkommen bei Battle the Galaxy";
+$LNG['main_navigation_menu_head2']	= "Login";
+$LNG['main_navigation_menu_head3']	= "Registrieren";
 $LNG['main_navigation_menu1']		= "Registrieren";
-$LNG['main_navigation_menu2']		= "Zuhause";
+$LNG['main_navigation_menu2']		= "Start";
 $LNG['main_navigation_menu3']		= "Über Uns";
 $LNG['main_navigation_menu4']		= "Gallery";
 $LNG['main_navigation_menu5']		= "Forum";
