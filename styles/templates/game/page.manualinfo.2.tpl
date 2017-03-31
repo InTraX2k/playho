@@ -6,13 +6,13 @@
     </div>
         <div class="ally_contents">
 		
-<font color="#B22222"><b>it's important:</b></font><b>
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>peaceful research - will reveal new opportunities.
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>martial research - you open new combat units and improve their combat characteristics
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>you can at the same time study only one research in the empire.
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>you can not learn new research and build research laboratory or university at the same time
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>you dont have to construct the same research on newly planets, they count for all your empire
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>you can study all research for darkmatter exept for the graviton technology.
+<font color="#B22222"><b>Wichtig:</b></font><b>
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Allgemeine Forschung - wird dir neue Möglichkeiten offenbaren.
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Kriegerische Forschung - neue Kampfeinheiten und verbesserungen ihre Kampfmerkmale
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Sie können zeitgleich nur eine Forschung im Imperium studieren.
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Sie können nicht Forschen, wenn ein Forschungslabor oder eine Universität gebaut wird.
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Die Forschung zählt für das gesammte Imperium.
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Für Dunkle Materie können Sie alles erforschen außer der Graviton-Technologie.
 
 </b>
 

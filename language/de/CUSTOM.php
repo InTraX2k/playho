@@ -327,7 +327,6 @@ $LNG['ach_varia_6']				= 'Sie erhalten für alle 50.000 dm mit der Mission gefun
 $LNG['ach_varia_7']				= 'Die Auszeichnung ist für alle 3 Upgrades gefunden gegeben';
 $LNG['ach_varia_8']				= 'Die Auszeichnung wird für jeden 10 Upgrade-Aktivierungs gegeben.';
 
-
 $LNG['st_next']								= 'N&auml;chste aktualisierung';
 $LNG['ReTime']								= 'Registrierungsdatum';
 $LNG['LP']									= 'Liste deiner Planeten';
@@ -395,7 +394,6 @@ $LNG['re']									= 'Rückkehr';
 $LNG['Re']									= 'Verbleibend';
 $LNG['Or']									= 'Order';
 $LNG['ReTe']								= 'Geschenkte Technologie';
-
 $LNG['Day']									= 'Tag';
 $LNG['Day1']									= 'Du bekommst 5 Akademie Punkte ! ';
 $LNG['Day2']									= 'Du bekommst ';
@@ -413,6 +411,7 @@ $LNG['sa']									= 'Wähle alle aus';
 $LNG['reset']								= 'Zurücksetzen';
 $LNG['nsf']									= 'Keine passende Flotte';
 $LNG['Wa']									= 'Planet verändern';
+
 $LNG['itfotp']									= 'Erhöhere die Felder deines Planeten';
 $LNG['dm']									= 'Dunkle Materie ';
 $LNG['rp']									= 'Planet verschieben ';

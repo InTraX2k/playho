@@ -4,8 +4,8 @@
 {if $manual_step_4 == 0}
 <script type="text/javascript">
 $(function() {
-qtips('.fleet_log ', 'Here will be displayed all fleets movement from and to your empire, as the location, amount and mission used.', 'bottomMiddle', 'topMiddle');
-setTimeout(function() { qtips('#munu_research', 'Click here, to know what would protect you against enemies probes.', 'rightMiddle', 'leftMiddle') }, 4000);
+qtips('.fleet_log ', 'Hier werden alle Flottenbewegungen von und zu deinem Imperium angezeigt.', 'bottomMiddle', 'topMiddle');
+setTimeout(function() { qtips('#munu_research', 'Klick hier, um zu erfahren, was dich vor feindlichen Sonden schützen kann.', 'rightMiddle', 'leftMiddle') }, 4000);
 
 });
 </script>

@@ -80,7 +80,7 @@ $( "#build_1" ).show();
 $( "#build_2" ).show();
 $( "#build_3" ).show();
 $( "#build_4" ).show();
-qtips('#fildes_band', 'Você pode construir minas no planeta para aumentar a produção de recursos..<br/> Mas lembre-se que para as minas trabalharem, elas precisam de energia..<br /><br /> <b><span style="margin:0 0 7px 0;display: block;color:#002211;">Construir:</span><span style=" margin-left: 9px;display: block;">Planta de Energia Solar lvl. 1</span>', 'leftMiddle', 'topRight')
+qtips('#fildes_band', 'Sie müssen Minen auf dem Planeten erbauen, um die Produktionskapazitäten zu erhöhen.<br/> Aber denken Sie daran, dass die Minen Energie benötigen um zu arbeiten.<br /><br /> <b><span style="margin:0 0 7px 0;display: block;color:#002211;">Bauen:</span><span style=" margin-left: 9px;display: block;">Baue ein Solarkraftwerk Stufe 1</span>', 'leftMiddle', 'topRight')
 
 	});
 	</script>
@@ -95,7 +95,7 @@ $( "#build_1" ).show();
 $( "#build_2" ).show();
 $( "#build_3" ).show();
 $( "#build_4" ).show();
-qtips('#fildes_band', 'Now you have a little bit of energy that would provide job Mines.<br /><br /> <b><span style="margin:0 0 7px 0;display: block;color:#002211;">Build:</span><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Metal Mine Level 3. <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Crystal Mine Level 2. <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Deuterium Mine Level 1.</b>', 'leftMiddle', 'topRight')
+qtips('#fildes_band', 'Jetzt hast du ein wenig Energie um Minen zu Bauen.<br /><br /> <b><span style="margin:0 0 7px 0;display: block;color:#002211;">Baue:</span><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Metall Mine Stufe 3. <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Kristal Mine Stufe 2. <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Deuterium Mine Stufe 1.</b>', 'leftMiddle', 'topRight')
 
 	});
 	</script>
@@ -109,8 +109,8 @@ $( "#build_1" ).show();
 $( "#build_2" ).show();
 $( "#build_3" ).show();
 $( "#build_4" ).show();
-qtips('#res_block_energy .stock_text ', 'You do not have enough energy.', 'bottomMiddle', 'topLeft');
-qtips('#fildes_band', 'Due to lack of energy, The production of mines is reduced. It is necessary to provide energy for all mines.<br /><br /><b><span style="margin:0 0 7px 0;display: block;color:#002211;">Build:</span> <span style=" margin-left: 9px;display: block;">Solar Power Planet lvl 4.</span></b>', 'leftMiddle', 'topRight')
+qtips('#res_block_energy .stock_text ', 'Du hast nicht genug Energie.', 'bottomMiddle', 'topLeft');
+qtips('#fildes_band', 'Aufgrund fehlender Energie wird die Produktion von Minen reduziert.<br /><br /><b><span style="margin:0 0 7px 0;display: block;color:#002211;">Baue:</span> <span style=" margin-left: 9px;display: block;">Solarkraftwerk Stufe 4.</span></b>', 'leftMiddle', 'topRight')
 
 	});
 	</script>

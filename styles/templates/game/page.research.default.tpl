@@ -44,7 +44,7 @@ setTimeout(function() { location.reload(); }, 10000);
 		$( ".build_box" ).hide();
 $( "#research_106" ).show();
 setTimeout(function() { qtips('.price:first', 'To unlock the study &laquo;Spy technology&raquo;, you need to go on the build page and upgrade &laquo;research laboratory&raquo; <br/>Third level.', 'topMiddle', 'bottomLeft') }, 4000);
-qtips('#fildes_band', 'To protect your data, you need to explore &laquo;Spy Technology&raquo; lvl 3.', 'leftMiddle', 'topRight');
+qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetechnik&raquo; Stufe 3 erforschen.', 'leftMiddle', 'topRight');
 
 	});
 	</script>
@@ -55,7 +55,7 @@ qtips('#fildes_band', 'To protect your data, you need to explore &laquo;Spy Tech
 	$(function() {
 		$( ".build_box" ).hide();
 $( "#research_106" ).show();
-qtips('#fildes_band', 'To protect your data, you need to explore &laquo;espionage&raquo; level 3.', 'leftMiddle', 'topRight');
+qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetechnik&raquo; Stufe 3 erforschen.', 'leftMiddle', 'topRight');
 
 	});
 	</script>
@@ -66,7 +66,7 @@ qtips('#fildes_band', 'To protect your data, you need to explore &laquo;espionag
 	$(function() {
 		$( ".build_box" ).hide();
 $( "#research_106" ).show();
-qtips('#fildes_band', 'To protect your data, you need to explore &laquo;espionage&raquo; level 3.', 'leftMiddle', 'topRight');
+qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetechnik&raquo; Stufe 3 erforschen.', 'leftMiddle', 'topRight');
 
 	});
 	</script>

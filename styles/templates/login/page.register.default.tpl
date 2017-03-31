@@ -12,9 +12,9 @@
 		jQuery().facebookTrafficPop({
 			timeout: 15,
 			delay: 0,
-			title: "<strong><center>Stellar Wars</center></strong>",
-			message: '<strong><center>Like us on Facebook end help us grow !!</center></strong> </strong><a href="https://www.facebook.com/pages/Stellar-Wars/167807423296353"><img src="http://beta7.stellarwars.net/media/images/logoz.png" border="0" style="margin:10px 0px;width:100%;" /></a></center>',
-			url: "https://www.facebook.com/pages/Stellar-Wars/167807423296353",
+			title: "<strong><center>Battle the Galaxy</center></strong>",
+			message: '<strong><center>Like us on Facebook end help us grow !!</center></strong> </strong><a href="https://www.facebook.com/battlethegalaxy"><img src="/media/images/logoz.png" border="0" style="margin:10px 0px;width:100%;" /></a></center>',
+			url: "https://www.facebook.com/battlethegalaxy",
 			
 		});
 		
@@ -72,7 +72,7 @@
         {if !empty($error.username)}
             <span class="error errorUsername"></span>
         {/if}
-        <div id="regnamecption" class="reg_caption"> Unter diesem Namen wirst du den anderen Spieler angezeigt. Verwenden Sie bitte nur Buchstaben und Zahlen. </div>
+        <div id="regnamecption" class="reg_caption"> Unter diesem Namen wirst du den anderen Spieler angezeigt. </div>
     </div>
 
     <div class="blocks">
@@ -115,7 +115,7 @@
         	<tbody>
                 <tr>
                 	<td style="width:50%;"> 
-                        <h4 style="font-size:16px;">Test - open 01.03.15</h4>
+                        <h4 style="font-size:16px;">Test - open 01.05.17</h4>
                         <p style="font-size:14px; margin-bottom:10px;">
                             <b>Geschwindigkeit der Rohstoffgewinnung:</b> high (x(BDD))
     						<br><b>Baugeschwindigkeit:</b> very high (x(BDD))
