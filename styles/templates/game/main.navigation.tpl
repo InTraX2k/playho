@@ -69,7 +69,7 @@ $( this ).dialog( "close" );
 <div class="separator"></div>
 {if $nvote == 1}	<a title="Promote us" class="big_btn red btn_menu btn_menu_big" href="game.php?page=Promote">
 {$LNG.alm_promote}</a>{/if} 
-{if $authlevel > 0} <a  href="admin.php" class="big_btn green btn_menu btn_menu_big">Administração</a>{/if}
+{if $authlevel > 0} <a  href="admin.php" class="big_btn green btn_menu btn_menu_big">Administration</a>{/if}
 <div class="clear"></div>
 
 <div id="bottom_cosmonautics">
