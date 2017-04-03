@@ -48,14 +48,14 @@
     </div>
         <div class="ally_contents" style="text-align:center">
 		
-<td style="text-align:center" colspan="2"> Like our facebook fan page and get instantly: <span style="color:#F90">500,000 dark matter</span> + <span style="color:#F90">5,000 anti matter</span> as reward. <br>You may close this windows after you liked us<br><span style="font-size:10px;">Attention: if you dislike us, you will lose your reward</span>.  </td><br><br>
+<td style="text-align:center" colspan="2"> Like uns auf facebook und erhalte: <span style="color:#F90">500,000 Dunkle Materie</span> + <span style="color:#F90">5,000 Anti Materie</span> als Belohnung. <br>Sie können diese Fenster schließen, nachdem Sie uns geliked haben<br><span style="font-size:10px;">Achtung: Beim entfernen des Likes , wirst du deine Belohnung verlieren</span>.  </td><br><br>
 
 
 
-<div class="fb-like-box" data-href="https://www.facebook.com/pages/Dark-Space-Empire/1490309864518434" data-send="false" data-show-faces="true"></div>
+<div class="fb-like-box" data-href="https://www.facebook.com/battlethegalaxy" data-send="false" data-show-faces="true"></div>
 
 <div class="manual_btn_blokc">
-	<a class="manual_btn_ok" href="game.php?page=overview" onclick="endfacebook()" target="_parent">Close this window!</a>
+	<a class="manual_btn_ok" href="game.php?page=overview" onclick="endfacebook()" target="_parent">Schließe dieses Fenster!</a>
 </div>
 
     </div>        

@@ -15,7 +15,7 @@ qtips('.gray_stripe', 'Here you can find a lot of skills that you can upgrade fo
 	{if $manual_25_1_step == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('.gray_stripe', 'Excellent! You pumped his first skill academy.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'leftMiddle', 'topRight');
+		qtips('.gray_stripe', 'Ausgezeichnet! Du hast den ersten Skill in Akademie erworben .<br/><br/> <b>Sie erhalten 650 Erfahrungspunkte.</b>', 'leftMiddle', 'topRight');
 setTimeout(function() { location.reload(); }, 10000);
 
 	});

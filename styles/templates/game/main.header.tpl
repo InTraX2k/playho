@@ -99,7 +99,7 @@ setTimeout(function() { qtips('.over', 'Gehen Sie auf die Übersicht, um die Flo
 	{if $manual_24_step == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('#munu_academy ', 'Go to the Academy. <br> Here you will be able to enhance skills available to you by selecting one of three trees, broken down my classification..', 'rightMiddle', 'leftMiddle');
+		qtips('#munu_academy ', 'Klick auf Academy. <br> Hier kannst du deine Fähigkeiten verbessern, durch die Auswahl eines von drei Bäumen, lässt sich deine Klassifizierung verbessern', 'rightMiddle', 'leftMiddle');
 
 	});
 	</script>
@@ -108,7 +108,7 @@ setTimeout(function() { qtips('.over', 'Gehen Sie auf die Übersicht, um die Flo
 	{if $manual_26_step == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('#achievements_name ', 'Go to Achievements. <br> Here you can choose suitable for achieving your development strategy.', 'rightMiddle', 'leftMiddle');
+		qtips('#achievements_name ', 'Klick auf Errungenschaften. <br> Seh dir deine Entwicklungsstrategie an.', 'rightMiddle', 'leftMiddle');
 
 	});
 	</script>
@@ -139,7 +139,7 @@ setTimeout(function() { qtips('.over', 'Gehen Sie auf die Übersicht, um die Flo
 	{if $manual_21_step == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('#munu_senat ', 'Go to Senate. <br> Here you can hire experts in various categories that help grown their Empire.', 'rightMiddle', 'leftMiddle');
+		qtips('#munu_senat ', 'Klick auf Senate. <br> Hier können Sie Experten in verschiedenen Kategorien mieten.', 'rightMiddle', 'leftMiddle');
 
 	});
 	</script>

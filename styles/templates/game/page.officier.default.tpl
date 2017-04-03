@@ -5,7 +5,7 @@
 {if $manual_23_step == 0}
 <script type="text/javascript">
 	$(function() {
-		qtips('.gray_stripe', 'To strengthen the economy and military power of the empire, you can hire officers. All officers are hired for dark matter. <br /><br /><b><span style="margin:0 0 7px 0;display: block;color:#002211;">Hire:<b></span><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Geologist Level 1 <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Admiral Level 1</b>', 'leftMiddle', 'topRight');
+		qtips('.gray_stripe', 'Um die Wirtschaft und die militärische Macht des Imperiums zu stärken, können Sie Offiziere einstellen. Alle Offiziere werden für dunkle Materie angeheuert.<br /><br /><b><span style="margin:0 0 7px 0;display: block;color:#002211;">Anheuern:<b></span><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Geologe Level 1 <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Admiral Level 1</b>', 'leftMiddle', 'topRight');
 
 	});
 	</script>
@@ -14,7 +14,7 @@
 	{if $close_to == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('.gray_stripe', 'Excellent! You hired officers.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'leftMiddle', 'topRight');
+		qtips('.gray_stripe', 'Ausgezeichnet! Sie haben Offiziere angeheuert.<br/><br/> <b>Sie erhalten 650 Erfahrungspunkte.</b>', 'leftMiddle', 'topRight');
 setTimeout(function() { location.reload(); }, 10000);
 
 	});

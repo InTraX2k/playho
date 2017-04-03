@@ -5,7 +5,7 @@
 {if $manual_22_step == 0}
 		<script type="text/javascript">
 	$(function() {
-		qtips('#a_officier ', 'Select officers', 'leftMiddle', 'rightMiddle');
+		qtips('#a_officier ', 'Wählen einen Offizier aus', 'leftMiddle', 'rightMiddle');
 
 	});
 	</script>

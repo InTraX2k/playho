@@ -16,7 +16,7 @@ setTimeout(function() { qtips('#munu_research', 'Klick hier, um zu erfahren, was
 {if $manual_20 == 0}
 <script type="text/javascript">
 $(function() {
-qtips('#owerwiv ', 'Excellent! Your fleet has been sent for processing debris is one way of obtaining resources, you can fly all over the universe and recycle debris around other planets.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'lefttMiddle', 'topRight');
+qtips('#owerwiv ', 'Ausgezeichnet! Ihre Flotte wurde fürs Sammeln von Schutt gesendet, Sie können durch das ganze Universum fliegen und recyceln.<br/><br/> <b>Sie erhalten 650 Erfahrungspunkte.</b>', 'lefttMiddle', 'topRight');
 setTimeout(function() { location.reload(); }, 13000);
 
 });
