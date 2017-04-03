@@ -49,12 +49,12 @@ $( this ).dialog( "close" );
 <a class="btn_menu" href="game.php?page=senat" id="munu_senat" {if $manual_21_step == 0}onclick="starttraining12()"{/if}>{$LNG.alm_senat}</a>
 <a class="btn_menu" href="game.php?page=port">{$LNG.alm_port}</a>   
 <a class="btn_menu" href="game.php?page=trader">{$LNG.alm_adv_trader}</a>
-<a class="btn_menu" href="game.php?page=academy"id="munu_academy" {if $manual_24_step == 0}onclick="starttraining14()"{/if}>Academia {if $academy_reduce != 0}<span style="color:#FC0;">-{$academy_reduce}%</span>{/if}</a>
+<a class="btn_menu" href="game.php?page=academy"id="munu_academy" {if $manual_24_step == 0}onclick="starttraining14()"{/if}>Academy {if $academy_reduce != 0}<span style="color:#FC0;">-{$academy_reduce}%</span>{/if}</a>
 <a class="btn_menu" href="game.php?page=Immunity">{$LNG.alm_immunity}</a>
 <a class="btn_menu" href="game.php?page=Planetcloak">{$LNG.alm_planetcloak}</a>
 <a class="btn_menu" href="game.php?page=Planeta">Leilões do P.</a>
-<a class="btn_menu" href="game.php?page=Reward2">Resgate</a>
-<a class="btn_menu" href="game.php?page=FleetDealer">Merc. de Frotas</a>
+<a class="btn_menu" href="game.php?page=Reward2">Promocode</a>
+<a class="btn_menu" href="game.php?page=FleetDealer">Schrotthändler</a>
 {*<a title="Get back some of your lsot fleets" class="btn_menu" href="game.php?page=FleetDealer">{$LNG.alm_fleetdealer}</a>*}
 <div class="clear"></div>        
 <div class="separator"></div>
@@ -83,7 +83,7 @@ $( this ).dialog( "close" );
 <a {if $gift4 > 0}href="?page=bonus&mode=gift4"{/if} class="gift_bloc gift_4 {if $gift4_1 == 0}gift_opacity{/if} tooltip" data-tooltip-content="Quando ativado o Cosmonauta, 
 <br>Você irá receber 300+ de Anti Matéria<br>
 E você tem 50% de chance de ganhar:
-<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>pontos de Academia <b>1-25</b>
+<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Academy Punkte <b>1-25</b>
 <br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>experiência de pascifismo <b>150-3500</b>
 <br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>bonus de anti matéria <b>200</b>
 <br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Obter <b>UFO</b>

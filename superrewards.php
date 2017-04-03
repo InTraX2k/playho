@@ -15,13 +15,13 @@ See: http://docs.superrewards.com/v1.0/docs/notification-postbacks
 For more details, see our documentation at:
 http://docs.superrewards.com/v1.0/docs/getting-started
 */
-define('APP_SECRET', ''); // App Secret Key. Find it by going to the Apps page, select Edit on the App of your choice, then Integrate.
-define('DB_USER', ''); // Your database user.
-define('DB_PASSWORD', ''); // Your database password.
-define('DB_HOST', ''); // Your database host (usually 127.0.0.1).
-define('DB_HOST_PORT', ''); // Your database host port (usually 3306).
-define('DB_NAME', ''); // Your database name.
-define('DB_PREFIX', ''); // OPTIONAL: A database table prefix, such as 'app1_'. This easily allows multiple apps to be served from the same database.
+define('APP_SECRET', '26877d999e9925f97dc3b3112c2b83c5'); // App Secret Key. Find it by going to the Apps page, select Edit on the App of your choice, then Integrate.
+define('DB_USER', 'btgv5'); // Your database user.
+define('DB_PASSWORD', 'Series87!'); // Your database password.
+define('DB_HOST', 'localhost'); // Your database host (usually 127.0.0.1).
+define('DB_HOST_PORT', '3306'); // Your database host port (usually 3306).
+define('DB_NAME', 'btgv5'); // Your database name.
+define('DB_PREFIX', 'uni_1'); // OPTIONAL: A database table prefix, such as 'app1_'. This easily allows multiple apps to be served from the same database.
 error_reporting(E_WARNING);
 // *** No more configuration below this line. ***
 header('Content-Type:text/plain');

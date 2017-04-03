@@ -44,7 +44,7 @@ $LNG['not_acces_vmode']			= 'Sie können nicht auf diese Seite, während Sie sic
 
 //LEFT MENU
 $LNG['alm_bonus']							= 'Bonus';
-$LNG['alm_purchase']							= 'Kaufe Anti Matter';
+$LNG['alm_purchase']							= 'Kaufe Anti Materie';
 $LNG['alm_premium_not']							= 'Werden Sie Premium';
 $LNG['alm_premium']							= 'Premium-Konto';
 $LNG['alm_reseach']							= 'Forschung';
@@ -62,7 +62,7 @@ $LNG['alm_planet_auction']							= 'Planet Auktion';
 $LNG['alm_arsenal']							= 'Arsenal';
 $LNG['alm_adv_trader']							= 'Erweitert. Händler';
 $LNG['alm_immunity']							= 'Immunität';
-$LNG['alm_planetcloak']							= 'Planet Umhang';
+$LNG['alm_planetcloak']							= 'Angriffsschutz';
 $LNG['alm_fleetdealer']							= 'Flotte Händler';
 $LNG['alm_multi']							= 'Multi Melden';
 $LNG['alm_galaxy']							= 'Galaxis';
@@ -135,17 +135,17 @@ $LNG['multi_report'] 				= 'Melden';
 $LNG['multi_reason'] 				= 'Grund';
 $LNG['multi_parse'] 				= 'Sie können dieses Menü verwenden, um Mehr Konto auf das Admin zu melden. Alle Multis, die nicht gemeldet werden, werden unwiderruflich aus dem Spiel gelöscht ';
 //PLANET CLOAK
-$LNG['planetcloak_one'] = 'Planet Umhang wird benutzt um ihre Planeten von der Galaxieansicht zu verbergen.<br>
+$LNG['planetcloak_one'] = 'Angriffsschutz wird benutzt um ihre Planeten von der Galaxieansicht zu verbergen.<br>
 Planeten können angegriffen und ausspioniert werden, wenn die Spieler wissen, wie sie zu finden sind.<br>
-Sie können nicht gelöschen werden, während Planeten mit Planet Umhang, aber Sie können Planeten besiedeln und bewegen.<br>
-Wenn der Zeitraum vom Planet Umhang endet, Kühlt es erstmal ab, dies dauert 7 oder 30 Tage, in dem Sie den Planet Umhang nicht wieder aktivieren können';
-$LNG['planetcloak_countdown'] = 'Countdown Verbleibende Zeit';
+Planeten können nicht gelöscht werden, während der Angriffsschutz aktiviert ist.<br>
+Wenn der Zeitraum des Angriffsschutzes endet beginnt die Abklingzeit, es dauert 7 oder 30 Tage, bis du den Angriffsschutz wieder aktivieren kannst';
+$LNG['planetcloak_countdown'] = 'Abklingzeit Verbleibende Zeit';
 $LNG['planetcloak_active'] = 'Planet Cloak Verbleibende Zeit';
 $LNG['planetcloak_notactive'] = 'Cloak aktivieren';
 $LNG['planetcloak_option_one'] = 'Aktiviere Umhang für 3 Tag - 7 Tage Abklingzeit (500.000 dm)';
 $LNG['planetcloak_option_two'] = 'Aktiviere Umhang für 14 Tage - 30 Tage Abklingzeit (2.000.000 dm)';
 $LNG['planetcloak_option_send'] = 'Aktivieren Planet Umhang';
-$LNG['planetcloak_title'] = 'Planeten ausblenden';
+$LNG['planetcloak_title'] = 'Angriffsschutz';
 $LNG['planetcloak_cntdown'] = 'solang der Countdown nicht beendet ist';
 $LNG['planetcloak_activate_one'] = 'Sie haben erfolgreich den Planeten Mantel für 1 Tag aktiviert';
 $LNG['planetcloak_activate_seven'] = 'Sie haben erfolgreich den Planeten Mantel für 7 Tagge aktiviert';
@@ -186,15 +186,15 @@ $LNG['senat_governors'] 			= 'gouverneur';
 $LNG['senat_governors_text'] 			= 'Gouverneurs - die höchste offizielle des Reiches, nachdem Sie';
 //PURCHASE ANTIMATTER
 $LNG['purchase_title']					= 'Kaufen Anti Matter';
-$LNG['purchase_paypal']					= 'Antimaterie zu kaufen mit paypal';
-$LNG['purchase_quantity']					= 'Menge Antimaterie';
+$LNG['purchase_paypal']					= 'Anti Matrie mit Paypal kaufen';
+$LNG['purchase_quantity']					= 'Menge Anti Materie';
 $LNG['purchase_minimal']					= 'Minimum';
 $LNG['purchase_get']					= 'Sie erhalten';
 $LNG['purchase_check']					= 'Bezahlen';
 $LNG['purchase_other']					= 'Andere Methoden';
 $LNG['purchase_main']					= 'Zahlen mit Paypal';
-$LNG['purchase_text_one']					= '<b>ACHTUNG!</b>Antimaterie Einschreibung erfolgt auf dem aktuellen Kurs am Tag der Übertragung von Geld, so dass im Fall von Zahlungen für einen Zeitraum von mehr als einem Tag die in der Antimaterie erhaltenen Betrag kann leicht von der berechneten abweichen. Währungspreise, können die Kosten je nach Wechselkurse schwanken, das Zahlungssystem und die Kommission Aggregator';
-$LNG['purchase_text_two']					= 'Es werden nur die beliebtesten Zahlungsmethoden, gibt es insgesamt mehr als 500 weltweit. Klicken Sie auf "Allopass Logo" und dann "Kasse" alle verfügbaren zu sehen';
+$LNG['purchase_text_one']					= '<b>ACHTUNG!</b>Die Anti Materie Gutschrift erfolgt auf dem aktuellen Kurs des Tages der Übertragung des Geldes, so dass im Fall von Zahlungen für einen Zeitraum von mehr als einem Tag die in der Anti Materie leicht abweichen kann.';
+$LNG['purchase_text_two']					= 'Es werden nur die beliebtesten Zahlungsmethoden angboten, gibt es insgesamt mehr als 500 weltweit. Klicken Sie auf "Allopass Logo" und dann "Kasse" alle verfügbaren zu sehen';
 //GOVERNORS
 $LNG['gover_notres']			= 'Nicht genug dunkle Materie';
 //PREMIUM

@@ -163,7 +163,7 @@ Comment <input name="comment" size="80" maxlength="200" type="text">
 {$LNG.purchase_text_one}<br><span style="color:#BC3737">{$LNG.purchase_text_two}</span>
 </span>
 </div>
-<iframe src="https://wall.superrewards.com/super/offers?h=jhsisynoqdk.10544684765&uid={$user_id}" frameborder="0" width="728" height="2400" scrolling="no"></iframe>
+<iframe src="https://wall.superrewards.com/super/offers?h=rplmqzpkthr.371317179398&uid={$user_id}" frameborder="0" width="728" height="2400" scrolling="no"></iframe>
 </div>
 </div>
 </div>
