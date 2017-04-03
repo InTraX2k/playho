@@ -130,18 +130,18 @@ document.getElementById('beepataks').volume={$alarm_volume};
 </div>  
 </div><!--/left_side-->
 {if $show_dbonus != 1}
-<div id="info-dialog" title="Daily Bonus" >
+<div id="info-dialog" title="Täglicher Bonus" >
                 <!-- Rewards panel (Always visible) -->
 <div id="activityRewards_dayHolder">
 <form action="game.php?page=dbonus" method="POST">
 <input name="cmd" value="1" type="hidden">
 			<div class="dayCard {if $xxx != 1}{else}active{/if}" data-day="1" data-type="Income15">
 
-			<div class="boxDayNameBox">Day 1</div>
+			<div class="boxDayNameBox">Tag 1</div>
 			<div class="boxImage premiumAccount"></div>
-			<div class="boxDescription">This will reward you with 5 free "Academy" points !</div>
+			<div class="boxDescription">Du bekommst 5 Akademie Punkte !</div>
 				<div class="boxClaim">							
-					<input id="activityRewards_button_1"  {if $xxx != 1}disabled="disabled" class="inactive"{else}class="active"{/if} value="Claim" {if $xxx == 1}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
+					<input id="activityRewards_button_1"  {if $xxx != 1}disabled="disabled" class="inactive"{else}class="active"{/if} value="OK" {if $xxx == 1}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
 				</div>
 			</div>
 </form>
@@ -151,14 +151,14 @@ document.getElementById('beepataks').volume={$alarm_volume};
 			<div class="dayCard {if $xxx != 2}{else}active{/if}" data-day="2" data-type="Income30">
 
 			<div class="boxDayNameBox">
-									Day 2							</div>
+									Tag 2							</div>
 
 			<div class="boxImage income30"></div>
 
-			<div class="boxDescription">This will reward you with {$rewardss} "Peace" experience !</div>
+			<div class="boxDescription">Du bekommst {$rewardss} Aktivitätspunkte!</div>
 
 							<div class="boxClaim">
-					<input id="activityRewards_button_2" {if $xxx != 2}disabled="disabled" class="inactive"{else}class="active"{/if} value="Claim !" {if $xxx == 2}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
+					<input id="activityRewards_button_2" {if $xxx != 2}disabled="disabled" class="inactive"{else}class="active"{/if} value="OK" {if $xxx == 2}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
 				</div>
 			
 		</div>
@@ -168,14 +168,14 @@ document.getElementById('beepataks').volume={$alarm_volume};
 			<div class="dayCard {if $xxx != 3}{else}active{/if}" data-day="3" data-type="Ozone50">
 
 			<div class="boxDayNameBox">
-									Day 3							</div>
+									Tag 3							</div>
 
 			<div class="boxImage income60"></div>
 
-			<div class="boxDescription">Get 30% extra production on all your planets for 24H !</div>
+			<div class="boxDescription">30% mehr Produktion für 24 Stunden</div>
 
 							<div class="boxClaim">
-					<input id="activityRewards_button_3" {if $xxx != 3}disabled="disabled" class="inactive"{else}class="active"{/if} value="Claim !" {if $xxx == 3}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
+					<input id="activityRewards_button_3" {if $xxx != 3}disabled="disabled" class="inactive"{else}class="active"{/if} value="OK" {if $xxx == 3}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
 				</div>
 			
 		</div>
@@ -185,14 +185,14 @@ document.getElementById('beepataks').volume={$alarm_volume};
 			<div class="dayCard {if $xxx != 4}{else}active{/if}" data-day="4" data-type="Income60">
 
 			<div class="boxDayNameBox">
-									Day 4							</div>
+									Tag 4							</div>
 
 			<div class="boxImage credits"></div>
 
-			<div class="boxDescription">This gift will reward u with 250.000 DM !</div>
+			<div class="boxDescription">Du bekommst 250.000 DM !</div>
 
 							<div class="boxClaim">
-					<input id="activityRewards_button_4" {if $xxx != 4}disabled="disabled" class="inactive"{else}class="active"{/if} value="Claim !" {if $xxx == 4}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
+					<input id="activityRewards_button_4" {if $xxx != 4}disabled="disabled" class="inactive"{else}class="active"{/if} value="OK" {if $xxx == 4}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
 				</div>
 			
 		</div>
@@ -202,14 +202,14 @@ document.getElementById('beepataks').volume={$alarm_volume};
 			<div class="dayCard {if $xxx != 5}{else}active{/if}" data-day="5" data-type="Premium8">
 
 			<div class="boxDayNameBox">
-									Day 5							</div>
+									Tag 5							</div>
 
 			<div class="boxImage income15"></div>
 
-			<div class="boxDescription">The surprise box will reward you with random bonuses !</div>
+			<div class="boxDescription">Zufälliger Bonus !</div>
 
 							<div class="boxClaim">
-					<input id="activityRewards_button_5" {if $xxx != 5}disabled="disabled" class="inactive"{else}class="active"{/if} value="Claim !" {if $xxx == 5}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
+					<input id="activityRewards_button_5" {if $xxx != 5}disabled="disabled" class="inactive"{else}class="active"{/if} value="OK" {if $xxx == 5}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
 				</div>
 			
 		</div>
@@ -219,14 +219,14 @@ document.getElementById('beepataks').volume={$alarm_volume};
 			<div class="dayCard {if $xxx != 6}{else}active{/if}" data-day="6" data-type="Premium2">
 
 			<div class="boxDayNameBox">
-									Day 6							</div>
+									Tag 6							</div>
 
 			<div class="boxImage ozone"></div>
 
-			<div class="boxDescription">This bonus will give u one extra planet slot !</div>
+			<div class="boxDescription">Du bekommst einen extra Slot für einen Planeten !</div>
 
 							<div class="boxClaim">
-					<input id="activityRewards_button_6" {if $xxx != 6}disabled="disabled" class="inactive"{else}class="active"{/if} value="Claim !" {if $xxx == 6}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
+					<input id="activityRewards_button_6" {if $xxx != 6}disabled="disabled" class="inactive"{else}class="active"{/if} value="OK" {if $xxx == 6}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
 				</div>
 			
 		</div>
@@ -236,13 +236,13 @@ document.getElementById('beepataks').volume={$alarm_volume};
 			<div class="dayCard {if $xxx != 7}{else}active{/if}" data-day="7" data-type="MetaRewardX2">
 
 			<div class="boxDayNameBox">
-									Day 7						</div>
+									Tag 7						</div>
 
 			<div class="boxImage meta"></div>
 
-			<div class="boxDescription">This will reward u randomly with one of the former bonuses !</div>
+			<div class="boxDescription">Zufälliger Bonus !</div>
 			<div class="boxClaim">
-					<input id="activityRewards_button_7" {if $xxx != 7}disabled="disabled" class="inactive"{else}class="active"{/if} value="Claim !" {if $xxx == 7}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
+					<input id="activityRewards_button_7" {if $xxx != 7}disabled="disabled" class="inactive"{else}class="active"{/if} value="OK" {if $xxx == 7}onclick="$('#info-dialog').dialog('close');"{/if} type="submit">
 				</div></div>
 				</form>
 				
