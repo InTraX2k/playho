@@ -3,7 +3,7 @@
 {if $manual_14_step == 0}
 <script type="text/javascript">
 	$(function() {
-		qtips('#mes_3 ', 'Go to the "Battle" and view the combat report by clicking on it.', 'topMiddle', 'bottomMiddle');
+		qtips('#mes_3 ', 'Klicke auf Kampfberichte dir den Kampfrebot anzeigen zu lassen.', 'topMiddle', 'bottomMiddle');
 setTimeout(function() { location.reload(); }, 20000);
 
 	});

@@ -359,7 +359,7 @@
 	<script type="text/javascript">
 	$(function() {
 		setTimeout(function() { location.reload(); }, 15000);
-qtips_galaxy_der('{$man_p}', 'Place your mouse on the debris field around the planet to send the recyclers');
+qtips_galaxy_der('{$man_p}', 'Klicke auf das Trümmerfeld (TF) um die Recycler zu los zu schicken.');
 
 	});
 	</script>

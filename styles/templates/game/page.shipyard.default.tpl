@@ -3,7 +3,7 @@
 {if $manual_step_16 == 0}
 <script type="text/javascript">
 	$(function() {
-		qtips('#fildes_band ', 'After a battle in the vicinity of your planet formed a debris field, for that would raise their fleet needs "Recycler".<br /><br /><span style="margin:0 0 7px 0;display: block;color:#002211; "><b>build:</b></span><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>5 recyclers', 'lefttMiddle', 'topRight');
+		qtips('#fildes_band ', 'Nach der Schlacht hat sich in der Nähe deines Planeten ein Trümmerfeld gebildet, du musst einen "Recycler" bauen um es abzubauen..<br /><br /><span style="margin:0 0 7px 0;display: block;color:#002211; "><b>Baue:</b></span><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>5 Recycler', 'lefttMiddle', 'topRight');
 $( ".build_box" ).hide();
 $( ".build_band_conveyors" ).hide();
 $( "#s_209" ).show();
@@ -16,8 +16,8 @@ $( "#s_middle" ).show();
 {if $manual_11_step == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('#attack', 'Attention to your planet flies attacking fleet', 'bottomMiddle', 'topLeft');
-setTimeout(function() { qtips('.over', 'Go to the review, to view the attackers fleet', 'bottomMiddle', 'topLeft') }, 4000);
+		qtips('#attack', 'Achtung eine feindliche Flotte fliegt auf deinen Planeten zu!', 'bottomMiddle', 'topLeft');
+setTimeout(function() { qtips('.over', 'Gehen Sie auf die Übersicht, um die Flotte des Angreifer zu sehen', 'bottomMiddle', 'topLeft') }, 4000);
 
 	});
 	</script>
@@ -35,7 +35,7 @@ $( ".build_band_conveyors" ).hide();
 $( "#s_401" ).show();
 $( "#s_402" ).show();
 $( "#s_light" ).show();
-qtips('#s_light', 'Enemy probed you and preparing an attack. To protect the planet, build defenses. <br/><br/><b><span style="margin:0 0 7px 0;display: block;color:#002211;">Build:</span><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>25 missiles launchers <br /> <span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>10 light lasers</b>', 'bottomMiddle', 'bottomMiddle')
+qtips('#s_light', 'Ein Feind hat dich Spioniert um einen Angriff vorzubereiten. Um den Planeten zu schützen, baue deine Verteidigung aus. <br/><br/><b><span style="margin:0 0 7px 0;display: block;color:#002211;">Baue:</span><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>25 Raketenwerfer <br /> <span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>10 Leichte Lasergeschütze</b>', 'bottomMiddle', 'bottomMiddle')
 
 	});
 	</script>
@@ -49,7 +49,7 @@ $( ".build_band_conveyors" ).hide();
 $( "#s_401" ).show();
 $( "#s_402" ).show();
 $( "#s_light" ).show();
-qtips('#fildes_band', 'Excellent! Now your planet is protected from attacks. After the destruction of defense exists 10-30% chance to restore it.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'leftMiddle', 'topRight')
+qtips('#fildes_band', 'Ausgezeichnet! Jetzt ist dein Planet vor Angriffen geschützt. Nach der Zerstörung der Verteidigung gibt es 10-30% Chance, es wiederherzustellen.<br/><br/> <b>Sie erhalten 650 Erfahrungspunkte.</b>', 'leftMiddle', 'topRight')
 setTimeout(function() { location.reload(); }, 5000);
 
 	});

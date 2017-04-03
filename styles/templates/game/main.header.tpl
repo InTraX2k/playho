@@ -75,7 +75,7 @@
 	<script type="text/javascript">
 	$(function() {
 		qtips('#attack', 'Attention to your planet flies attacking fleet', 'bottomMiddle', 'topLeft');
-setTimeout(function() { qtips('.over', 'Go to the review, to view the attackers fleet', 'bottomMiddle', 'topLeft') }, 4000);
+setTimeout(function() { qtips('.over', 'Gehen Sie auf die Übersicht, um die Flotte des Angreifer zu sehen', 'bottomMiddle', 'topLeft') }, 4000);
 
 	});
 	</script>
@@ -90,7 +90,7 @@ setTimeout(function() { qtips('.over', 'Go to the review, to view the attackers 
 	{if $manual_15_step == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('#munu_shipyard_fleet ', 'Go to Fleet. <br> Here you can build a battle fleet, attacks on other players or flight expedition.', 'rightMiddle', 'leftMiddle');
+		qtips('#munu_shipyard_fleet ', 'Klicke auf Hangar <br> Hier können Sie eine Flotte bauen, Angriffe auf andere Spieler vorbereiten oder Flugexpedition starten.', 'rightMiddle', 'leftMiddle');
 
 	});
 	</script>
@@ -117,7 +117,7 @@ setTimeout(function() { qtips('.over', 'Go to the review, to view the attackers 
 	{if $manual_17_step == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('#munu_galaxy ', 'Go to the Galaxy. <br> This map of the universe, the planet where all the players are displayed.', 'rightMiddle', 'leftMiddle');
+		qtips('#munu_galaxy ', 'Klicke auf Galaxis. <br> Diese Karte zegt das Universum, Planet und Spieler.', 'rightMiddle', 'leftMiddle');
 
 	});
 	</script>
@@ -152,7 +152,7 @@ setTimeout(function() { qtips('.over', 'Go to the review, to view the attackers 
 	{if $manual_13_step == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('.mesages ', 'Go to messages. <br> Red figure beside notifies you about the number of unread messages.', 'bottomMiddle', 'topMiddle');
+		qtips('.mesages ', 'Klick auf Nachrichten.<br> Die Roten Zahlen zeigen dir wie viele ungelesenen Nachrichten du hast.', 'bottomMiddle', 'topMiddle');
 		
 	});
 	</script>
@@ -171,7 +171,7 @@ setTimeout(function() { qtips('#munu_research', 'Log in here, for then that woul
 	
 	<script type="text/javascript">
 	$(function() {
-		qtips('#munu_shipyard_defense ', 'Go to Defense.<br>Here you will be able to increase the protection of the planet. ', 'rightMiddle', 'leftMiddle');
+		qtips('#munu_shipyard_defense ', 'Verteidigung - <br>Hier könnt ihr den Schutz des Planeten erhöhen. ', 'rightMiddle', 'leftMiddle');
 
 	});
 	</script>

@@ -32,7 +32,7 @@ $( "#research_120" ).show();
 	$(function() {
 		$( ".build_box" ).hide();
 $( "#research_106" ).show();
-qtips('#fildes_band', 'excellent! Now your empire protected from espionage, but do not forget to continue to increase as the technology that will allow you to hide information and from more serious opponents.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'leftMiddle', 'topRight');
+qtips('#fildes_band', 'Ausgezeichnet! Jetzt ist Ihr Reich vor Spionage geschützt, aber vergessen Sie nicht, weiter zu Forschen um Informationen vor Stärkeren Gegnern zu verbergen.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'leftMiddle', 'topRight');
 setTimeout(function() { location.reload(); }, 10000);
 
 	});
