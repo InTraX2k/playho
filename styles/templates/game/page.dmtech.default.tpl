@@ -12,7 +12,7 @@
 <div id="build_content" class="conteiner">
     <div id="fildes_band">
     	<a href="#" id="arrow_question" style="left:5px; right:auto;" onclick="return Dialog.manualinfo(2)" class="interrogation manual">?</a>
-       	<a class="bd_dm_buy" href="game.php?page=dmtech">Buy study with dm</a>
+       	<a class="bd_dm_buy" href="game.php?page=dmtech">DM Forschung</a>
     </div>   
     <div id="build_elements">
 	 {foreach $ResearchList as $ID => $Element}   

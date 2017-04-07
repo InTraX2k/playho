@@ -38,7 +38,7 @@ function buildTimeTicker(){ var e=buildEndTime-(serverTime.getTime()-startTime)/
 <div id="page" >
 <div id="content"> 
 <div id="owerwiv" class="conteiner">
-<div class="title">Fleets</div>
+<div class="title">Flottenbewegung</div>
 <div class="fleet_log">
 <div class="separator"></div>
 {foreach $fleets as $index => $fleet}

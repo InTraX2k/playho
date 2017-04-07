@@ -7,7 +7,7 @@
     <div class="gray_stripe">
     	       <a href="game.php?page=reduceresources" class="fleet_reduce ico_reduceresources tooltip" data-tooltip-content="{$LNG.HarRes}"></a>
 	   <a href="game.php?page=reducefleet" class="fleet_reduce ico_reducefleet tooltip" data-tooltip-content="Fleet harvester"></a>
-        <span style="float:right;color:#6ccdce;"><span class="totalFleetPoints">0</span> Navy selected points</span>
+        <span style="float:right;color:#6ccdce;"><span class="totalFleetPoints">0</span> Flottenpunkte ausgewählt</span>
     </div>
     {if !empty($acsData)}
 {include file="shared.fleetTable.acsTable.tpl"}
@@ -20,7 +20,7 @@
 <input type="hidden" name="target_mission" value="{$targetMission}">
         <table class="tablesorter ally_ranks">
     	        <tr>
-        	<th colspan="3" class="gray_stripe">Combat Ships</th>     
+        	<th colspan="3" class="gray_stripe">Kampfschiffe</th>     
             <th style="padding:0;" class="gray_stripe">            	
              	<a href="javascript:noShipsBatle();" class="fl_min_ships">Min</a>
                 <a href="javascript:maxShipsBatle();" class="fl_max_ships">Max</a>
@@ -44,7 +44,7 @@
 		
 		
 		    <tr>
-        	<th colspan="3" class="gray_stripe">Transport</th>     
+        	<th colspan="3" class="gray_stripe">Transportschiffe</th>     
             <th style="padding:0;" class="gray_stripe">            	
              	<a href="javascript:noShipsTransports();" class="fl_min_ships">Min</a>
                 <a href="javascript:maxShipsTransports();" class="fl_max_ships">Max</a>
@@ -118,7 +118,7 @@
                         <tr>     
         	<th colspan="2" style="text-align:center;" class="gray_stripe"><a href="javascript:onSave();" style="color:#666;">Save</a></td>            	      
         	<th colspan="1" style="text-align:center;" class="gray_stripe"><a href="javascript:maxShips();" style="color:#666;">All ships</a></td>        	  
-            <th colspan="1" style="text-align:center;" class="gray_stripe"><a href="javascript:noShips();" style="color:#666;">set to zero</a></td>           
+            <th colspan="1" style="text-align:center;" class="gray_stripe"><a href="javascript:noShips();" style="color:#666;">auf 0 setzen</a></td>           
         </tr>
         <tr style="display:none;" id="save">
         	<td colspan="3" style="text-align:right; color:#CCC;">Specify the name of the stored group</td>
@@ -127,7 +127,7 @@
 {if $maxFleetSlots != $activeFleetSlots}		
         <tr>
             <td colspan="4" style="padding:0;">
-                <input class="fl_bigbtn_go" type="submit"  value="Continue">
+                <input class="fl_bigbtn_go" type="submit"  value="Weiter">
             </td>
         </tr>
                {/if}  

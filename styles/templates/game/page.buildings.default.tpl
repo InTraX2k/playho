@@ -195,7 +195,7 @@ qtips('#fildes_band', 'Aufgrund fehlender Energie wird die Produktion von Minen 
         <div class="fildes_band_text">
         	campos construídos: <span>{$field_used}</span> de <span>{$field_max}</span>&emsp;&emsp;
         	free: <span>{$field_left}</span>
-			<a class="bd_dm_buy" style="padding-right: 30px;" href="game.php?page=dmbuild">Comprar edifícios com MN</a>
+			<a class="bd_dm_buy" style="padding-right: 30px;" href="game.php?page=dmbuild">Bauen mit DM</a>
         </div>    
 		
     </div>   

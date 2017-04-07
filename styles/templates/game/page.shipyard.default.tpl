@@ -82,8 +82,8 @@ setTimeout(function() { location.reload(); }, 5000);
 <div id="build_content" class="conteiner ship_build">
     <div id="fildes_band">
     	<a href="#" id="arrow_question" style="left:5px; right:auto;" onclick="return Dialog.manualinfo({if $mode == "defense"}4{else}3{/if})" class="interrogation manual">?</a>
-	   	{if $mode == "defense"}<a class="bd_dm_buy" href="?page=dmhangar&mode=defense">Dark Matter Defense</a>
-		{else}<a class="bd_dm_buy" href="?page=dmhangar&mode=fleet">Dark Matter Fleets</a>{/if}
+	   	{if $mode == "defense"}<a class="bd_dm_buy" href="?page=dmhangar&mode=defense">Bauen mit DM</a>
+		{else}<a class="bd_dm_buy" href="?page=dmhangar&mode=fleet">Bauen mit DM</a>{/if}
     </div> 
 	{foreach $elementList as $ID => $Element}
     <div id="build_elements">
