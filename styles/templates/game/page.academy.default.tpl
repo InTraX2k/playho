@@ -26,7 +26,7 @@ setTimeout(function() { location.reload(); }, 10000);
     
         <div id="academy_head" class="gray_stripe">
             Academy
-         	<span style="color:#FC6; float:right;" id="span_point">you have {$academy_p} academy points</span>
+         	<span style="color:#FC6; float:right;" id="span_point">Du kannst {$academy_p} Akademiepunkte vergeben</span>
         </div>
 
 		<div id="academy" class="ach_main_content">
