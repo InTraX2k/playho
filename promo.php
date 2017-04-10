@@ -3,11 +3,11 @@
 <html>
 	<head>
 		
-	<base href="http://dark-space.org">
+	<base href="http://BattletheGalaxy.de">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Dark-Space: Empire" - Play for free</title>
+	<title>Battle the Galaxy" - Play for free</title>
 	<meta name="description" content="LIFE WAS BORN ON THE SAME PLANET - DOMINATE THE UNIVERSE" />
-	<meta name="keywords" content="Dark-Space: Empire - play for free" />		<link type="image/x-icon" href="media/images/favicon.ico" rel="shortcut icon" />
+	<meta name="keywords" content="Battle the Galaxy - play for free" />		<link type="image/x-icon" href="media/images/favicon.ico" rel="shortcut icon" />
 	<link href="/media/css/promo.css" rel="stylesheet" type="text/css" />   
 
 </head>
@@ -60,7 +60,7 @@ $id = $_GET['referralID'];
         <div class="block"><span>Account</span> <a href="/users/register">Create an account</a><br /> <a href="/users/recover">Recover account</a></div>
         
          
-<div class="block"><span>Community</span> <a href="http://forum.dark-space.org">Forum</a><br /> <a href="/contacts">Contacts</a> <br> <a href="/gallery">Galery</a></div>        
+<div class="block"><span>Community</span> <a href="http://Battlethegalaxy.de">Forum</a><br /> <a href="/contacts">Contacts</a> <br> <a href="/gallery">Galery</a></div>        
         
         <div class="clear"></div>
     </div>
