@@ -165,9 +165,9 @@ function ShowBanPage()
 		require 'includes/classes/Mail.class.php';
 		
 		if(isset($_POST['permanent'])){
-		$pmMessage 	= "Hello ".$UserData['username'].",<br> Your Dark-Space: Empire account is permanently suspended for the following reason: ".$reas.".<br> You might still open a forum thread if you want to resolve your ban issue: <a href=http://forum.dark-space.org/index.php?/forum/17-locked-account/>Click here</a><br><br> Regards<br>The Development Team.";
+		$pmMessage 	= "Hallo ".$UserData['username'].",<br> dein Battle the Galaxy Account ist Permanent gebant: ".$reas.".<br> Bei Fragen zu deiner Sperre wende dich bitte an das Forum: <a href=http://forum.battlethegalaxy.de/>Hier klicken</a><br><br> Beste Grüße<br>Dein Support Team.";
 		}else{
-		$pmMessage 	= "Hello ".$UserData['username'].",<br> Your Dark-Space: Empire account account is suspended for the following reason: ".$reas." until '".$timeofban."'.<br> You might still open a forum thread if you want to resolve your ban issue: <a href=http://forum.dark-space.org/index.php?/forum/17-locked-account/>Click here</a><br><br> Regards<br>The Development Team.";
+		$pmMessage 	= "Halle ".$UserData['username'].",<br> dein Battle the Galaxy Account ist gesperrt: ".$reas." until '".$timeofban."'.<br> Bei Fragen zu deiner Sperre wende dich bitte an das Forum: <a href=http://forum.battlethegalaxy.de/>Hier klickeen</a><br><br> Beste Grüße<br>Dein Support Team.";
 		}
 		$sendMessage = str_replace('{USERNAME}', $UserData['username'], $pmMessage);
 		
@@ -175,9 +175,9 @@ function ShowBanPage()
 		$to = $UserData['email'];
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-		$headers .= 'From: support@dark-space.org' . "\r\n";
-		$headers .= 'Reply-To: support@dark-space.org' . "\r\n";
-		mail($to, 'Your account is suspended', $sendMessage, $headers);
+		$headers .= 'From: support@battlethegalaxy.de' . "\r\n";
+		$headers .= 'Reply-To: support@battlethegalaxy.de' . "\r\n";
+		mail($to, 'Dein Account ist gesperrt', $sendMessage, $headers);
 		
 		}
 		$GLOBALS['DATABASE']->query($SQL);
