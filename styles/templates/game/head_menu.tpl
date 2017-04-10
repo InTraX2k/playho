@@ -106,12 +106,12 @@
                         	<span class="techtree"></span>
                         </a>
                         
-                       <a target="_blank" href="http://wiki.dark-space.org" title="Wiki">
+                       <a target="_blank" href="http://wiki.battlethegalaxy.de" title="Wiki">
 
     <span class="faq"></span>
 
 </a>
-                        <a title="{$LNG.hnav_rules}" href="http://dark-space.org/index.php?page=rules" target="_blank">
+                        <a title="{$LNG.hnav_rules}" href="http://battlethegalaxy.de/index.php?page=rules" target="_blank">
                             <span class="rules"></span>
                         </a>
                         <a title="{$LNG.hnav_notes}" href="javascript:Dialog.open('?page=notes', 900, 300);">

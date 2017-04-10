@@ -83,7 +83,7 @@
 <div class="img_donat_sys">
 <img alt="" onclick="document.getElementById('lightbox').style.display='inline';" src="http://www.navyfield.eu/eng/images/common/banner_paysafecard.jpg">                   
 <script type="text/javascript" src="https://payment.allopass.com/virtual/button.apu?ids=322070&amp;idd=1408135&amp;user_id={$user_id}&amp;lang=fr"></script>
-<img alt="" src="http://dark-space.org/styles/images/super-rewards-sub.gif">     
+<img alt="" src="http://battlethegalaxy.de/styles/images/super-rewards-sub.gif">     
 </div>
 </div>
 </form>

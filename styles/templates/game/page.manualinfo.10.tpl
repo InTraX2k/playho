@@ -27,7 +27,7 @@ Paysafecard is the only payment system that don't work automatically. We decided
 
 <span onclick="$('#id_2').slideToggle();return false" style="cursor: pointer;"><img alt="" src="/styles/images/Adm/GO.png" height="12"> Loyality Points</span>
 <div style="display:  none; clear: both;" id="id_2">
-The loyality program allows Battle The Galaxy Clients to obtain more for each purchase.The loyality program involves the payments done by paypal and Allopass. Paypal and Allopass works automatically, for the users who use the PaysafeCard method, their Loyality Points are added manualy at the same time you receive your dark matter. <br><br>
+Das Treueprogramm erlaubt es Battle The Galaxy Spielern, mehr für jeden Kauf zu erhalten. Das Loyalitätsprogramm beinhaltet die Zahlungen, die von paypal und Allopass durchgeführt werden. Paypal und Allopass arbeiten automatisch, PaysafeCard-Methode wird manuell hinzugefügt, ihre Loyalitätspunkte werden zur gleichen Zeit hinzugefügt, wie deine Dunkle Materie/Anti Materie. <br><br>
 
 <div class="lp_container_details">
 	<table width="100%">
