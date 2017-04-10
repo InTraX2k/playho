@@ -27,7 +27,7 @@ Paysafecard is the only payment system that don't work automatically. We decided
 
 <span onclick="$('#id_2').slideToggle();return false" style="cursor: pointer;"><img alt="" src="/styles/images/Adm/GO.png" height="12"> Loyality Points</span>
 <div style="display:  none; clear: both;" id="id_2">
-The loyality program allows Dark-Space: Empire Clients to obtain more for each purchase.The loyality program involves the payments done by paypal and Allopass. Paypal and Allopass works automatically, for the users who use the PaysafeCard method, their Loyality Points are added manualy at the same time you receive your dark matter. <br><br>
+The loyality program allows Battle The Galaxy Clients to obtain more for each purchase.The loyality program involves the payments done by paypal and Allopass. Paypal and Allopass works automatically, for the users who use the PaysafeCard method, their Loyality Points are added manualy at the same time you receive your dark matter. <br><br>
 
 <div class="lp_container_details">
 	<table width="100%">

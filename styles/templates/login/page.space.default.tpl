@@ -7,10 +7,10 @@
 		<div class="right_menu">
 			<h3>Categories</h3>
 			<ul>
-				<li><a href="http://dark-space.org/index.php?page=galery&mode=space">Space</a></li>
-				{* <li><a href="http://dark-space.org/index.php?page=galery&mode=update">Updates</a></li> *}
-				<li><a href="http://dark-space.org/index.php?page=galery&mode=screen">Game Screenshots</a></li>
-				<li><a href="http://dark-space.org/index.php?page=galery">All</a></li>
+				<li><a href="http://Battlethegalaxy.de/index.php?page=galery&mode=space">Space</a></li>
+				{* <li><a href="http://Battlethegalaxy.de/index.php?page=galery&mode=update">Updates</a></li> *}
+				<li><a href="http://Battlethegalaxy.de/index.php?page=galery&mode=screen">Game Screenshots</a></li>
+				<li><a href="http://Battlethegalaxy.de/index.php?page=galery">All</a></li>
 			</ul>
 		</div>
 
