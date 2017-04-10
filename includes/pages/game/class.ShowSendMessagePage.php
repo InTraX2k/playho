@@ -58,8 +58,8 @@ class ShowSendMessagePage extends AbstractPage
 		$to = $UserData['email'];
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-		$headers .= 'From: no-reply@dark-space.org' . "\r\n";
-		$headers .= 'Reply-To: no-reply@dark-space.org' . "\r\n";
+		$headers .= 'From: no-reply@battlethegalaxy.de' . "\r\n";
+		$headers .= 'Reply-To: no-reply@battlethegalaxy.de' . "\r\n";
 		mail($to, $mode1, $pmMessage, $headers);
 		} 
 		if($news == 1){

@@ -116,13 +116,13 @@ class ShowPaypalPage extends AbstractPage
                
 				
 			  if($UNI==1){
-			   $this_p->add_field('return', 'http://dark-space.org/game.php?page=overview');
-			   $this_p->add_field('cancel_return', 'http://dark-space.org/game.php?page=overview');
-                $this_p->add_field('notify_url', 'http://dark-space.org/ipns.php');
+			   $this_p->add_field('return', 'http://battlethegalaxy.de/game.php?page=overview');
+			   $this_p->add_field('cancel_return', 'http://battlethegalaxy.de/game.php?page=overview');
+                $this_p->add_field('notify_url', 'http://battlethegalaxy.de/ipns.php');
 				}else{
-				 $this_p->add_field('return', 'http://dark-space.org/game.php?page=overview');
-				 $this_p->add_field('cancel_return', 'http://dark-space.org/game.php?page=overview');
-                $this_p->add_field('notify_url', 'http://dark-space.org/ipns.php');
+				 $this_p->add_field('return', 'http://battlethegalaxy.de/game.php?page=overview');
+				 $this_p->add_field('cancel_return', 'http://battlethegalaxy.de/game.php?page=overview');
+                $this_p->add_field('notify_url', 'http://battlethegalaxy.de/ipns.php');
 				}
 				
                 $this_p->add_field('item_name', $this->amount.' AM-User('.$USER['username'].').');

@@ -243,8 +243,8 @@ class ShowMessagesPage extends AbstractPage
 			$Subject	= $LNG['mg_no_subject'];
 		}
 		
-		$healthy = array("madnessogame", "moon-xnova", "corrado-game", "zyperaxgalaxy");
-        $yummy   = array("dark-space", "dark-space", "dark-space", "dark-space");
+		$healthy = array(("Battle the Galaxy", "BTG", "ogame", "ogame Clone");
+        $yummy   = array("Battle the Galaxy", "BTG", "ogame", "ogame Clone");
         $newphrase = str_replace($healthy, $yummy, $Message);
 		
 		$newphrase 	= bbcode($newphrase);
