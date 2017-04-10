@@ -137,7 +137,7 @@
 <tr class="odd gradeX">
 	<td><center>Voucher Universe</center></td>
 	<td><select name="universe">
-				<option value="1">Dark-Space</option>
+				<option value="1">Dark</option>
 			</select></td>
 </tr>
 
