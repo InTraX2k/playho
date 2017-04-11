@@ -44,12 +44,12 @@ class ShowPaypalPage extends AbstractPage
         function Success()
         {
  
-                message(pretty_number(HTTP::_GP('amount', 0)).' Anti matter where is on your account. <br><br><a href="?page=overview">Continue</a>');
+                message(pretty_number(HTTP::_GP('amount', 0)).' Antimaterie wurde ihrem Acccount Gutgeschrieben. <br><br><a href="?page=overview">Fortsetzen</a>');
         }
 
         function Cancel()
         {
-                message('Your Order where Cancelled.</h3><br><a href="?page=overview">Continue</a><br>');
+                message('Ihre Bestellung wurde storniert.</h3><br><a href="?page=overview">Fortsetzen</a><br>');
         }
 
         /*
@@ -70,7 +70,7 @@ class ShowPaypalPage extends AbstractPage
                 $this->amountbis                = HTTP::_GP('ik_payment_amount',0);
 				
 				if($this->amount < 10000){
-				$this->printMessage('You have to buy minimum 10.000 AM!',  true, array('game.php?page=donate', 3)); 
+				$this->printMessage('Du musst mindestens 10.000 AM kaufen!',  true, array('game.php?page=donate', 3)); 
 				}
 				
 				
