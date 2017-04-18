@@ -44,7 +44,7 @@ $LNG['not_acces_vmode']			= 'Sie können nicht auf diese Seite, während Sie sic
 
 //LEFT MENU
 $LNG['alm_bonus']							= 'Bonus';
-$LNG['alm_purchase']							= 'Kaufe Anti Materie';
+$LNG['alm_purchase']							= 'Kaufe Anti Matter';
 $LNG['alm_premium_not']							= 'Werden Sie Premium';
 $LNG['alm_premium']							= 'Premium-Konto';
 $LNG['alm_reseach']							= 'Forschung';
@@ -62,7 +62,7 @@ $LNG['alm_planet_auction']							= 'Planet Auktion';
 $LNG['alm_arsenal']							= 'Arsenal';
 $LNG['alm_adv_trader']							= 'Erweitert. Händler';
 $LNG['alm_immunity']							= 'Immunität';
-$LNG['alm_planetcloak']							= 'Angriffsschutz';
+$LNG['alm_planetcloak']							= 'Planet Umhang';
 $LNG['alm_fleetdealer']							= 'Flotte Händler';
 $LNG['alm_multi']							= 'Multi Melden';
 $LNG['alm_galaxy']							= 'Galaxis';
@@ -307,7 +307,7 @@ $LNG['ach_build_6']				= 'Erreichung während der Bauarbeiten für jede Ebenen d
 $LNG['ach_build_7']				= 'Erreichung während des Baus der Universität 2 Ebenen durchgeführt';
 $LNG['ach_build_8']				= 'Erreichung während der Bau von 2 Ebenen Mondbasen durchgeführt';
 $LNG['ach_build_9']				= 'Erreichung während der Bau von 2 Ebenen durchgeführt phalanx Sensor';
-$LNG['ach_build_10']			= 'Erreichung während der Bau von 2 Ebenen durchgeführt Terraformer';
+$LNG['ach_build_10']			        = 'Erreichung während der Bau von 2 Ebenen durchgeführt Terraformer';
 $LNG['ach_tech_1']				= 'Erfolg in der Studie für jeden Datensatz 3 durchgeführt (für Ihr Reich) Ebene der Spionage';
 $LNG['ach_tech_2']				= 'Erfolg in der Studie für jeden Datensatz 3 durchgeführt (für Ihr Reich) Ebene von Computer-Technologie';
 $LNG['ach_tech_3']				= 'Erfolg in der Studie für jeden Datensatz 3 durchgeführt (für Ihr Reich) Ebene der Energietechnik';
@@ -326,6 +326,7 @@ $LNG['ach_varia_5']				= 'nehmen in zählen erfolgreiche Expedition, die die Exp
 $LNG['ach_varia_6']				= 'Sie erhalten für alle 50.000 dm mit der Mission gefunden zu finden dunkle Materie ausgezeichnet';
 $LNG['ach_varia_7']				= 'Die Auszeichnung ist für alle 3 Upgrades gefunden gegeben';
 $LNG['ach_varia_8']				= 'Die Auszeichnung wird für jeden 10 Upgrade-Aktivierungs gegeben.';
+
 
 $LNG['st_next']								= 'N&auml;chste aktualisierung';
 $LNG['ReTime']								= 'Registrierungsdatum';
