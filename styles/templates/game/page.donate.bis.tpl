@@ -81,8 +81,8 @@
 <div class="gray_stripe gray_stripe_big"> 
 <input type="submit" name="process" class="btn_big_blue" value="Paypal">
 <div class="img_donat_sys">
-<img alt="" onclick="document.getElementById('lightbox').style.display='inline';" src="../../../media/images/paysafecard.png" height="51" width="150">                    
-<img alt="" height="42" src="../../../media/images/paypal.png" width="150"></div>
+<img alt="" onclick="document.getElementById('lightbox').style.display='inline';" src="../../../media/images/paysafecard.png" height="69" width="200">                    
+	<img alt="" height="57" src="../../../media/images/paypal.png" width="200"></div>
 </div>
 </form>
 </div>	

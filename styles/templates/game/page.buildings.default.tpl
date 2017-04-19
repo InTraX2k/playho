@@ -12,7 +12,7 @@ $( "#build_4" ).show();
 $( "#build_31" ).show();
 $( "#build_14" ).show();
 $( "#build_21" ).show();
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 
@@ -30,7 +30,7 @@ $( "#build_4" ).show();
 $( "#build_31" ).show();
 $( "#build_14" ).show();
 $( "#build_21" ).show();
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	{/if}
@@ -49,9 +49,9 @@ $( "#build_1" ).show();
 $( "#build_2" ).show();
 $( "#build_3" ).show();
 $( "#build_4" ).show();
-qtips('#fildes_band', 'Excelente! Agora temos energia suficiente para todas as minas!<br/><br/> <b>Você ganhou 650 pontos de experiência em pacifismo.</b>', 'leftMiddle', 'topRight')
+qtips('#fildes_band', 'Excellent! Now has enough energy for all mines.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'leftMiddle', 'topRight')
 setTimeout(function() { location.reload(); }, 5000);
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	{/if}
@@ -64,7 +64,7 @@ $( "#build_2" ).show();
 $( "#build_3" ).show();
 $( "#build_4" ).show();
 $( "#build_31" ).show();
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	
@@ -81,7 +81,7 @@ $( "#build_2" ).show();
 $( "#build_3" ).show();
 $( "#build_4" ).show();
 qtips('#fildes_band', 'Sie müssen Minen auf dem Planeten erbauen, um die Produktionskapazitäten zu erhöhen.<br/> Aber denken Sie daran, dass die Minen Energie benötigen um zu arbeiten.<br /><br /> <b><span style="margin:0 0 7px 0;display: block;color:#002211;">Bauen:</span><span style=" margin-left: 9px;display: block;">Baue ein Solarkraftwerk Stufe 1</span>', 'leftMiddle', 'topRight')
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 
@@ -96,7 +96,7 @@ $( "#build_2" ).show();
 $( "#build_3" ).show();
 $( "#build_4" ).show();
 qtips('#fildes_band', 'Jetzt hast du ein wenig Energie um Minen zu Bauen.<br /><br /> <b><span style="margin:0 0 7px 0;display: block;color:#002211;">Baue:</span><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Metall Mine Stufe 3. <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Kristal Mine Stufe 2. <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Deuterium Mine Stufe 1.</b>', 'leftMiddle', 'topRight')
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	{/if}
@@ -111,7 +111,7 @@ $( "#build_3" ).show();
 $( "#build_4" ).show();
 qtips('#res_block_energy .stock_text ', 'Du hast nicht genug Energie.', 'bottomMiddle', 'topLeft');
 qtips('#fildes_band', 'Aufgrund fehlender Energie wird die Produktion von Minen reduziert.<br /><br /><b><span style="margin:0 0 7px 0;display: block;color:#002211;">Baue:</span> <span style=" margin-left: 9px;display: block;">Solarkraftwerk Stufe 4.</span></b>', 'leftMiddle', 'topRight')
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	{/if}
@@ -193,7 +193,7 @@ qtips('#fildes_band', 'Aufgrund fehlender Energie wird die Produktion von Minen 
 		<a href="game.php?page=planet" title="Change Planet" class="palanetarium_linck seting2"></a>
         <div id="fildes_band_proc" style="width:{$field_percent}%;"></div>
         <div class="fildes_band_text">
-        	campos construídos: <span>{$field_used}</span> de <span>{$field_max}</span>&emsp;&emsp;
+        	fields employed: <span>{$field_used}</span> of <span>{$field_max}</span>&emsp;&emsp;
         	free: <span>{$field_left}</span>
 			<a class="bd_dm_buy" style="padding-right: 30px;" href="game.php?page=dmbuild">Bauen mit DM</a>
         </div>    
@@ -264,7 +264,7 @@ qtips('#fildes_band', 'Aufgrund fehlender Energie wird die Produktion von Minen 
                 </div>
                 
                 
-                                <div class="break_build tooltip_sticky" data-tooltip-content="<table style='width:300px'><tr><th colspan='2'><span style='color:#00FF00'>Custo de demolição:</span><br> {$LNG.tech.{$ID}} {$Element.level} </th></tr>
+                                <div class="break_build tooltip_sticky" data-tooltip-content="<table style='width:300px'><tr><th colspan='2'><span style='color:#00FF00'>Cost for the demolition of</span><br> {$LNG.tech.{$ID}} {$Element.level} </th></tr>
 								{foreach $Element.destroyRessources as $ResType => $ResCount}
 								<tr><td>{$LNG.tech.{$ResType}}</td><td>{$ResCount|number}</td></tr>{/foreach}
 								
@@ -290,7 +290,7 @@ qtips('#fildes_band', 'Aufgrund fehlender Energie wird die Produktion von Minen 
     <input type="hidden" value="insert" name="cmd"></input>
     <input type="hidden" value="{$ID}" name="building"></input>
 	<input type="hidden" value="{$Element.level}" name="lvlup1"></input>
-    <input id="b_input_{$ID}" class="build_number" type="hidden" value="{$Element.levelToBuild + 1}" min="{$Element.levelToBuild + 1}" maxlength="3" size="3" name="lvlup" onchange="counting('{$ID}');"></input>
+    <input id="b_input_{$ID}" class="build_number" type="number" value="{$Element.levelToBuild + 1}" min="{$Element.levelToBuild + 1}" maxlength="3" size="3" name="lvlup" onchange="counting('{$ID}');"></input>
     <button class="btn_build_part_left" type="submit">
 
     {$LNG.btnl}

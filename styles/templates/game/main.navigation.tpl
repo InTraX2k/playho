@@ -12,6 +12,7 @@ $( this ).dialog( "close" );
 </script>{/if}
 <div style="display: none;" id="scroller">
 <a class="scroller_mesages" href="game.php?page=messages" onclick="document.location.href = 'game.php?page=messages'">
+<span class="mesages" {if $new_message == 0}style="display:none;"{/if}></span>
 <span class="new_email" {if $new_message == 0}style="display:none;"{/if}>
 {$new_message}
 </span>
@@ -22,13 +23,13 @@ $( this ).dialog( "close" );
 <div id="left_side">        
 <div id="left_menu">
 <div id="indicators">        	
-<div id="attack" class="{$attack} indicator tooltip" data-tooltip-content="{if $attack == 'active_indicator' }{$LNG.NIA_on}{else}{$LNG.NIA}{/if}"><div class="icoi"></div></div>
-<div id="grab" class="indicator tooltip" data-tooltip-content="{if $attack == 'active_indicator' }{$LNG.FORR_on}{else}{$LNG.FORR}{/if}"><div class="icoi"></div></div>
-<div id="destruction" class="{$destroy} indicator tooltip" data-tooltip-content="{if $destroy == 'active_indicator' }{$LNG.YMIS_on}{else}{$LNG.YMIS}{/if}"><div class="icoi"></div></div>
-<div id="espionage" class="{$spying} indicator tooltip" data-tooltip-content="{if $spying == 'active_indicator' }{$LNG.YEINBS_on}{else}{$LNG.YEINBS}{/if}" href="game.php?page=overview"><div class="icoi"></div></div>
-<div id="rocket" class="{$rocket} indicator tooltip" data-tooltip-content="{if $rocket == 'active_indicator' }{$LNG.NIR_on}{else}{$LNG.NIR}{/if}"><div class="icoi"></div></div>
+<div id="attack" class="{$attack} indicator tooltip" data-tooltip-content="{$LNG.NIA}"><div class="icoi"></div></div>
+<div id="grab" class="indicator tooltip" data-tooltip-content="Dein Planet ist sicher"><div class="icoi"></div></div>
+<div id="destruction" class="{$destroy} indicator tooltip" data-tooltip-content="{$LNG.YMIS}"><div class="icoi"></div></div>
+<div id="espionage" class="{$spying} indicator tooltip" data-tooltip-content="{$LNG.YEINBS}" href="game.php?page=overview"><div class="icoi"></div></div>
+<div id="rocket" class="{$rocket} indicator tooltip" data-tooltip-content="{$LNG.NIR}"><div class="icoi"></div></div>
 </div>     
-<div class="servertime">{$servertime} Tick: {$tickatual}</div>
+<div class="servertime">{$servertime}</div>
 <div class="separator"></div>
 {if $bonus_timer < $TIME}     <a title="Bonus" class="big_btn red btn_menu btn_menu_big" href="game.php?page=bonus">
 {if $bonte_button !=0}x{$bonte_button}|{/if}<span>{$LNG.alm_bonus}</span></a>{/if}
@@ -59,7 +60,6 @@ $( this ).dialog( "close" );
 <div class="clear"></div>        
 <div class="separator"></div>
 <a class="btn_menu" href="game.php?page=galaxy" id="munu_galaxy" {if $manual_17_step == 0}onclick="starttraining9()"{/if}>{$LNG.alm_galaxy}</a>
-{if $authlevel > 0} <a class="btn_menu" href="game.php?page=galaxy2" id="munu_galaxy" {if $manual_17_step == 0}onclick="starttraining9()"{/if}>{$LNG.alm_galaxy}2</a>{/if}
 <a class="btn_menu" href="game.php?page=alliance">{$LNG.alm_ally}</a>  		
 <a class="btn_menu" href="game.php?page=battleSimulator">{$LNG.alm_battlesim}</a>
 {if $uni_value == 1}    <a class="btn_menu" {if $manual_26_step == 0}onclick="starttraining15()"{/if} href="game.php?page=Achievements" id="achievements_name">{$LNG.alm_achievement}</a> {/if}
@@ -74,39 +74,38 @@ $( this ).dialog( "close" );
 
 <div id="bottom_cosmonautics">
 <div class="bottom_gift_bg">
-<a {if $gift1 > 0}href="?page=bonus&mode=gift1"{/if} class="gift_bloc gift_1 {if $gift1 == 0}gift_opacity{/if} tooltip" data-tooltip-content="Quando ativado, você obtém <b>50+</b> de Anti Matéria<br>
-(O UFO será perdido)">{$gift1}</a>
-<a {if $gift2 > 0}href="?page=bonus&mode=gift2"{/if} class="gift_bloc gift_2 {if $gift2 == 0}gift_opacity{/if} tooltip" data-tooltip-content="Quando ativado, você obtém <b>50+</b> de Anti Matéria<br>
-(O Alien será perdido)">{$gift2}</a>
-<a {if $gift3 > 0}href="?page=bonus&mode=gift3"{/if} class="gift_bloc gift_3 {if $gift3 == 0}gift_opacity{/if} tooltip" data-tooltip-content="Quando ativado, você obtém <b>50+</b> de Anti Matéria<br>
-(O Foguete será perdido)">{$gift3}</a>
-<a {if $gift4 > 0}href="?page=bonus&mode=gift4"{/if} class="gift_bloc gift_4 {if $gift4_1 == 0}gift_opacity{/if} tooltip" data-tooltip-content="Quando ativado o Cosmonauta, 
-<br>Você irá receber 300+ de Anti Matéria<br>
-E você tem 50% de chance de ganhar:
-<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Academy Punkte <b>1-25</b>
-<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>experiência de pascifismo <b>150-3500</b>
-<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>bonus de anti matéria <b>200</b>
-<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Obter <b>UFO</b>
-<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Obter <b>Alien</b> 
-<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Obter <b>Foguete</b> 
-<br>(UFO, Alien, Foguete e Cosmonauta serão perdidos)">{$gift4}</a>
+<a {if $gift1 > 0}href="?page=bonus&mode=gift1"{/if} class="gift_bloc gift_1 {if $gift1 == 0}gift_opacity{/if} tooltip" data-tooltip-content="Bei aktivierung erhältst du <b>50</b> Anti Materie<br>
+(Nach Zerstörung des UFOs)">{$gift1}</a>
+<a {if $gift2 > 0}href="?page=bonus&mode=gift2"{/if} class="gift_bloc gift_2 {if $gift2 == 0}gift_opacity{/if} tooltip" data-tooltip-content="Bei aktivierung erhältst du <b>50</b> Anti Materie<br>
+(Nach Vernichtung der Aliens)">{$gift2}</a>
+<a {if $gift3 > 0}href="?page=bonus&mode=gift3"{/if} class="gift_bloc gift_3 {if $gift3 == 0}gift_opacity{/if} tooltip" data-tooltip-content="Bei aktivierung erhältst du <b>50</b> Anti Materie<br>
+(Nach Zerstörung der Rakete)">{$gift3}</a>
+<a {if $gift4 > 0}href="?page=bonus&mode=gift4"{/if} class="gift_bloc gift_4 {if $gift4_1 == 0}gift_opacity{/if} tooltip" data-tooltip-content="Wenn du Cosmonaut aktivierst, 
+<br>Erhältst du <b>300</b> Anti Materie<br>
+Und du hast eine 50% Chance auf:
+<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Akademie Punke <b>1-25</b>
+<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Aktivitätspunkte <b>150-3500</b>
+<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Bonus Anti Materie <b>200</b>
+<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Erhalte <b>UNFO</b>
+<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Erhalte <b>Alien</b> 
+<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Erhalte <b>Rakete</b> ">{$gift4}</a>
 </div>
 </div>
 
 {if $new_year == 1}
 <div id="bottom_new_year">
 <div class="bottom_gift_bg">
-<a class="gift_bloc gift_1 gift_opacity tooltip" data-tooltip-content="When activated, you will receive a Christmas toy <b>35</b> antimatter<br>
+<a class="gift_bloc gift_1 gift_opacity tooltip" data-tooltip-content="When activated, you will receive a Christmas toy <b>35</b> Anti Materie<br>
 (Christmas tree toy at the same time will be lost)">0</a>
-<a class="gift_bloc gift_2 gift_opacity tooltip" data-tooltip-content="When activated, you will receive a New Year Snowflakes <b>35</b> antimatter<br>
+<a class="gift_bloc gift_2 gift_opacity tooltip" data-tooltip-content="When activated, you will receive a New Year Snowflakes <b>35</b> Anti Materie<br>
 (Snowflake thus will be lost)">0</a>
-<a class="gift_bloc gift_3 gift_opacity tooltip" data-tooltip-content="When activated, you will receive a New Year's Bluebell <b>35</b> antimatter<br>
+<a class="gift_bloc gift_3 gift_opacity tooltip" data-tooltip-content="When activated, you will receive a New Year's Bluebell <b>35</b> Anti Materie<br>
 (The bell will then be lost)">0</a>
 <a class="gift_bloc gift_4 gift_opacity tooltip" data-tooltip-content="When activated, Christmas gifts (one toy, Snowflake and bell) 
-<br>you will receive 215 antimatter<br>
+<br>you will receive 215 Anti Materie<br>
 And as you have a 50% chance:
 <br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>Peace Experience <b>215-2015</b>
-<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>bonus antimatter <b>215</b>
+<br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>bonus Anti Materie <b>215</b>
 <br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>To Get <b>Christmas toy </b>
 <br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>To Get <b>Christmas Snowflake</b> 
 <br><span style=' margin-left: 9px; margin-right: 4px; cursor: default; float: left;'>•</span>To Get <b>Christmas bell</b> ">0</a>

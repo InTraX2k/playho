@@ -48,7 +48,7 @@
 		{if allowedTo('ShowPassEncripterPage')}<a href="?page=password" class="btn_menu" >{$LNG.mu_md5_encripter}</a>{/if}
 		{if allowedTo('ShowStatUpdatePage')}<a href="?page=statsupdate" class="btn_menu"  onClick=" return confirm('{$LNG.mu_mpu_confirmation}');">{$LNG.mu_manual_points_update}</a>{/if}
 		{if allowedTo('ShowClearCachePage')}<a href="?page=clearcache" class="btn_menu" >{$LNG.mu_clear_cache}</a>{/if}
-        {if allowedTo('ShowResetPage')}<a href="?page=reset" class="btn_menu" >test</a>{/if}
+
         <div class="separator"></div>
         
 		        

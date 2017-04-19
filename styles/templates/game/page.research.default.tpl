@@ -9,7 +9,7 @@ $( "#research_113" ).show();
 $( "#research_120" ).show();
 $( "#research_110" ).show();
 $( "#research_115" ).show();
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	{/if}
@@ -21,7 +21,7 @@ $( "#research_115" ).show();
 		$( ".build_box" ).hide();
 $( "#research_113" ).show();
 $( "#research_120" ).show();
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	{/if}
@@ -34,7 +34,7 @@ $( "#research_120" ).show();
 $( "#research_106" ).show();
 qtips('#fildes_band', 'Ausgezeichnet! Jetzt ist Ihr Reich vor Spionage geschützt, aber vergessen Sie nicht, weiter zu Forschen um Informationen vor Stärkeren Gegnern zu verbergen.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'leftMiddle', 'topRight');
 setTimeout(function() { location.reload(); }, 10000);
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 {/if}
@@ -45,7 +45,7 @@ setTimeout(function() { location.reload(); }, 10000);
 $( "#research_106" ).show();
 setTimeout(function() { qtips('.price:first', 'To unlock the study &laquo;Spy technology&raquo;, you need to go on the build page and upgrade &laquo;research laboratory&raquo; <br/>Third level.', 'topMiddle', 'bottomLeft') }, 4000);
 qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetechnik&raquo; Stufe 3 erforschen.', 'leftMiddle', 'topRight');
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	{/if}
@@ -56,7 +56,7 @@ qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetech
 		$( ".build_box" ).hide();
 $( "#research_106" ).show();
 qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetechnik&raquo; Stufe 3 erforschen.', 'leftMiddle', 'topRight');
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	{/if}
@@ -67,7 +67,7 @@ qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetech
 		$( ".build_box" ).hide();
 $( "#research_106" ).show();
 qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetechnik&raquo; Stufe 3 erforschen.', 'leftMiddle', 'topRight');
-
+setInterval(function() { AJAX() }, 6000)
 	});
 	</script>
 	{/if}
@@ -217,7 +217,7 @@ qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetech
     <input type="hidden" value="insert" name="cmd"></input>
     <input type="hidden" value="{$ID}" name="tech"></input>
 	<input type="hidden" value="{$Element.level}" name="lvlup1"></input>
-    <input id="b_input_{$ID}" class="build_number" type="hidden" value="{$Element.levelToBuild + 1}" min="{$Element.levelToBuild + 1}" maxlength="3" size="3" name="lvlup" onchange="counting('{$ID}');"></input>
+    <input id="b_input_{$ID}" class="build_number" type="number" value="{$Element.levelToBuild + 1}" min="{$Element.levelToBuild + 1}" maxlength="3" size="3" name="lvlup" onchange="counting('{$ID}');"></input>
     <button class="btn_build_part_left" type="submit">
 
         {$LNG.BTNL}

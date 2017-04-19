@@ -7,3 +7,28 @@ Stack trace:
 #1 /includes/pages/adm/ShowDumpPage.php(53): SQLDumper-&gt;dumpTablesToFile(Array, 'includes/backup...')
 #2 /admin.php(216): ShowDumpPage()
 #3 {main}
+[03-Apr-2017 15:11:47] NOTICE: "session_start(): ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13)"
+File: /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/classes/class.Session.php | Line: 107
+URL: http://beta.battlethegalaxy.de/game.php?page=messages&mode=view&messcat=3&site=1&ajax=1 | Version: V 1.0
+Stack trace:
+#0 [internal function]: errorHandler(8, 'session_start()...', '/var/www/vhosts...', 107, Array)
+#1 /includes/classes/class.Session.php(107): session_start()
+#2 /includes/common.php(115): Session-&gt;isActiveSession()
+#3 /game.php(10): require('/var/www/vhosts...')
+#4 {main}
+[11-Apr-2017 16:50:55 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:02 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:03 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:08 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:52 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:53 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:53 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:54 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:54 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:54 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:55 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:56 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:56 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:57 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:57 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246
+[11-Apr-2017 16:51:57 Europe/Berlin] PHP Parse error:  syntax error, unexpected ',' in /var/www/vhosts/Battlethegalaxy.de/beta.Battlethegalaxy.de/includes/pages/game/class.ShowMessagesPage.php on line 246

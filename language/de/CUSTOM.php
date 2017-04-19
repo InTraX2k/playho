@@ -44,7 +44,7 @@ $LNG['not_acces_vmode']			= 'Sie können nicht auf diese Seite, während Sie sic
 
 //LEFT MENU
 $LNG['alm_bonus']							= 'Bonus';
-$LNG['alm_purchase']							= 'Kaufe Anti Matter';
+$LNG['alm_purchase']							= 'Kaufe Anti Materie';
 $LNG['alm_premium_not']							= 'Werden Sie Premium';
 $LNG['alm_premium']							= 'Premium-Konto';
 $LNG['alm_reseach']							= 'Forschung';
@@ -62,7 +62,7 @@ $LNG['alm_planet_auction']							= 'Planet Auktion';
 $LNG['alm_arsenal']							= 'Arsenal';
 $LNG['alm_adv_trader']							= 'Erweitert. Händler';
 $LNG['alm_immunity']							= 'Immunität';
-$LNG['alm_planetcloak']							= 'Planet Umhang';
+$LNG['alm_planetcloak']							= 'Angriffsschutz';
 $LNG['alm_fleetdealer']							= 'Flotte Händler';
 $LNG['alm_multi']							= 'Multi Melden';
 $LNG['alm_galaxy']							= 'Galaxis';
