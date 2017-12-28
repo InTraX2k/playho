@@ -126,27 +126,27 @@ Verbessere die Akademie-Fähigkeit "Expansion des Imperiums" und erhöhe die max
 	<br>Verbesserungsfaktor <font color="#FF4500"><b>2</b></font>
 	
 	<br><br><font color="#3CB371"><b>	sonstiger damit zusammenhängender Bonus: </b></font>
-	<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>hire officer <b>"admiral"</b> increases attack of combat units with <b>1%</b> per level.
-	<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>hire governor <b>"veteran"</b> adds <b>10%</b> to weapons and armor.
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>upgrade academy ability <b>"armament"</b> branch- I increases armement with <b>1%</b> per level. 
+	<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Offizier <b> "Admiral" </ b> erhöht den Angriff von Kampfeinheiten mit <b>1%</b> pro Stufe.
+	<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Offizier <b> "Veteran" </ b> fügt <b> 10% </ b> zu Waffen und Rüstungen hinzu.
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Upgrade academy <b> "armament" </ b> branch- Ich verstärke die Bewaffnung mit <b> 1% </ b> pro Stufe. 
 
 
 
 	
-	<br><br><img alt="" src="/styles/theme/gow/gebaeude/110.gif" style="float: left; margin: 0 8px 8px 0;" height="65"> <b>shielding technology</b> - increases the density of fleets. 
-	<br>each level increases the density boards of combat units. every odd level adds <font color="#00CD66"><b>+1%</b></font> shield. 
-	<br>magnification factor prices <font color="#FF4500"><b>2</b></font>
+	<br><br><img alt="" src="/styles/theme/gow/gebaeude/110.gif" style="float: left; margin: 0 8px 8px 0;" height="65"> <b>Abschirmtechnik</b> - erhöht die Flottenslots. 
+	<br>Jedes Level erhöht die Flottenslots der Kampfeinheiten <font color="#00CD66"><b>+1%</b></font> Schild. 
+	<br>Verbesserungsfaktor <font color="#FF4500"><b>2</b></font>
 	
  
 	<br><br><font color="#3CB371"><b>	sonstiger damit zusammenhängender Bonus: </b></font>
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>hire officer <b>"admiral"</b> adds <b>1% </b>to weapons, armor and shields for each level.
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>hire governor <b>"master of defense"</b> increases defence shields with <b>10%</b>
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>upgrade academy ability <b>"defensive strategy"</b> branch- III increases armor and shields with <b>1%</b> per level. 
-<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>upgrade academy ability <b>"defense class A"</b> branch- III increases armor and shields with <b>1%</b>, reduces the attack with <b>2%</b> per level. 
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Offizier <b> "Admiral" </ b> fügt <b> 1% </ b> Waffen, Rüstungen und Schilden für jedes Level hinzu.
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Offizier <b> "Meister der Verteidigung" </ b> erhöht die Verteidigungsschilde mit <b>10%</b>
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Upgrade-Akademie-Fähigkeit <b> "defensive Strategie" </ b> Zweig-III erhöht Rüstung und Schilde mit <b> 1% </ b> pro Stufe. 
+<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>Upgrade-Akademie-Fähigkeit <b> "Verteidigungs-Klasse A" </ b> Zweig-III erhöht Rüstung und Schilde mit <b> 1% </ b>, reduziert den Angriff mit <b> 2% </ b> pro Stufe. 
 	
-	<br><br><img alt="" src="/styles/theme/gow/gebaeude/111.gif" style="float: left; margin: 0 8px 8px 0;" height="65"> <b>armour technology</b> - increases the strength of the armor.
-	<br>each level increases the strength of combat units. <br> every odd level adds <font color="#00CD66"><b>+1%</b></font> armour. 
-	<br>magnification factor prices <font color="#FF4500"><b>2</b></font>
+	<br><br><img alt="" src="/styles/theme/gow/gebaeude/111.gif" style="float: left; margin: 0 8px 8px 0;" height="65"> <b>Schildtechnologie</b> - erhöht die Stärke der Schilde.
+	<br>Jedes Level erhöht die Stärke von Kampfeinheiten. Jede Upgrade Ebene fügt <font color = "# 00CD66"> <b> +1% </ b> </ font> Schild hinzu. 
+	<br>Verbesserungsfaktor <font color="#FF4500"><b>2</b></font>
 	
 	<br><br><font color="#3CB371"><b>	sonstiger damit zusammenhängender Bonus: </b></font>
 <br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>hire officer <b>"admiral"</b> increases with  <b>1%</b> weapons, armor and shields for each level.  
