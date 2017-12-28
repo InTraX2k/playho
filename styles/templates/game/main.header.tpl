@@ -231,7 +231,7 @@ qtips('#res_block_darkmatter .ico_res ', '<span style="margin:0 0 7px 0;display:
 qtips('#res_block_antimatter .ico_res ', '<span style="margin:0 0 7px 0;display: block;color:#002211;"><b>Anti Materie:</b></span>  <span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Kann nur gekauft werden', 'bottomLeft', 'topLeft');
 
 
-setTimeout(function() { qtips('#munu_build ', 'Go to buildings .', 'rightMiddle', 'leftMiddle') }, 4000);
+setTimeout(function() { qtips('#munu_build ', 'Gehe zu Gebäuden.', 'rightMiddle', 'leftMiddle') }, 4000);
 	});
 	</script>
 	{/if}
