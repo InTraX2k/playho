@@ -106,24 +106,24 @@ Verbessere die Akademie-Fähigkeit "Expansion des Imperiums" und erhöhe die max
 
 <span onclick="$('#id_2').slideToggle();return false" style="cursor: pointer;"> <img alt="" src="/styles/images/Adm/GO.png" height="12"> martial research</span> 
 <div style="display:  none; clear: both;" id="id_2">
-	<img alt="" src="/styles/theme/gow/gebaeude/106.gif" style="float: left; margin: 0 8px 8px 0;" height="65"> <b>espionage</b> - allows you to spy on the enemy planet and build espionage probes.
-	<br>with the increase in the level increases the accuracy of the information with spying and hiding information from the enemy.
-	<br>magnification factor prices <font color="#FF4500"><b>2</b></font>
+	<img alt="" src="/styles/theme/gow/gebaeude/106.gif" style="float: left; margin: 0 8px 8px 0;" height="65"> <b>Spionage</b> - erlaubt es dir, den feindlichen Planeten auszuspionieren und Spionage-Sonden zu bauen.
+	<br>Mit der Erhöhung des Levels erhöht sich die Genauigkeit der Informationen mit Ausspähen und Verbergen von Informationen vom Feind.
+	<br>Verbesserungsfaktor <font color="#FF4500"><b>2</b></font>
 	
-	<br><br><font color="#1E90FF">more:</font><br>
-	 each level increases the accuracy of the information received from the enemy.
-	<br>conceals information about Navy and Defense of the difference of <b>5</b> espionage levels.
-	<br>when levels are equal error in espionage technology is <b>10%</b>  <b>(if the technology espionage lower than your opponent then the error increases by <b>10%</b> for each level)</b>
-	<br>error can be both positive and negative. error is reduced by<b>2%</b> for every <b>10.000</b> spy espionage probes sent to the planet. if If all probes are destroyed then the error increases by <b>15%</b>.
+	<br><br><font color="#1E90FF">Mehr:</font><br>
+	 Jedes Level erhöht die Genauigkeit der vom Feind erhaltenen Informationen.
+	<br>verbirgt Informationen über Schiffe und Verteidigung der Differenz von <b>5</b> Spionage Stufen.
+	<br>wenn die Stufe gleich sind, ist der Fehlerquote in der Spionagetechnologie <b>10%</b>  <b>(Wenn die Spionagestuffe niedriger ist als dein Gegner, erhöht sich der Fehlerquote um <b>10%</b> pro Stufe)</b>
+	<br>Fehlerquote kann sowohl positiv als auch negativ sein. Fehlerquote wird um reduziert um <b>2%</b> für jeden <b>10.000</b> Spionagesonden, die auf den Planeten geschickt werden. Wenn alle Sonden zerstört sind, erhöht sich der Fehlerquote um <b>15%</b>.
 	
 	
 	<br><br><font color="#3CB371"><b>	sonstiger damit zusammenhängender Bonus: </b></font>
-	<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span> hire officer <b>"scout"</b> increases the level of spy technology with <b>1</b> per level.
+	<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span> officer <b> "Scout" </ b> erhöht das Level der Spionagetechnologie mit <b> 1 </ b> pro Stufe.
 
 	
-	<br><br><img alt="" src="/styles/theme/gow/gebaeude/109.gif" style="float: left; margin: 0 8px 8px 0;" height="65"> <b>weapons technology</b> - increase attack of combat units.
-	<br>each level increases the power of attack combat units. every odds level adds <font color="#00CD66"><b>+1%</b></font> armenet. 
-	<br>magnification factor prices <font color="#FF4500"><b>2</b></font>
+	<br><br><img alt="" src="/styles/theme/gow/gebaeude/109.gif" style="float: left; margin: 0 8px 8px 0;" height="65"> <b>Waffentechnologie</b> - Angriff von Kampfeinheiten erhöhen.
+	<br>Jedes Level erhöht die Stärke der Kampfeinheiten. Jede Quotenstufe wird hinzugefügt <font color="#00CD66"><b>+1%</b></font> Armeenetz. 
+	<br>Verbesserungsfaktor <font color="#FF4500"><b>2</b></font>
 	
 	<br><br><font color="#3CB371"><b>	sonstiger damit zusammenhängender Bonus: </b></font>
 	<br><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;">•</span>hire officer <b>"admiral"</b> increases attack of combat units with <b>1%</b> per level.
