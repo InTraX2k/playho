@@ -128,7 +128,7 @@ setTimeout(function() { qtips('.over', 'Gehen Sie auf die Übersicht, um die Flo
 	
 	<script type="text/javascript">
 	$(function() {
-		qtips('.over ', 'Go to the review, to see the fleet sent for recycling', 'bottomMiddle', 'topLeft');
+		qtips('.over ', 'Gehen Sie zur Übersicht, um die gesendete Flotte zu sehen', 'bottomMiddle', 'topLeft');
 
 	});
 	</script>
