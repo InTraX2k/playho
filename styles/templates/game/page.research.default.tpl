@@ -32,7 +32,7 @@ setInterval(function() { AJAX() }, 6000)
 	$(function() {
 		$( ".build_box" ).hide();
 $( "#research_106" ).show();
-qtips('#fildes_band', 'Ausgezeichnet! Jetzt ist Ihr Reich vor Spionage geschützt, aber vergessen Sie nicht, weiter zu Forschen um Informationen vor Stärkeren Gegnern zu verbergen.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'leftMiddle', 'topRight');
+qtips('#fildes_band', 'Ausgezeichnet! Jetzt ist Ihr Reich vor Spionage geschützt, aber vergessen Sie nicht, weiter zu Forschen um Informationen vor Stärkeren Gegnern zu verbergen.<br/><br/> <b>Sie erhalten 650 Punkte Erfahrungspunkte.</b>', 'leftMiddle', 'topRight');
 setTimeout(function() { location.reload(); }, 10000);
 setInterval(function() { AJAX() }, 6000)
 	});

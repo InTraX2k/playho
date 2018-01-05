@@ -160,7 +160,7 @@ setTimeout(function() { qtips('.over', 'Gehen Sie auf die Übersicht, um die Flo
 	{if $manual_5_step == 0}
 	<script type="text/javascript">
 	$(function() {
-setTimeout(function() { qtips('#munu_research', 'Log in here, for then that would protect against espionage.', 'rightMiddle', 'leftMiddle') }, 4000);
+setTimeout(function() { qtips('#munu_research', 'Klick hier, um dich vor Spionage zu schützen.', 'rightMiddle', 'leftMiddle') }, 4000);
 
 	});
 	</script>

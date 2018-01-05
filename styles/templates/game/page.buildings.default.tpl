@@ -49,7 +49,7 @@ $( "#build_1" ).show();
 $( "#build_2" ).show();
 $( "#build_3" ).show();
 $( "#build_4" ).show();
-qtips('#fildes_band', 'Excellent! Now has enough energy for all mines.<br/><br/> <b>You get 650 points peaceful experience.</b>', 'leftMiddle', 'topRight')
+qtips('#fildes_band', 'Ausgezeichnet! Jetzt hat genug Energie für alle Minen.<br/><br/> <b>Sie erhalten 650 Punkte Erfahrungspunkte.</b>', 'leftMiddle', 'topRight')
 setTimeout(function() { location.reload(); }, 5000);
 setInterval(function() { AJAX() }, 6000)
 	});
