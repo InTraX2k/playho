@@ -81,8 +81,7 @@
 <div class="gray_stripe gray_stripe_big"> 
 <input type="submit" name="process" class="btn_big_blue" value="Paypal">
 <div class="img_donat_sys">
-<img alt="" onclick="document.getElementById('lightbox').style.display='inline';" src="../../../media/images/paysafecard.png" height="69" width="200">                    
-	<img alt="" height="57" src="../../../media/images/paypal.png" width="200"></div>
+&nbsp;</div>
 </div>
 </form>
 </div>	
@@ -138,7 +137,7 @@ Comment <input name="comment" size="80" maxlength="200" type="text">
 </tr>
 </table>
 </div>
-<!-- LIGHTBOX CODE END -->	
+<!-- LIGHTBOX CODE END 	
 <table class="donation_table">
 <tr>
 <td>[RUB]</td>
@@ -166,4 +165,4 @@ Comment <input name="comment" size="80" maxlength="200" type="text">
 </div>
 </div>
 <div class="clear"></div>            
-</div>{/block}
+</div>-->{/block}

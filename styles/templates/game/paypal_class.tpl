@@ -16,7 +16,7 @@
        {$LNG.fcm_info}                    
     </div> 
 	<div class="ally_contents">
-		<h3>Your request is being processed and you will be redirected to the PayPal site.</h3><br>This process takes 5 seconds. If you are not redirected automatically ...<br></h3><br>After Payment do no forget to hit the BACK BUTTON ,it will deposit the DM to your account....<br><br><input type="submit" value="CLICK here">
+		<h3>Ihre Anfrage wird bearbeitet und Sie werden zur PayPal-Website weitergeleitet.</h3><br>Dieser Vorgang dauert 5 Sekunden. Wenn Sie nicht automatisch umgeleitet werden ...<br></h3><br>Vergessen Sie nach der Zahlung nicht, auf den ZURÜCK-BUTTON zu drücken, um die DM auf Ihr Konto zu transferieren....<br><br><input type="submit" value="zu Paypal">
 	</div>
 </div>
 

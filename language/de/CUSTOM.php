@@ -60,7 +60,7 @@ $LNG['alm_academy']							= 'Akademie';
 $LNG['alm_port']							= 'Port';
 $LNG['alm_planet_auction']							= 'Planet Auktion';
 $LNG['alm_arsenal']							= 'Arsenal';
-$LNG['alm_adv_trader']							= 'Erweitert. Händler';
+$LNG['alm_adv_trader']							= 'Händler';
 $LNG['alm_immunity']							= 'Immunität';
 $LNG['alm_planetcloak']							= 'Angriffsschutz';
 $LNG['alm_fleetdealer']							= 'Flotte Händler';
@@ -150,20 +150,20 @@ $LNG['planetcloak_cntdown'] = 'solang der Countdown nicht beendet ist';
 $LNG['planetcloak_activate_one'] = 'Sie haben erfolgreich den Planeten Mantel für 1 Tag aktiviert';
 $LNG['planetcloak_activate_seven'] = 'Sie haben erfolgreich den Planeten Mantel für 7 Tagge aktiviert';
 //IMMUNITY
-$LNG['immunity_title'] 			= 'Immunität';
-$LNG['immunity_text'] 			= 'Dieser Mod schützt alle Ihre Planeten vor Angriffen, während deine Rohstoffproduktion weiter laufen <br>
+$LNG['immunity_title'] 			= 'Angriffsschutz';
+$LNG['immunity_text'] 			= 'Angriffsschutz schützt alle Ihre Planeten vor Angriffen, während deine Rohstoffproduktion weiter laufen <br>
 Flotte Bewegung ist nur erlaubt zwischen den eigenen Planeten. <br>
-Immunität ist 3 Tage aktiv und nach Immunität hat es eine Abklingzeit von 7 Tagen, dass heißt, Sie können es nach 7 Tagen reaktivieren.<br>
+Angriffsschutz ist 3 Tage aktiv und und hat eine Abklingzeit von 7 Tagen, dass heißt, Sie können es den Angriffsschutz erst nach 7 Tagen erneut aktivieren.<br>
 Kosten der Aktivierung sind 500.000 Dunkle Materie';
-$LNG['immunity_on_status'] 			= 'Planet Schutz (Immunität) - ';
-$LNG['immunity_off_status'] 			= 'Planet Schutz (Immunität) - Status: offline.';
+$LNG['immunity_on_status'] 			= 'Angriffsschutz - ';
+$LNG['immunity_off_status'] 			= 'Angriffsschutz - Status: offline.';
 $LNG['immunity_reactivate_text'] 			= 'Sie können es wieder aktivieren in:';
-$LNG['immunity_activate'] 			= 'Aktivieren Immunität!';
-$LNG['immunity_desactivate'] 			= 'Immunität deaktivieren!';
+$LNG['immunity_activate'] 			= 'Aktivieren';
+$LNG['immunity_desactivate'] 			= 'deaktivieren!';
 $LNG['immu_fleetmove'] 			= 'Flotten Bewegung !';
-$LNG['immu_succes'] 			= 'Sie haben den Immunität mod erfolgreich aktiviert';
+$LNG['immu_succes'] 			= 'Sie haben den Angriffsschutz erfolgreich aktiviert';
 $LNG['immu_no_dm'] 			= 'Nicht genug Dm!';
-$LNG['immu_desactivate'] 			= 'Sie die Immunität mod erfolgreich deaktiviert';
+$LNG['immu_desactivate'] 			= 'Sie die Angriffsschutz erfolgreich deaktiviert';
 //PORT
 $LNG['port_build_text'] 			= 'Hier können Sie Gebäude für die Dunkle Materie zu kaufen';
 $LNG['port_research_text'] 			= 'Hier können Sie Forschung für die Dunkle Materie zu kaufen';
