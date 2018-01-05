@@ -43,7 +43,7 @@ setInterval(function() { AJAX() }, 6000)
 	$(function() {
 		$( ".build_box" ).hide();
 $( "#research_106" ).show();
-setTimeout(function() { qtips('.price:first', 'To unlock the study &laquo;Spy technology&raquo;, you need to go on the build page and upgrade &laquo;research laboratory&raquo; <br/>Third level.', 'topMiddle', 'bottomLeft') }, 4000);
+setTimeout(function() { qtips('.price:first', 'Um Forschen freizuschalten Sie müssen auf der Gebäudeseite ein Forschungslabor Level 3 Bauen. &raquo; <br/>', 'topMiddle', 'bottomLeft') }, 4000);
 qtips('#fildes_band', 'Um deine Daten zu schützen, musst du &laquo;Spionagetechnik&raquo; Stufe 3 erforschen.', 'leftMiddle', 'topRight');
 setInterval(function() { AJAX() }, 6000)
 	});
