@@ -34,11 +34,11 @@ $LNG['redeem'] = 'Wenn Sie einen aktiven Verrechnungscode haben, können Sie es 
 können Sie auch einige Verrechnungscodes von unserem facebook Profil erhalten';
 $LNG['techsupportadvisor'] = 'Seien Sie vorsichtig in wich Kategorie Sie Ihr Ticket zu senden, da einige Spieler könnten Zugang zum Ticket-System für eine schnellere Reaktion haben';
 
-$LNG['gl_immunity']							= 'Immunität Modus';
+$LNG['gl_immunity']							= 'Angriffsschutz Modus';
 $LNG['gl_short_immunity']					= 'P';
-$LNG['fl_in_immunity_player']				= 'Der Spieler ist im Immunität Modus';
-$LNG['fa_immunity_mode']					= 'Player im immunit&auml;tsmodus';
-$LNG['fa_immunity_mode_current']			= 'Tut uns leid, aber sie sind im Immunit&auml;tsmodus';
+$LNG['fl_in_immunity_player']				= 'Der Spieler hat den Angriffsschutz aktiviert';
+$LNG['fa_immunity_mode']					= 'Spieler hat den Angriffsschutz aktiviert';
+$LNG['fa_immunity_mode_current']			= 'Tut uns leid, aber sie haben den Angriffsschutz aktiviert';
 $LNG['show_all']			= 'Alle anzeigen';
 $LNG['not_acces_vmode']			= 'Sie können nicht auf diese Seite, während Sie sich im Urlaubsmodus befinden!';
 
@@ -61,8 +61,8 @@ $LNG['alm_port']							= 'Port';
 $LNG['alm_planet_auction']							= 'Planet Auktion';
 $LNG['alm_arsenal']							= 'Arsenal';
 $LNG['alm_adv_trader']							= 'Händler';
-$LNG['alm_immunity']							= 'Immunität';
-$LNG['alm_planetcloak']							= 'Angriffsschutz';
+$LNG['alm_immunity']							= 'Angriffsschutz';
+$LNG['alm_planetcloak']							= 'Planetenschutz';
 $LNG['alm_fleetdealer']							= 'Flotte Händler';
 $LNG['alm_multi']							= 'Multi Melden';
 $LNG['alm_galaxy']							= 'Galaxis';
@@ -135,20 +135,20 @@ $LNG['multi_report'] 				= 'Melden';
 $LNG['multi_reason'] 				= 'Grund';
 $LNG['multi_parse'] 				= 'Sie können dieses Menü verwenden, um Mehr Konto auf das Admin zu melden. Alle Multis, die nicht gemeldet werden, werden unwiderruflich aus dem Spiel gelöscht ';
 //PLANET CLOAK
-$LNG['planetcloak_one'] = 'Angriffsschutz wird benutzt um ihre Planeten von der Galaxieansicht zu verbergen.<br>
+$LNG['planetcloak_one'] = 'Planetenschutz wird benutzt um ihre Planeten von der Galaxieansicht zu verbergen.<br>
 Planeten können angegriffen und ausspioniert werden, wenn die Spieler wissen, wie sie zu finden sind.<br>
-Planeten können nicht gelöscht werden, während der Angriffsschutz aktiviert ist.<br>
-Wenn der Zeitraum des Angriffsschutzes endet beginnt die Abklingzeit, es dauert 7 oder 30 Tage, bis du den Angriffsschutz wieder aktivieren kannst';
+Planeten können nicht gelöscht werden, während der Planetenschutz aktiviert ist.<br>
+Wenn der Zeitraum des Planetenschutz endet beginnt die Abklingzeit, es dauert 7 oder 30 Tage, bis du den Planetenschutz wieder aktivieren kannst';
 $LNG['planetcloak_countdown'] = 'Abklingzeit Verbleibende Zeit';
-$LNG['planetcloak_active'] = 'Planet Cloak Verbleibende Zeit';
-$LNG['planetcloak_notactive'] = 'Cloak aktivieren';
-$LNG['planetcloak_option_one'] = 'Aktiviere Umhang für 3 Tag - 7 Tage Abklingzeit (500.000 dm)';
-$LNG['planetcloak_option_two'] = 'Aktiviere Umhang für 14 Tage - 30 Tage Abklingzeit (2.000.000 dm)';
-$LNG['planetcloak_option_send'] = 'Aktivieren Planet Umhang';
-$LNG['planetcloak_title'] = 'Angriffsschutz';
+$LNG['planetcloak_active'] = 'Planetenschutz Verbleibende Zeit';
+$LNG['planetcloak_notactive'] = 'Planetenschutz aktivieren';
+$LNG['planetcloak_option_one'] = 'Aktiviere Planetenschutz für 3 Tage - 7 Tage Abklingzeit (500.000 dm)';
+$LNG['planetcloak_option_two'] = 'Aktiviere Planetenschutz für 14 Tage - 30 Tage Abklingzeit (2.000.000 dm)';
+$LNG['planetcloak_option_send'] = 'Aktivieren';
+$LNG['planetcloak_title'] = 'Planetenschutz';
 $LNG['planetcloak_cntdown'] = 'solang der Countdown nicht beendet ist';
-$LNG['planetcloak_activate_one'] = 'Sie haben erfolgreich den Planeten Mantel für 1 Tag aktiviert';
-$LNG['planetcloak_activate_seven'] = 'Sie haben erfolgreich den Planeten Mantel für 7 Tagge aktiviert';
+$LNG['planetcloak_activate_one'] = 'Sie haben erfolgreich den Planetenschutz für 3 Tage aktiviert';
+$LNG['planetcloak_activate_seven'] = 'Sie haben erfolgreich den Planetenschutz für 7 Tage aktiviert';
 //IMMUNITY
 $LNG['immunity_title'] 			= 'Angriffsschutz';
 $LNG['immunity_text'] 			= 'Angriffsschutz schützt alle Ihre Planeten vor Angriffen, während deine Rohstoffproduktion weiter laufen <br>

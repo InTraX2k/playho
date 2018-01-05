@@ -382,10 +382,10 @@ $LNG['longDescription'] = array(
 	2 => 'Baut Mineralien ab, die für die Feinelektronik benötigt werden. Sie benötigt jedoch mehr, da sie die Mineralien gleich in nötige Legierungen verarbeitet.',
 	3 => 'Deuterium ist schwerer Wasserstoff. Daher sind ähnlich wie bei den Minen die grössten Vorräte auf dem Grund des Meeres. Der Ausbau des Synthetisierers sorgt ebenfalls für die Erschließung dieser Deuterium-Tiefenlagerstätten. Deuterium wird als Treibstoff für die Schiffe, für fast alle Forschungen, für einen Blick in die Galaxie sowie für den Sensorphalanx-Scan benötigt.',
 	4 => 'Um die Energie zur Versorgung der Minen und Synthetisierern zu gewährleisten, sind riesige Solarkraftwerkanlagen von Nöten. Je größer die Anlagen ausgebaut sind, desto mehr Oberfläche ist mit photovoltaischen Zellen bedeckt, welche Lichtenergie in elektrische Energie umwandeln. Solarkraftwerke stellen den Grundstock der planetaren Energieversorgung dar.',
-	5 => 'The searcher will help you gradualy to find more colonies of your ennemies in the whole galaxy<br><br>
-	<font color="#3399CC"><span style=" margin-left:0px; margin-right:4px; cursor:default; float:left;" class="interrogation">i</span>	Helpful information:</font>
+	5 => 'Der Searcher wird dir helfen, nach und nach mehr Kolonien deiner Feinde in der ganzen Galaxie zu finden<br><br>
+	<font color="#3399CC"><span style=" margin-left:0px; margin-right:4px; cursor:default; float:left;" class="interrogation">i</span> Hilfreiche Information:</font>
 	<br>
-    <font color="#00FF00"><span style=" margin-left:9px; margin-right:4px; cursor:default; float:left;">•</span>each 2 levels of the searcher give you access to 1 more planet in the search menu.</font>',
+    <font color="#00FF00"><span style=" margin-left:9px; margin-right:4px; cursor:default; float:left;">•</span>2 Stufen des Searchers geben dir Zugriff auf 1 weiteren Planeten im Suchmenü.</font>',
 	6 => 'Aufgrund der immer zeitaufwendigeren Forschungen, haben sich die klügsten Köpfe der intergalaktischen Forschungsnetzwerke zusammengetan und den TechnoDome entwickelt. Es verkürzt die Forschungszeiten um 8%',
 	12 => 'Im Atomkraftwerk werden Atome gespalten, umso mehr Energie zu erzeugen als in dem Solarkraftwerk, allerdings ist es teurer im Bau.',
 	14 => 'Roboterfabriken stellen einfache Arbeitskräfte zur Verfügung, die beim Bau der planetaren Infrastruktur eingesetzt werden können. Jede Stufe erhöht damit die Geschwindigkeit des Ausbaus von Gebäuden.',
