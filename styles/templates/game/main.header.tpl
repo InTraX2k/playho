@@ -74,7 +74,7 @@
 	{if $manual_11_step == 0}
 	<script type="text/javascript">
 	$(function() {
-		qtips('#attack', 'Attention to your planet flies attacking fleet', 'bottomMiddle', 'topLeft');
+		qtips('#attack', 'Achtung! auf Ihren Planeten fliegt angreifende Flotte', 'bottomMiddle', 'topLeft');
 setTimeout(function() { qtips('.over', 'Gehen Sie auf die Übersicht, um die Flotte des Angreifer zu sehen', 'bottomMiddle', 'topLeft') }, 4000);
 
 	});
