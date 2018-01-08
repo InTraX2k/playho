@@ -187,7 +187,7 @@ setTimeout(function() { qtips('#munu_research', 'Klick hier, um dich vor Spionag
 	
 	$(function() {
 		
-qtips('#munu_build ', 'Go to Buildings.', 'rightMiddle', 'leftMiddle');
+qtips('#munu_build ', 'Gehe zu Gebäuden', 'rightMiddle', 'leftMiddle');
 
 	});
 	</script>
