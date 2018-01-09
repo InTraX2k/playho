@@ -4,9 +4,9 @@
 
 // Your Database Connection Details
 $host = 'localhost';
-$db_name = 'btgv5';
-$db_user = 'btgv5'; 
-$db_password = 'Series87!';
+$db_name = 'dbname';
+$db_user = 'user'; 
+$db_password = 'passwort!';
 
 
 mysql_connect($host, $db_user, $db_password);
