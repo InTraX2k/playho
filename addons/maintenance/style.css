@@ -1,0 +1,140 @@
+/* 
+* License: GNU General Public License version 3.0
+* License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+body { height:100%;  margin:0; padding:0; font-family: Tahoma, Geneva, sans-serif; font-size:80%; color:#eee; text-align:center; background: url(images/bg1.jpg) top left no-repeat;}
+body {-webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%; 
+    background-attachment: fixed;}
+
+#wrapper { margin:0; width:100%; height:100%; text-align:center;  padding:20px 0 0 0; position:relative; background:rgba(255,255,255,.2);  }
+#page { width:45%; max-width:400px; margin:0 0 0 10%; padding:10px; background:rgba(20, 33, 44, .7)}
+#footer { margin:50px 0 0 0;  width:100%; height:20px; padding:10px 0; background:#40474F; color:#eee; font-size:.8em; }
+#footer a { color:#eee; text-decoration:none; }
+
+
+.sliderwrap {position: fixed; top: 0; left:0; z-index:-1; width:100%; height:100%; overflow:hidden; -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%; }
+.sliderwrap img {width:100%; height:100%; display:block; position: fixed;}
+
+
+/* =========================  grid ========================  */ 
+
+.col-full { width:100%; margin:1.5% 0;}
+.col-ttc { width:65.85744680851%; margin:1.5% 0;}
+.col-otc { width:31.714893617021%; margin:1.5% 0;}
+.col-ofc { width:23.179255319148%; margin:1.5% 0;}
+.col-ohc {width:48.786170212699%; margin:1.5% 0;}
+.col-ttc, .col-otc, .col-ofc, .col-ohc {margin-right:2.427659574468%; display: inline; float:left;}
+
+.cr {margin-right:0 !important;}
+.ct {margin-top: 0 !important;}
+.mr { margin-right:25px;}
+
+.clearfix:before,  
+.clearfix:after {content: " "; display: table; }  
+.clearfix:after {clear: both; }  
+.clearfix {*zoom: 1;}  
+.clear { clear:both;}
+
+
+
+/* =========================  font =========================  */ 
+
+h1 {font-family: 'Lato', sans-serif; font-size: 2em; color:#eee; margin:0; padding:0; line-height:1.6em; font-weight: normal;}
+h2 {font-family: 'Lato', sans-serif; font-size: 1.45em;  color:#eee; margin:0; padding:0 0 5px 0; line-height:1.5em; font-weight: normal;}
+h3 {font-family: 'Lato', sans-serif; font-size: 1.175em;  color:#eee; margin:0; padding:0; line-height:1.5em; font-weight: normal;}
+p {font-family: 'Lato', sans-serif; font-size:1.15em; margin:10px 0; padding:0 0 10px 0; line-height:1.65em; border-bottom:1px solid rgba(255,255,255,.4); }
+
+.title {font-family: 'Lato', sans-serif; font-size:4em; color:#40474F; font-weight:bold;}
+.subtitle {font-family: 'Lato', sans-serif; font-size:1.5em; color:#40474F; }
+
+
+/* =========================  logo =========================  */ 
+
+/* Wenn Sie ein Logobild einbinden, geben Sie dem #logo die maximale Breite des Bildes und kommentieren die folgenden Zeilen aus */ 
+#logo { margin:15px auto 35px auto; height:auto; text-align:center; /* max-width:450px; */}
+#logo img { /* width:100%; height:auto; display:block; */}
+
+
+
+
+/* ============== info ============== */
+
+#info { margin:0; padding: 0 20px; text-align:left;}
+#info [class^="icon-"]:before, #info [class*=" icon-"]:before  { float:left; margin:0 10px 0 0; font-size:26px; color:#eee; }
+
+.social-media {margin:50px 0 0 0; border-top:1px solid rgba(255,255,255,.4); padding:20px 0 10px 0;}
+.social-media .smicon { background:#C30; opacity:.8;width:22px; height:20px; padding:8px 8px 8px 6px; margin:0 4px 0 0; text-align:center; border-radius:100%; float:left; display:inline-block;}
+.social-media .smicon:hover { opacity:1;}
+
+#info .social-media [class^="icon-"]:before, #info .social-media [class*=" icon-"]:before  { float: none !important; margin:0; font-size:24px; line-height:24px; color:#fff; text-shadow:none !important;}
+
+
+
+/* ============== contact ============== */
+#contact-form { margin:20px 0 0 0; text-align:left; }
+#contact-form label { font-size:.9em; display:block; margin:5px 0 2px 0;}
+#contact-form input {width:100%; max-width:180px; border:1px solid #dedede; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; padding:5px 1px; margin:0 0 7px 0; font-family:Verdana, Arial, sans-serif; font-size:.9em; background:rgba(255,255,255,.8);} 
+#contact-form textarea { width:100%; max-width:400px; border:1px solid #dedede; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; padding:5px 1px; font-family:Verdana, Arial, sans-serif; font-size:.9em; background:rgba(255,255,255,.8);}
+#contact-form input:focus, #contact-form textarea:focus { border:1px solid #ccc;}
+#contact-form button { color:#fff; cursor:pointer; margin:15px 0 0 0; border:none; font-size:1em;  padding:6px 10px; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+background: #C30;}
+
+.thanks, .error { padding:15px; }
+
+
+/* ============== loading animation ============== */
+.spinner {font-size:40px; color:#555;  text-align:center; width:100px; margin:10px auto;}
+.spin { -webkit-animation:spin 5s linear infinite; -moz-animation:spin 5s linear infinite; animation:spin 5s linear infinite;}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+
+
+@media screen and (max-width: 1024px)  {
+.sliderwrap {position: fixed; top: 0; left:0; z-index:-1; width:auto !important; height:100%; }
+.sliderwrap img {width: auto !important; height:100%; display:block; position: fixed;}	
+#page { width:45%; max-width:400px; margin:0 0 0 5%;}
+	 }
+	
+
+@media screen and (max-width: 800px)  {
+	
+.sliderwrap {position: fixed; top: 0; left:0; z-index:-1; width:auto !important; height:100%; }
+.sliderwrap img {width: auto !important; height:100%; display:block; position: fixed;}
+.col-ohc { width:100% !important; display:block !important; float:none !important; }
+#page { width:45%; max-width:400px; margin:0 0 0 5%;}
+	h1 {font-size: 1.8em;}
+	h2 {font-size: 1.2em; }
+	h3 {font-size: 1.075em;  }
+	p {font-size:1em;}
+
+	}
+	
+	
+@media screen and (max-width: 768px)  {
+#page { width:45%; max-width:400px; margin:0 0 0 5%;}
+}	
+	
+@media screen and (max-width: 600px)  {
+#contact-form { margin:30px 0 10px 0;  }
+#contact-form input {width:100%; max-width:350px;}
+#page { width:55%; max-width:400px; margin:0 0 0 5%;}
+}	
+	
+@media screen and (max-width: 480px)  {
+#page { width:75%; max-width:400px; margin:0 0 0 5%;}
+.title {font-size:3em; }
+}	
+	
+@media screen and (max-width: 320px)  {
+#page { width:85%; max-width:280px; margin:0 0 0 5%;}
+}	
