@@ -18,10 +18,10 @@ class ShowDbonusPage extends AbstractPage {
 		
 		if($USER['sdays_time'] < TIMESTAMP - 48 * 60 * 60 ){
 		$GLOBALS['DATABASE']->query("Update ".USERS." SET `sdays_b` = 1, `sdays_time` = ".(TIMESTAMP - 60 * 60 *24)." WHERE `id` = ".$USER['id']." ;");
-		$this->printMessage("Você não retirou seu bônus ontem... A contagem irá reiniciar a partir do dia 1.", true, array('game.php?page=dbonus', 2));
+		$this->printMessage("Sie haben Ihren Bonus beretis erhalten", true, array('game.php?page=dbonus', 2));
 		}
 		if($USER['sdays_time']  > TIMESTAMP - 60 * 60 * 24){
-        $this->printMessage("Não permitido!", true, array('game.php?page=overview', 2));
+        $this->printMessage("Abgeschlossen!", true, array('game.php?page=overview', 2));
         die();
         }
 		else{
@@ -48,7 +48,7 @@ class ShowDbonusPage extends AbstractPage {
 		
 		
 		if($mode != $USER['sdays_b'] && $USER['sdays_b'] != 7 ){
-		$this->printMessage("Não tente coisas estúpidas, o admin foi avisado.", true, array('game.php?page=dbonus', 2));
+		$this->printMessage("Bei Problemen erstelle bitte ein Support Ticket.", true, array('game.php?page=dbonus', 2));
 		die();
 		}
 		
