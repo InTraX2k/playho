@@ -5,12 +5,12 @@
 <div id="ally_content" style="width:auto;" class="conteiner">
     <div class="gray_stripe">
     	{$LNG.lv_imperium_title}
-		<a href="game.php?page=userAtmLogs" class="imper_gala_bonuses imper_atm_logs">User antimatter log</a>
+		<a href="game.php?page=userAtmLogs" class="imper_gala_bonuses imper_atm_logs">Antimaterie log</a>
         	</div>
         <div class="gray_stripe">
     	<div class="imper_left_part">
-        	<a href="game.php?page=reduceresources" class="fleet_reduce ico_reduceresources tooltip" data-tooltip-content="Resource harvester"></a>
-       		<a href="game.php?page=reducefleet" class="fleet_reduce ico_reducefleet tooltip" data-tooltip-content="Fleet harvester"></a>
+        	<a href="game.php?page=reduceresources" class="fleet_reduce ico_reduceresources tooltip" data-tooltip-content="Ressourcen Harvester"></a>
+       		<a href="game.php?page=reducefleet" class="fleet_reduce ico_reducefleet tooltip" data-tooltip-content="F harvester"></a>
         </div>
         <div class="imper_right_part">        	
             <div onclick="gorightMAX();" class="imper_goleft_2 imper_navigation"></div>
@@ -18,10 +18,10 @@
             <div onclick="goleftMAX();" class="imper_goright_2 imper_navigation"></div>
             <div onclick="goleft();" class="imper_goright imper_navigation"></div>  
             <div class="icovavigation">
-            	<span class="record_btn ico_star record_btn_active" title="All" onclick="allopen();"></span>
-                <span class="record_btn ico_builds" title="Buildings" onclick="buildsopen();"></span>
-                <span class="record_btn ico_fleet" title="Fleets" onclick="fleetopen();"></span>
-                <span class="record_btn ico_shield" title="Defense" onclick="defopen();"></span>
+            	<span class="record_btn ico_star record_btn_active" title="Alle" onclick="allopen();"></span>
+                <span class="record_btn ico_builds" title="Gebaude" onclick="buildsopen();"></span>
+                <span class="record_btn ico_fleet" title="Flotte" onclick="fleetopen();"></span>
+                <span class="record_btn ico_shield" title="Verteidigung" onclick="defopen();"></span>
                 <div class="clear"></div>
             </div>          
         </div>
@@ -31,7 +31,7 @@
         	<div class="imper_block_info_text">{$LNG.lv_name}</div>
             <div class="imper_block_info_text">{$LNG.lv_coords}</div>
             <div class="imper_block_info_text">{$LNG.lv_fields}</div>
-            <div class="imper_block_info_text">Go on</div>            
+            <div class="imper_block_info_text">Planetenwechsel</div>            
         </div>
     	<div class="imper_block_th">Resources</div>
                 <div class="imper_block_td">{$LNG.tech.901}</div>
