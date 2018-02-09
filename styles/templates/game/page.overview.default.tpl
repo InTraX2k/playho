@@ -25,7 +25,7 @@ setTimeout(function() { location.reload(); }, 13000);
 {if $manual_12 == 0}
 <script type="text/javascript">
 $(function() {
-qtips('a.attack:first ', 'Place your mouse on the word "fleet" to view its composition', 'topMiddle', 'bottomMiddle');
+qtips('a.attack:first ', 'Klicken Sie auf "Flotte", um eine Zusammensetzung zu sehen', 'topMiddle', 'bottomMiddle');
 setTimeout(function() { qtips('#big_panet', 'Es gibt genug Verteidigung, um deinen Planeten zu schützen. Lass die Schlacht gehen. Sie werden weitergeleitet', 'leftTop', 'rightMiddle') }, 4000);
 setTimeout(function() { location.reload(); }, 59000);
 

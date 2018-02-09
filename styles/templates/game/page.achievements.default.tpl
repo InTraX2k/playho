@@ -5,7 +5,7 @@
 {if $manual_28_step == 0}
 <script type="text/javascript">
 	$(function() {
-		qtips('.ach_head', 'During the game you can do differents achievements. Pick any favorite achievement and begin completing it. As reward, you get  {$LNG.ach_points} and antimatter, how higher the succesfull achievement, how higher the reward.', 'leftMiddle', 'topRight');
+		qtips('.ach_head', 'Während des Spiels können Sie verschiedene Erfolge erzielen. Wählen Sie eine Lieblingsleistung und beginnen Sie damit. Als Belohnung bekommst du {$LNG.ach_points} und Antimaterie, je höher die erfolgreiche Leistung, je höher die Belohnung.', 'leftMiddle', 'topRight');
 
 	});
 	</script>

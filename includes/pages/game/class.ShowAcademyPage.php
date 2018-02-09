@@ -402,7 +402,7 @@ $academy_1201 = $price;
 if( $skill == '1201' && $USER['academy_p'] >= $academy_1201 && $USER['academy_1201'] + $count <= 100){
 $GLOBALS['DATABASE']->query("UPDATE ".USERS." SET academy_1201 = academy_1201 + '".$count."' WHERE id= '".$USER['id']."';");
 $GLOBALS['DATABASE']->query("UPDATE ".USERS." SET academy_p = academy_p - '".$academy_1201."' WHERE id= '".$USER['id']."';");
-$this->printMessage('Academy production rate is succesfully upgraded!',  true, array('game.php?page=academy', 3)); 
+$this->printMessage('Die Produktionsrate wird erfolgreich aktualisiert!',  true, array('game.php?page=academy', 3)); 
 }elseif( $skill == '1201' && $USER['academy_p'] < $academy_1201){
 $this->printMessage('Please verify your academy points to upgrade this bonus!',  true, array('game.php?page=academy', 3));    
 }elseif($skill == '1201' && $USER['academy_1201'] + $count > 100){

@@ -5,8 +5,8 @@
 {if $manual_25_step == 0}
 <script type="text/javascript">
 	$(function() {
-		qtips('#span_point', 'You have accumulated experience points, through awareness. The higher the level, the more points you get for his achievement.', 'topMiddle', 'bottomLeft');
-qtips('.gray_stripe', 'Here you can find a lot of skills that you can upgrade for academy points that you get for achieving Peace and Combat level. <br /><br /><b><span style="margin:0 0 7px 0;display: block;color:#002211;">Upgrade one of the skills:<b></span> <b><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>armament <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>production rate <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>defensive strategy</b>', 'leftMiddle', 'topRight');
+		qtips('#span_point', 'Du hast Erfahrungspunkte gesammelt. Je höher das Level, desto mehr Punkte erhältst du für deine Leistungen. 'topMiddle', 'bottomLeft');
+qtips('.gray_stripe', 'Hier findest du eine Menge Fähigkeiten, die du verbessern kannst. <br /><br /><b><span style="margin:0 0 7px 0;display: block;color:#002211;">Verbessere eine der Fähigkeiten:<b></span> <b><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Schild <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Produktionsrate <br /><span style=" margin-left: 9px; margin-right: 4px; cursor: default; float: left;color:#002211;">•</span>Verteidigungsstrategie</b>', 'leftMiddle', 'topRight');
 
 	});
 	</script>
