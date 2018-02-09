@@ -48,34 +48,34 @@
     <div class="gray_stripe">
     	<span style='color:#FFDEAD' class="tooltip" data-tooltip-content="<table>
 	<tr>
-		<th colspan='2'><span style='color:F30'>player</span></th>
+		<th colspan='2'><span style='color:F30'>Spieler</span></th>
 	</tr>
 	<tr>
-		<td style='text-align:left;'>friends</td>
-		<td style='text-align:left;'><span style='color:yellow'>UserName</span></td>
+		<td style='text-align:left;'>Freunde</td>
+		<td style='text-align:left;'><span style='color:yellow'>Name</span></td>
 	</tr>
 	<tr>
-		<td style='text-align:left;'>enemies</td>
-		<td style='text-align:left;'><span style='color:red'>UserName</span></td>
+		<td style='text-align:left;'>Feinde</td>
+		<td style='text-align:left;'><span style='color:red'>Name</span></td>
 	</tr>
 	
 	
 	<tr>
-		<th colspan='2'>alliance</th>
+		<th colspan='2'>Allianz</th>
 	</tr>
 	<tr>
-		<td style='text-align:left;'>union</td>
-		<td style='text-align:left;'><span style='color:#32CD32'>AllyName</span></td>
+		<td style='text-align:left;'>Verbündete</td>
+		<td style='text-align:left;'><span style='color:#32CD32'>Name</span></td>
 	</tr>
 	<tr>
-		<td style='text-align:left;'>war</td>
-		<td style='text-align:left;'><span style='color:#FF0000'>AllyName</span></td>
+		<td style='text-align:left;'>Im Krieg</td>
+		<td style='text-align:left;'><span style='color:#FF0000'>Name</span></td>
 	</tr>
 	<tr>
-		<td style='text-align:left;'>their alliance</td>
-		<td style='text-align:left;'><span style='color:#33CCFF'>AllyName</span></td>
+		<td style='text-align:left;'>Deine Allianz</td>
+		<td style='text-align:left;'><span style='color:#33CCFF'>Name</span></td>
 	</tr>
-</table>">color diplomacy</span>
+</table>">Erklärung zur Farbe</span>
     </div>
 </div>
 </div>
