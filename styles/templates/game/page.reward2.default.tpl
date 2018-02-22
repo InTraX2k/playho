@@ -5,7 +5,7 @@
 	<div id="content">
 <div id="ally_content" class="conteiner">
     <div class="gray_stripe" style="border-bottom:0;">
-    	Redeem Code
+    	 Voucher
     </div>
  <table class="tablesorter ally_ranks">
 <tr>
@@ -21,7 +21,7 @@
     </tr>		
 					<tr>
         <td colspan="2">
-  <center>  <button type="submit" name="redeem" class="button" style="height:25px;">Redeem</button>   </center>  
+  <center>  <button type="submit" name="Einlösen" class="button" style="height:25px;">Einlösen</button>   </center>  
 					
 				</form>
     

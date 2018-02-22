@@ -4,7 +4,7 @@ require_once(ROOT_PATH . 'includes/classes/class.paypal.php');
 
 class ShowPaypalPage extends AbstractPage
 {
-        const MAIL        = 'ncn71008@toiea.com';
+        const MAIL        = 'paypal@battlethegalaxy.de';
 
         public $pattern        = array(
                 

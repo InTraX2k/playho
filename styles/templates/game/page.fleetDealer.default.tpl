@@ -1,4 +1,4 @@
-{block name="title" prepend}Fleet Dealer{/block}
+{block name="title" prepend}{$LNG.alm_fleetdealer}:{/block}
 {block name="content"}
 <div id="page">
 <form action="game.php?page=fleetDealer" method="post">
@@ -6,7 +6,7 @@
 	<div id="content">
 <div id="ally_content" class="conteiner">
     <div class="gray_stripe" style="border-bottom:0;">
-    	Fleet Dealer
+        {$LNG.alm_fleetdealer}
     </div>
     <table class="tablesorter ally_ranks">
     <tbody>
