@@ -43,11 +43,10 @@ class template extends Smarty
 	
 	function smartySettings()
 	{	
-		$this->force_compile 			= false;
-		$this->caching 					= true; #Set true for production!
-		$this->merge_compiled_includes	= true;
-		$this->compile_check			= true; #Set false for production!
-		$this->php_handling				= Smarty::PHP_REMOVE;
+		$this->force_compile           = false;
+		$this->caching                 = true;
+		$this->merge_compiled_includes = true;
+		$this->compile_check           = true;
 		
 		$this->setCompileDir(is_writable(ROOT_PATH.'cache/') ? ROOT_PATH.'cache/' : $this->getTempPath());
 		$this->setCacheDir(ROOT_PATH.'cache/templates');
