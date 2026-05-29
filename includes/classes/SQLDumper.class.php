@@ -2,7 +2,7 @@
 
 /**
  *  2Moons
- *  Copyright (C) 2012 Jan Kröpke
+ *  Copyright (C) 2012 Jan Krï¿½pke
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,8 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @package 2Moons
- * @author Jan Kröpke <info@2moons.cc>
- * @copyright 2012 Jan Kröpke <info@2moons.cc>
+ * @author Jan Krï¿½pke <info@2moons.cc>
+ * @copyright 2012 Jan Krï¿½pke <info@2moons.cc>
  * @license http://www.gnu.org/licenses/gpl.html GNU GPLv3 License
  * @version 1.7.3 (2013-05-19)
  * @info $Id: SQLDumper.class.php 2640 2013-03-23 19:23:26Z slaver7 $
@@ -54,7 +54,7 @@ class SQLDumper
 	{
 		require 'includes/config.php';
 		$dbTables	= array_map('escapeshellarg', $dbTables);
-		$sqlDump	= shell_exec("mysqldump --host='".escapeshellarg($database['host'])."' --port=".((int) $database['port'])." --user='".escapeshellarg($database['user'])."' --password='".escapeshellarg($database['userpw'])."' --no-create-db --order-by-primary --add-drop-table --comments --complete-insert --hex-blob '".escapeshellarg($database['databasename'])."' ".implode(' ', $dbTables)." 2>&1 1> ".$filePath);
+		$sqlDump	= shell_exec("mysqldump --host=".escapeshellarg($database['host'])." --port=".((int) $database['port'])." --user=".escapeshellarg($database['user'])." --password=".escapeshellarg($database['userpw'])." --no-create-db --order-by-primary --add-drop-table --comments --complete-insert --hex-blob ".escapeshellarg($database['databasename'])." ".implode(' ', $dbTables)." 2>&1 1> ".escapeshellarg($filePath));
 		if(strlen($sqlDump) !== 0) #mysqldump error
 		{
 			throw new Exception($sqlDump);

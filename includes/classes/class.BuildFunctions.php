@@ -150,7 +150,7 @@ class BuildFunctions
 	{
 		global $requeriments, $resource;
 		
-		$CurrentQueue  		= unserialize($PLANET['b_building_id']);
+		$CurrentQueue  		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 		if (empty($CurrentQueue)) {
 		$CurrentQueue	= array();
 		}
@@ -291,7 +291,7 @@ class BuildFunctions
 			}
 		}
 		
-		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id']) : array();
+		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]) : array();
 		$MaxMissiles   		= $PLANET[$resource[44]] * 10 * max(Config::get('silo_factor'), 1);
 
 		foreach($BuildArray as $ElementArray) {
@@ -319,7 +319,7 @@ class BuildFunctions
 		$Domes[$elementID]	= $PLANET[$resource[$elementID]];
 		}
 		}
-		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id']) : array();
+		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]) : array();
 		$MaxDomes   		= 25 + getbonusOneBis(1108,$USER['academy_1208']);
 		foreach($BuildArray as $ElementArray) {
 			if(isset($Domes[$ElementArray[0]]))
@@ -346,7 +346,7 @@ class BuildFunctions
 		$Orbits[$elementID]	= $PLANET[$resource[$elementID]];
 		}
 		}
-		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id']) : array();
+		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]) : array();
 		$MaxOrbits   		= 250 + getbonusOneBis(1309,$USER['academy_1309']);
 		foreach($BuildArray as $ElementArray) {
 			if(isset($Orbits[$ElementArray[0]]))
@@ -392,7 +392,7 @@ class BuildFunctions
         )
             return;
 
-        $CurrentQueue  		= unserialize($PLANET['b_building_id']);
+        $CurrentQueue  		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 
 
         if (!empty($CurrentQueue)) {
@@ -481,7 +481,7 @@ class BuildFunctions
             $Count 			= max(min($Count, Config::get('max_fleet_per_build')), 0);
             $Count 			= min($Count, $MaxElements);
 
-            $BuildArray    	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id']) : array();
+            $BuildArray    	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]) : array();
             if (in_array($Element, $reslist['missile']))
             {
                 $MaxMissiles		= BuildFunctions::getMaxConstructibleRockets($USER, $PLANET, $Missiles);
@@ -525,7 +525,7 @@ class BuildFunctions
         if ($PLANET['b_building'] == 0)
             return true;
 
-        $CurrentQueue		= unserialize($PLANET['b_building_id']);
+        $CurrentQueue		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
         foreach($CurrentQueue as $ListIDArray) {
             if($ListIDArray[0] == 6 || $ListIDArray[0] == 31)
                 return false;
@@ -546,7 +546,7 @@ class BuildFunctions
             return;
         }
 
-        $CurrentQueue  		= unserialize($USER['b_tech_queue']);
+        $CurrentQueue  		= unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 
         if (!empty($CurrentQueue)) {
             $ActualCount   	= count($CurrentQueue);

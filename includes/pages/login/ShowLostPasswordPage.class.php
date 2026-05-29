@@ -70,7 +70,7 @@ class ShowLostPasswordPage extends AbstractPage
 			)));
 		}
 		
-		$newPassword	= uniqid();
+		$newPassword	= bin2hex(random_bytes(12));
 
 		$userData		= $GLOBALS['DATABASE']->getFirstRow("SELECT username, email_2 as mail FROM ".USERS." WHERE id = ".$userID.";");
 
@@ -87,7 +87,7 @@ class ShowLostPasswordPage extends AbstractPage
 			$newPassword,
 		), $MailRAW);
 		
-		$GLOBALS['DATABASE']->query("UPDATE ".USERS." SET password = '".md5($newPassword)."' WHERE id = ".$userID.";");
+		$GLOBALS['DATABASE']->query("UPDATE ".USERS." SET password = '".password_hash($newPassword, PASSWORD_DEFAULT)."' WHERE id = ".$userID.";");
 		
 		require 'includes/classes/Mail.class.php';		
 		Mail::send($userData['mail'], $userData['username'], t('passwordChangedMailTitle', Config::get('game_name')), $MailContent);
@@ -153,7 +153,7 @@ class ShowLostPasswordPage extends AbstractPage
 			)));
 		}
 		
-		$validationKey	= md5(uniqid());
+		$validationKey	= bin2hex(random_bytes(32));
 						
 		$MailRAW		= $GLOBALS['LNG']->getTemplate('email_lost_password_validation');
 		

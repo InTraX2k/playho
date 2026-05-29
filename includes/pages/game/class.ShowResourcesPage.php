@@ -215,7 +215,7 @@ class ShowResourcesPage extends AbstractPage
 				if(!isset($ProdGrid[$ProdID]['production'][$ID]))
 					continue;
 					
-				$Production	= eval(ResourceUpdate::getProd($ProdGrid[$ProdID]['production'][$ID]));
+				$Production	= ResourceUpdate::safeEval($ProdGrid[$ProdID]['production'][$ID]);
 				
 				if($ID != 911)
 				{

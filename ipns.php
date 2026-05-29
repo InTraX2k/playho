@@ -3,10 +3,10 @@
 #Example PHP Postback Script
 
 // Your Database Connection Details
-$host = 'localhost';
-$db_name = 'dbname';
-$db_user = 'user'; 
-$db_password = 'passwort!';
+$host        = getenv('IPN_DB_HOST') ?: 'localhost';
+$db_name     = getenv('IPN_DB_NAME') ?: '';
+$db_user     = getenv('IPN_DB_USER') ?: '';
+$db_password = getenv('IPN_DB_PASS') ?: '';
 
 
 mysql_connect($host, $db_user, $db_password);
@@ -90,8 +90,7 @@ error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
 
 //-------------------------- Don't change anything below this! ----------------------------- //
 
-define("DEBUG", 1);
-// Set to 0 once you're ready to go live
+define("DEBUG", 0);
 define("USE_SANDBOX", 0);
 define("LOG_FILE", "./ipn.log");
 // Read POST data

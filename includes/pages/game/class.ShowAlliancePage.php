@@ -644,9 +644,9 @@ class ShowAlliancePage extends AbstractPage
 		
 		global $USER, $PLANET, $LNG, $UNI, $CONF, $resource;
 
-		$metal = $_POST['resource901'];
-        $crystal = $_POST['resource902'];
-        $deuterium = $_POST['resource903'];
+		$metal     = (int) ($_POST["resource901"] ?? 0);
+        $crystal   = (int) ($_POST["resource902"] ?? 0);
+        $deuterium = (int) ($_POST["resource903"] ?? 0);
 		$premium_bank = 0;
 		if($USER['premium_reward_bank'] > 0 && $USER['premium_reward_bank_days'] > TIMESTAMP){
 		$premium_bank = $USER['premium_reward_bank'];
@@ -709,9 +709,9 @@ class ShowAlliancePage extends AbstractPage
 		global $USER, $PLANET, $LNG, $UNI, $CONF, $resource;
 		if (!$this->rights['BANK'])
 			$this->redirectToHome();
-		$metal = $_POST['resource901'];
-        $crystal = $_POST['resource902'];
-        $deuterium = $_POST['resource903'];
+		$metal     = (int) ($_POST["resource901"] ?? 0);
+        $crystal   = (int) ($_POST["resource902"] ?? 0);
+        $deuterium = (int) ($_POST["resource903"] ?? 0);
 		$storages	= $GLOBALS['DATABASE']->query("SELECT storage_metal, storage_crystal, storage_deuterium FROM ".ALLIANCE." WHERE id = ".$this->allianceData['id'].";");
 		$storages  = $GLOBALS['DATABASE']->fetch_array($storages);
 		if($metal < 0|| $crystal < 0  ||$deuterium < 0){
@@ -778,9 +778,9 @@ class ShowAlliancePage extends AbstractPage
 			$this->redirectToHome();
 			
 		 $userid        = HTTP::_GP('idu','');
-		 $metal = isset($_POST['resource901']) ? $_POST['resource901'] : 0; 
-         $crystal = isset($_POST['resource902']) ? $_POST['resource902'] : 0; 
-         $deuterium = isset($_POST['resource903']) ? $_POST['resource903'] : 0; 
+		$metal     = (int) ($_POST["resource901"] ?? 0);
+        $crystal   = (int) ($_POST["resource902"] ?? 0);
+        $deuterium = (int) ($_POST["resource903"] ?? 0);
 		 $storages	= $GLOBALS['DATABASE']->query("SELECT storage_metal, storage_crystal, storage_deuterium FROM ".ALLIANCE." WHERE id = ".$this->allianceData['id'].";");
 		 $storages  = $GLOBALS['DATABASE']->fetch_array($storages);
 		 

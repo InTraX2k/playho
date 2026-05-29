@@ -140,16 +140,20 @@ function bbcode_url ($action, $attributes, $content, $params, $node_object) {
 }
 function bbcode_mailto ($action, $attributes, $content, $params, $node_object) {
 	if ($action == 'validate') return true;
+	$safeContent = htmlspecialchars($content, ENT_QUOTES, 'UTF-8');
 	if (!isset ($attributes['default'])) {
-		return '<a href="mailto:'.$content.'">'.$content.'</a>';
+		return '<a href="mailto:'.htmlspecialchars($content, ENT_QUOTES, 'UTF-8').'">'.$safeContent.'</a>';
 	}
-	return '<a href="mailto:'.htmlspecialchars($attributes['default']).'">'.$content.'</a>';
+	return '<a href="mailto:'.htmlspecialchars($attributes['default'], ENT_QUOTES, 'UTF-8').'">'.$safeContent.'</a>';
 }
 
 function bbcode_code($action, $attributes, $content, $params, $node_object) {
 	if ($action == 'validate') return true;
 	if ($params["php"]) {
-		$content = highlight_string(html_entity_decode($content), true);
+		// htmlspecialchars_decode is safe — only reverses &lt; &gt; &amp; &quot;
+		// html_entity_decode was removed here as it decoded arbitrary entities (XSS gadget)
+		$decoded = htmlspecialchars_decode($content, ENT_QUOTES);
+		$content = highlight_string($decoded, true);
 	}
 	$return =  '<div class="bbcode_code';
 	if ($params["php"]) $return .= "_php";
@@ -158,8 +162,12 @@ function bbcode_code($action, $attributes, $content, $params, $node_object) {
 }
 
 function bbcode_img ($action, $attributes, $content, $params, $node_object) {
+	$url = trim($content);
+	if (preg_match('/^(javascript|data|vbscript|file|jar):/i', $url)) {
+		return '';
+	}
 	if ($action == 'validate') return true;
-	return '<img src="'.htmlentities($content).'" alt="" border="">';
+	return '<img src="'.htmlspecialchars($url, ENT_QUOTES, 'UTF-8').'" alt="" border="">';
 }
 
 function bbcode_background($action, $attributes, $content, $params, $node_object) {

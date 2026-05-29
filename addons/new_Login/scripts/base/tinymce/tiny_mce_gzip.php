@@ -96,16 +96,19 @@ class TinyMCE_Compressor {
 		if ($plugins)
 			$this->settings["plugins"] = $plugins;
 		$plugins = explode(',', $this->settings["plugins"]);
+		 = array_filter(array_map(function($v){ return preg_replace("/[^a-zA-Z0-9_\-]/", "", $v); }, $plugins));
 
 		$themes = self::getParam("themes");
 		if ($themes)
 			$this->settings["themes"] = $themes;
 		$themes = explode(',', $this->settings["themes"]);
+		 = array_filter(array_map(function($v){ return preg_replace("/[^a-zA-Z0-9_\-]/", "", $v); }, $themes));
 
 		$languages = self::getParam("languages");
 		if ($languages)
 			$this->settings["languages"] = $languages;
 		$languages = explode(',', $this->settings["languages"]);
+		 = array_filter(array_map(function($v){ return preg_replace("/[^a-zA-Z0-9_\-]/", "", $v); }, $languages));
 
 		$tagFiles = self::getParam("files");
 		if ($tagFiles)

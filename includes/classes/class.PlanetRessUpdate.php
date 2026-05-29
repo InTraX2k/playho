@@ -272,7 +272,34 @@ class ResourceUpdate
 	{
 		return 'return '.$Calculation.';';
 	}
-	
+
+	public static function safeEval(string $expr): float
+	{
+		if (trim($expr) === '' || trim($expr) === '0') return 0.0;
+		// Nur erlaubte Tokens: Zahlen, Operatoren, Klammern, Dezimalpunkte,
+		// PHP-Math-Funktionen, und die spezifischen Variablennamen die in Formeln vorkommen
+		if (!preg_match('/^[0-9\s\+\-\*\/\%\(\)\.\,]*$|^[0-9\s\+\-\*\/\%\(\)\.\,\$_A-Za-z\[\]\'\"->]*$/', $expr)) {
+			throw new \RuntimeException('Invalid formula: ' . $expr);
+		}
+		// Strikte Token-Validierung: nur erlaubte Funktionen und Variablen
+		$clean = $expr;
+		$allowedFuncs = ['pow','round','floor','ceil','sqrt','min','max','abs','log','exp','intval','floatval'];
+		foreach ($allowedFuncs as $f) {
+			$clean = str_replace($f, '', $clean);
+		}
+		// Erlaubte Variablen: $BuildLevel, $this->PLANET['...'], $this->USER['...'], $CONF['...']
+		$clean = preg_replace('/\$BuildLevel/', '', $clean);
+		$clean = preg_replace('/\$this->(PLANET|USER)\[\'[a-zA-Z0-9_]+\'\]/', '', $clean);
+		$clean = preg_replace('/\$CONF\[\'[a-zA-Z0-9_]+\'\]/', '', $clean);
+		// Nach Entfernen aller erlaubten Tokens darf nur noch: Zahlen, Operatoren, Whitespace, Klammern, Punkt, Komma übrig sein
+		$clean = preg_replace('/[0-9\s\+\-\*\/\%\(\)\.\,]/', '', $clean);
+		if (strlen(trim($clean)) > 0) {
+			throw new \RuntimeException('Dangerous formula token detected: ' . $clean . ' in: ' . $expr);
+		}
+		$result = eval('return (float)(' . $expr . ');');
+		return is_float($result) || is_int($result) ? (float)$result : 0.0;
+	}
+
 	public static function getNetworkLevel($USER, $PLANET)
 	{
 		global $resource;
@@ -354,7 +381,7 @@ class ResourceUpdate
 				$academy_storage	                = $academy_storage;	 
 				
 				$BuildLevel 		= $this->PLANET[$resource[$ProdID]];
-				$temp[$ID]['max']	+= round(eval(self::getProd($ProdGrid[$ProdID]['storage'][$ID])));
+				$temp[$ID]['max']	+= round(self::safeEval($ProdGrid[$ProdID]['storage'][$ID]));
 			}
 		}
 		
@@ -423,7 +450,7 @@ class ResourceUpdate
 				if(!isset($ProdGrid[$ProdID]['production'][$ID]))
 					continue;
 				
-				$Production	= eval(self::getProd($ProdGrid[$ProdID]['production'][$ID]));
+				$Production	= self::safeEval($ProdGrid[$ProdID]['production'][$ID]);
 				
 				if($Production > 0) {					
 					$temp[$ID]['plus']	+= $Production;

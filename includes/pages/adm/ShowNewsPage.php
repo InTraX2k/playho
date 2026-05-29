@@ -31,15 +31,16 @@ if (!allowedTo(str_replace(array(dirname(__FILE__), '\\', '/', '.php'), '', __FI
 function ShowNewsPage(){
 	global $LNG, $USER;
 
-	if($_GET['action'] == 'send') {
-		$edit_id 	= HTTP::_GP('id', 0);
+	$action = HTTP::_GP('action', '');
+	$mode   = (int) HTTP::_GP('mode', 0);
+	if($action === 'send') {
+		$edit_id 	= (int) HTTP::_GP('id', 0);
 		$title 		= $GLOBALS['DATABASE']->sql_escape(HTTP::_GP('title', '', true));
 		$text 		= $GLOBALS['DATABASE']->sql_escape(HTTP::_GP('text', '', true));
-		$query		= ($_GET['mode'] == 2) ? "INSERT INTO ".NEWS." (`id` ,`user` ,`date` ,`title` ,`text`) VALUES ( NULL , '".$USER['username']."', '".TIMESTAMP."', '".$title."', '".$text."');" : "UPDATE ".NEWS." SET `title` = '".$title."', `text` = '".$text."', `date` = '".TIMESTAMP."' WHERE `id` = '".$edit_id."' LIMIT 1;";
-		
+		$query		= ($mode === 2) ? "INSERT INTO ".NEWS." (`id`,`user`,`date`,`title`,`text`) VALUES (NULL,'".$GLOBALS['DATABASE']->sql_escape($USER['username'])."','".TIMESTAMP."','".$title."','".$text."');" : "UPDATE ".NEWS." SET `title`='".$title."',`text`='".$text."',`date`='".TIMESTAMP."' WHERE `id`=".$edit_id." LIMIT 1;";
 		$GLOBALS['DATABASE']->query($query);
-	} elseif($_GET['action'] == 'delete' && isset($_GET['id'])) {
-		$GLOBALS['DATABASE']->query("DELETE FROM ".NEWS." WHERE `id` = '".HTTP::_GP('id', 0)."';");
+	} elseif($action === 'delete' && HTTP::_GP('id', 0) > 0) {
+		$GLOBALS['DATABASE']->query("DELETE FROM ".NEWS." WHERE `id` = ".(int)HTTP::_GP('id', 0).";");
 	}
 
 	$query = $GLOBALS['DATABASE']->query("SELECT * FROM ".NEWS." ORDER BY id ASC");

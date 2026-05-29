@@ -45,7 +45,10 @@ function ShowDumpPage()
 			}
 			
 			$fileName	= '2MoonsBackup_'.date('d_m_Y_H_i_s', TIMESTAMP).'.sql';
-			$filePath	= 'includes/backups/'.$fileName;
+			// Store backups outside the web root to prevent direct download
+			$backupDir	= ROOT_PATH . '../backups/';
+			if (!is_dir($backupDir)) { @mkdir($backupDir, 0750, true); }
+			$filePath	= $backupDir . $fileName;
 		
 			require 'includes/classes/SQLDumper.class.php';
 		

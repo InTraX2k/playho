@@ -55,7 +55,20 @@ class ShowLoginPage extends AbstractPage
 	function show() 
 	{
 		if (empty($_POST)) {
-			HTTP::redirectTo('index.php');	
+			HTTP::redirectTo('index.php');
+		}
+
+		// Rate limiting: max 5 attempts per 15 minutes per IP
+		$ip = $_SERVER['REMOTE_ADDR'] ?? '';
+		$attemptKey = 'login_attempts_' . md5($ip);
+		$lockKey    = 'login_locked_' . md5($ip);
+		if (!isset($_SESSION[$lockKey])) $_SESSION[$lockKey] = 0;
+		if (!isset($_SESSION[$attemptKey])) $_SESSION[$attemptKey] = ['count' => 0, 'since' => time()];
+		if (time() - $_SESSION[$attemptKey]['since'] > 900) {
+		    $_SESSION[$attemptKey] = ['count' => 0, 'since' => time()];
+		}
+		if ($_SESSION[$attemptKey]['count'] >= 5) {
+		    HTTP::redirectTo('index.php?code=6');
 		}
 		
 		$username = HTTP::_GP('email', '', UTF8_SUPPORT);
@@ -64,15 +77,18 @@ class ShowLoginPage extends AbstractPage
 		$loginData = $GLOBALS['DATABASE']->getFirstRow("SELECT id, password, username FROM ".USERS." WHERE universe = ".$GLOBALS['UNI']." AND email = '".$GLOBALS['DATABASE']->escape($username)."';");
 		if (isset($loginData))
 		{
-			$hashedPassword = md5($password);
-			if($loginData['password'] != $hashedPassword)
-			{
-				// Fallback pre 1.7
-				if($loginData['password'] == md5($password)) {
-					$GLOBALS['DATABASE']->query("UPDATE ".USERS." SET password = '".$hashedPassword."' WHERE id = ".$loginData['id'].";");
-				} else {
-					HTTP::redirectTo('index.php?code=1');	
-				}
+			$loginOk = false;
+			if (password_verify($password, $loginData['password'])) {
+			    $loginOk = true;
+			} elseif (strlen($loginData['password']) === 32 && hash_equals(md5($password), $loginData['password'])) {
+			    // Legacy MD5 — upgrade to bcrypt
+			    $newHash = password_hash($password, PASSWORD_DEFAULT);
+			    $GLOBALS['DATABASE']->query("UPDATE ".USERS." SET password = '".$GLOBALS['DATABASE']->sql_escape($newHash)."' WHERE id = ".$loginData['id'].";");
+			    $loginOk = true;
+			}
+			if (!$loginOk) {
+			    $_SESSION[$attemptKey]['count']++;
+			    HTTP::redirectTo('index.php?code=1');
 			}
 			
 			
@@ -118,6 +134,7 @@ class ShowLoginPage extends AbstractPage
 			
 			
 			
+			session_regenerate_id(true);
 			Session::create($loginData['id']);
 			HTTP::redirectTo('game.php?page=overview');	
 		}

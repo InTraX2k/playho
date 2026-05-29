@@ -176,7 +176,7 @@ if (MODE === 'INGAME' || MODE === 'ADMIN' || MODE === 'CHAT')
 	} elseif (MODE === 'ADMIN') {
 		error_reporting(E_ERROR | E_WARNING | E_PARSE);
 		
-		$USER['rights']		= unserialize($USER['rights']);
+		$USER['rights']		= unserialize($USER['rights'], ["allowed_classes" => false]);
 		$LNG->includeData(array('ADMIN', 'CUSTOM'));
 	}
 }

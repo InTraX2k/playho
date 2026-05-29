@@ -10,7 +10,7 @@ require_once('includes/classes/class.Log.php');
 
 if ($USER['authlevel'] == AUTH_USR) HTTP::redirectTo('game.php');
 
-if(!isset($_SESSION['admin_login']) || $_SESSION['admin_login'] != $USER['password'])
+if(!isset($_SESSION['admin_login']) || !hash_equals((string)$USER['password'], (string)$_SESSION['admin_login']))
 {
 	include_once('includes/pages/adm/ShowLoginPage.php');
 	ShowLoginPage();

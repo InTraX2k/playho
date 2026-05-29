@@ -9,15 +9,42 @@ require('includes/common.php');
 
 $LNG->includeData(array('L18N', 'INGAME', 'ADMIN'));
 
-if(isset($_REQUEST['admin_pw']))
+if(isset($_POST['admin_pw']))
 {
-	$login = $GLOBALS['DATABASE']->getFirstRow("SELECT `id`, `username`, `dpath`, `authlevel`, `id_planet` FROM ".USERS." WHERE `id` = '1' AND `password` = '".cryptPassword($_REQUEST['admin_pw'])."';");
-	if(isset($login)) {
-		session_start();
-		$SESSION       	= new Session();
-		$SESSION->CreateSession($login['id'], $login['username'], $login['id_planet'], $UNI, $login['authlevel'], $login['dpath']);
-		$_SESSION['admin_login']	= cryptPassword($_REQUEST['admin_pw']);
+	// Rate limiting: max 5 attempts per 15 minutes per IP
+	$ipKey = 'root_attempts_' . md5($_SERVER['REMOTE_ADDR'] ?? '');
+	if (!isset($_SESSION[$ipKey])) $_SESSION[$ipKey] = ['count' => 0, 'since' => time()];
+	if (time() - $_SESSION[$ipKey]['since'] > 900) {
+		$_SESSION[$ipKey] = ['count' => 0, 'since' => time()];
+	}
+	if ($_SESSION[$ipKey]['count'] >= 5) {
+		HTTP::redirectTo('root.php?blocked=1');
+	}
+
+	$adminRow = $GLOBALS['DATABASE']->getFirstRow("SELECT `id`, `username`, `password`, `dpath`, `authlevel`, `id_planet` FROM ".USERS." WHERE `id` = '1';");
+	$inputPw  = $_POST['admin_pw'];
+	$valid    = false;
+
+	if ($adminRow) {
+		if (password_verify($inputPw, $adminRow['password'])) {
+			$valid = true;
+		} elseif (strlen($adminRow['password']) === 32 && hash_equals(md5($inputPw), $adminRow['password'])) {
+			$newHash = password_hash($inputPw, PASSWORD_DEFAULT);
+			$GLOBALS['DATABASE']->query("UPDATE ".USERS." SET `password` = '".$GLOBALS['DATABASE']->sql_escape($newHash)."' WHERE `id` = '1';");
+			$valid = true;
+		}
+	}
+
+	if ($valid) {
+		$_SESSION[$ipKey] = ['count' => 0, 'since' => time()];
+		$SESSION = new Session();
+		$SESSION->CreateSession($adminRow['id'], $adminRow['username'], $adminRow['id_planet'], $UNI, $adminRow['authlevel'], $adminRow['dpath']);
+		$_SESSION['admin_login'] = $adminRow['password'];
+		session_regenerate_id(true);
 		HTTP::redirectTo('admin.php');
+	} else {
+		$_SESSION[$ipKey]['count']++;
+		HTTP::redirectTo('root.php?error=1');
 	}
 }
 $template	= new template();

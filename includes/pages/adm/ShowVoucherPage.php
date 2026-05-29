@@ -9,19 +9,17 @@ function ShowVoucherPage()
 	
     $template = new template();
     
-    if($_GET['mode'] == 'delete' && !empty($_GET['i'])){
-        //delete an entry
-        $GLOBALS['DATABASE']->query("DELETE from `uni1_reward` where `rewardId` = ".$GLOBALS['DATABASE']->sql_escape($_GET['i'])." ;");
+    if(isset($_GET['mode']) && $_GET['mode'] === 'delete' && !empty($_GET['i'])){
+        $GLOBALS['DATABASE']->query("DELETE from `uni1_reward` where `rewardId` = ".(int)$_GET['i']." ;");
         $template->message("Voucher Code deleted");
         die();
     }
     if($_POST){
-        $SQL = "";
-        foreach($_POST as $key => $value){
-            $SQL .= "'".$value."',";
-        }
-        $SQL = substr($SQL,0,-1);
-        $GLOBALS['DATABASE']->query("INSERT INTO `uni1_reward` VALUES (NULL,".$SQL.");");
+        $code    = $GLOBALS['DATABASE']->sql_escape(HTTP::_GP('code',    '', true));
+        $type    = (int) HTTP::_GP('type',    0);
+        $value   = (int) HTTP::_GP('value',   0);
+        $maxUses = (int) HTTP::_GP('maxUses', 1);
+        $GLOBALS['DATABASE']->query("INSERT INTO `uni1_reward` VALUES (NULL,'".$code."',".$type.",".$value.",".$maxUses.");");
         $template->message("Voucher Added");
         die();
     }

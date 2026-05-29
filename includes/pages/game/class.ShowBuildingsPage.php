@@ -414,10 +414,10 @@ class ShowBuildingsPage extends AbstractPage
 				$alliance_prod	                = $alliance_prod;
 				
 				$BuildLevel	= $PLANET[$resource[$Element]];
-				$Need		= round(eval(ResourceUpdate::getProd($ProdGrid[$Element]['production'][911])));
-									
+				$Need		= round(ResourceUpdate::safeEval($ProdGrid[$Element]['production'][911]));
+
 				$BuildLevel	= $levelToBuild + 1;
-				$Prod		= round(eval(ResourceUpdate::getProd($ProdGrid[$Element]['production'][911])));
+				$Prod		= round(ResourceUpdate::safeEval($ProdGrid[$Element]['production'][911]));
 					
 				$requireEnergy	= $Prod - $Need;
 				
