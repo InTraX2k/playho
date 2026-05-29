@@ -1,48 +1,38 @@
 <?php
 
-// Your Database Connection Details
-$host = 'localhost';
-$db_name = '';
-$db_user = ''; 
-$db_password = '';
+define('ROOT_PATH', str_replace('\\', '/', dirname(__FILE__)) . '/');
+set_include_path(ROOT_PATH);
+require('includes/common.php');
 
-mysql_connect($host, $db_user, $db_password);
-mysql_select_db($db_name);
-function _VoteReward($custom) {
-        // Make userid safe to use in query
-        $userId = mysql_real_escape_string($custom);
-		$timer = time();
-		$timer += 12 * 60 * 60; 
-		$timerreal = time();
-   
-        // Check if that user voted already
-        // Adjust this query to match your table, column names etc
-        $voted = mysql_fetch_array(mysql_query("SELECT v1 FROM uni1_users WHERE id = '".$userId."'"));
-        if($voted['v1'] < $timerreal) {
-           //  User has not voted, grant him reward, for example points
-            mysql_query("UPDATE `uni1_users` SET `darkmatter` = `darkmatter` + '40000', v1 = '".$timer."' WHERE `id` = '".mysql_escape_string($userId)."';");
-            mysql_query("INSERT INTO uni1_votesystem_log VALUES ('".mysql_escape_string($userId)."','".$timer."','1', '1') ;");
-        }
-        else {
-            // Do whatever you want if he voted already. Maybe a log of false votes
-        }
-
-    
-
+// Enforce caller IP whitelist — only the vote platform may call this endpoint
+$ipsWhitelist = []; // add trusted IPs here, e.g. '1.2.3.4'
+$callerIp = $_SERVER['REMOTE_ADDR'];
+if (!in_array($callerIp, $ipsWhitelist, true)) {
+    exit;
 }
-//-------------------------- Don't change anything below this! ----------------------------- //
 
-$custom   = $_POST['custom'];
-$result = false;
-if ($custom > 0)
-{ 
-_VoteReward($custom);
-$result = true;
+function _VoteReward($custom): void {
+    $userId    = (int) $custom;
+    $timer     = time() + 12 * 60 * 60;
+    $timerReal = time();
+
+    $sth = $GLOBALS['DATABASE']->prepare("SELECT v1 FROM uni1_users WHERE id = ?");
+    $sth->execute([$userId]);
+    $voted = $sth->fetch(PDO::FETCH_ASSOC);
+
+    if ($voted && $voted['v1'] < $timerReal) {
+        $GLOBALS['DATABASE']->prepare(
+            "UPDATE `uni1_users` SET `darkmatter` = `darkmatter` + 40000, v1 = ? WHERE `id` = ?"
+        )->execute([$timer, $userId]);
+        $GLOBALS['DATABASE']->prepare(
+            "INSERT INTO uni1_votesystem_log VALUES (?, ?, '1', '1')"
+        )->execute([$userId, $timer]);
+    }
 }
-if ($result) {
+
+$custom = isset($_POST['custom']) ? (int)$_POST['custom'] : 0;
+if ($custom > 0) {
+    _VoteReward($custom);
     echo 'OK';
 }
-//Close Connection
-mysql_close();
-
 ?>

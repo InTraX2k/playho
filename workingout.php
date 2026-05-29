@@ -1,110 +1,85 @@
 <?php
 
-#Example PHP Postback Script
+// Load credentials from environment — never hardcode in source files.
+$host        = getenv('ALLOPASS_DB_HOST') ?: 'localhost';
+$db_name     = getenv('ALLOPASS_DB_NAME') ?: '';
+$db_user     = getenv('ALLOPASS_DB_USER') ?: '';
+$db_password = getenv('ALLOPASS_DB_PASS') ?: '';
 
-// Your Database Connection Details
-$host = 'localhost';
-$db_name = '';
-$db_user = ''; 
-$db_password = '';
-
-
-mysql_connect($host, $db_user, $db_password);
-mysql_select_db($db_name);
-function pretty_number($n, $dec = 0)
-{
-	return number_format(floattostring($n, $dec), $dec, ',', '.');
-}
-function floattostring($Numeric, $Pro = 0, $Output = false){
-	return ($Output) ? str_replace(",",".", sprintf("%.".$Pro."f", $Numeric)) : sprintf("%.".$Pro."f", $Numeric);
-}
-function SendSimpleMessage($Owner, $Sender, $Time, $Type, $From, $Subject, $Message)
-{
-			
-	$SQL	= "INSERT INTO uni1_messages SET 
-	message_owner = ".(int) $Owner.", 
-	message_sender = ".(int) $Sender.", 
-	message_time = ".(int) $Time.", 
-	message_type = ".(int) $Type.", 
-	message_from = '". $From ."', 
-	message_subject = '". $Subject ."', 
-	message_text = '".$Message."', 
-	message_unread = '1', 
-	message_universe = '1';";
-	$SQ	= "INSERT INTO uni1_messages_copy SET 
-	message_owner = ".(int) $Owner.", 
-	message_sender = ".(int) $Sender.", 
-	message_time = ".(int) $Time.", 
-	message_type = ".(int) $Type.", 
-	message_from = '". $From ."', 
-	message_subject = '". $Subject ."', 
-	message_text = '".$Message."', 
-	message_unread = '1', 
-	message_universe = '1';";
-
-	mysql_query($SQL);
-	mysql_query($SQ);
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8mb4", $db_user, $db_password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    exit('DB connection failed');
 }
 
-function _rewardPurchase($userId, $pay, $realpay, $received, $credits, $type, $transac, $code, $timer) {
-
-    
-
-// Make userid safe to use in query
-$userId = mysql_real_escape_string($userId);
-$timer = time();
-$INFO1        = mysql_query("SELECT * FROM `uni1_users` WHERE `id` = ".mysql_escape_string($userId).";");   
-				
-if($INFO1['lp_points'] >= 0)
-{$tex = 1;}
-elseif($INFO1['lp_points'] >= 125)
-{$tex = 2;}
-elseif($INFO1['lp_points'] >= 625)
-{$tex = 4;}
-elseif($INFO1['lp_points'] >= 2500)
-{$tex = 6;}
-elseif($INFO1['lp_points'] >= 7000)
-{$tex = 8;}
-   
-mysql_query("UPDATE `uni1_users` SET `lp_points` = `lp_points` + ".($mc_gross * $tex).", `antimatter` = `antimatter` + '".$credits."' WHERE `id` = '".mysql_escape_string($userId)."';");
-mysql_query("INSERT INTO `uni1_allopass_log` VALUES ('', '".mysql_escape_string($userId)."', '".mysql_escape_string($code)."', '".mysql_escape_string($credits)."','".mysql_escape_string($type)."', '".mysql_escape_string($transac)."', '".mysql_escape_string($pay)."', '".mysql_escape_string($realpay)."', '".mysql_escape_string($received)."',  '".$timer."', '1');");
-if($INFO1['ref_id'] != 0){
-mysql_query("UPDATE `uni1_users` SET `antimatter` = `antimatter` + ".($INFO['amount'] / 100 * 5)." WHERE `id` = '".$INFO1['ref_id']."';");
-SendSimpleMessage($INFO1['ref_id'], '', TIMESTAMP, 4, 'System', 'Anti Matter Order', 'Referal PayPal payment was successful. <br>'.pretty_number($INFO['amount'] / 100 * 5).' anti matter have been credited to your account.');
-}        
-SendSimpleMessage(mysql_escape_string($userId), '', $timer, 4, 'System', 'Anti Matter Order', 'Allopass payment was successful. <br>'.pretty_number($credits + ($credits / 100 * $text)).' Anti Matter Units have been credited to your account');
-				//Admin Message
-SendSimpleMessage(1, '', $timer, 4, 'System', 'Anti Matter Order', 'Allopass payment was successful. <br>'.pretty_number($credits + ($credits / 100 * $text)).' Anti Matter Units have been credited to '.$userId.'');
-    
-
+function pretty_number($n, $dec = 0) {
+    return number_format(floattostring($n, $dec), $dec, ',', '.');
+}
+function floattostring($Numeric, $Pro = 0, $Output = false) {
+    return ($Output)
+        ? str_replace(',', '.', sprintf('%.' . $Pro . 'f', $Numeric))
+        : sprintf('%.' . $Pro . 'f', $Numeric);
 }
 
-//-------------------------- Don't change anything below this! ----------------------------- //
+function SendSimpleMessage(PDO $pdo, $Owner, $Sender, $Time, $Type, $From, $Subject, $Message) {
+    $params = [(int)$Owner, (int)$Sender, (int)$Time, (int)$Type, $From, $Subject, $Message];
+    $sql = "INSERT INTO uni1_messages
+        SET message_owner=?, message_sender=?, message_time=?, message_type=?,
+            message_from=?, message_subject=?, message_text=?,
+            message_unread='1', message_universe='1'";
+    $pdo->prepare($sql)->execute($params);
+    $pdo->prepare(str_replace('uni1_messages', 'uni1_messages_copy', $sql))->execute($params);
+}
 
-$userId = isset($_GET['user_id']) ? $_GET['user_id'] : null;
-$pay = isset($_GET['amount']) ? $_GET['amount'] : null;
-$realpay = isset($_GET['paid']) ? $_GET['paid'] : null;
-$received = isset($_GET['payout_amount']) ? $_GET['payout_amount'] : null;
-$credits = isset($_GET['virtual_amount']) ? $_GET['virtual_amount'] : null;
-$type = isset($_GET['type']) ? $_GET['type'] : null;
-$transac = isset($_GET['transaction_id']) ? $_POST['transaction_id'] : null;
-$code = isset($_GET['code']) ? $_GET['code'] : null;
-$timer = time();
-$result = false;
+function _rewardPurchase(PDO $pdo, $userId, $pay, $realpay, $received, $credits, $type, $transac, $code, $timer) {
+    $userId  = (int) $userId;
+    $credits = (int) $credits;
+    $timer   = time();
+
+    $sth = $pdo->prepare("SELECT * FROM `uni1_users` WHERE `id` = ?");
+    $sth->execute([$userId]);
+    $INFO1 = $sth->fetch(PDO::FETCH_ASSOC);
+    if (!$INFO1) return;
+
+    if     ($INFO1['lp_points'] >= 7000) { $tex = 8; }
+    elseif ($INFO1['lp_points'] >= 2500) { $tex = 6; }
+    elseif ($INFO1['lp_points'] >= 625)  { $tex = 4; }
+    elseif ($INFO1['lp_points'] >= 125)  { $tex = 2; }
+    else                                  { $tex = 1; }
+
+    $sth = $pdo->prepare("UPDATE `uni1_users` SET `lp_points` = `lp_points` + ?, `antimatter` = `antimatter` + ? WHERE `id` = ?");
+    $sth->execute([$credits * $tex, $credits, $userId]);
+
+    $sth = $pdo->prepare("INSERT INTO `uni1_allopass_log` VALUES ('', ?, ?, ?, ?, ?, ?, ?, ?, ?, '1')");
+    $sth->execute([$userId, $code, $credits, $type, $transac, $pay, $realpay, $received, $timer]);
+
+    if (!empty($INFO1['ref_id'])) {
+        $refBonus = (int)($credits / 100 * 5);
+        $pdo->prepare("UPDATE `uni1_users` SET `antimatter` = `antimatter` + ? WHERE `id` = ?")->execute([$refBonus, (int)$INFO1['ref_id']]);
+        SendSimpleMessage($pdo, (int)$INFO1['ref_id'], 0, $timer, 4, 'System', 'Anti Matter Order',
+            'Referral payment was successful. <br>' . pretty_number($refBonus) . ' anti matter have been credited to your account.');
+    }
+
+    $bonus = pretty_number($credits + (int)($credits / 100 * $tex));
+    SendSimpleMessage($pdo, $userId, 0, $timer, 4, 'System', 'Anti Matter Order',
+        'Allopass payment was successful. <br>' . $bonus . ' Anti Matter Units have been credited to your account');
+    SendSimpleMessage($pdo, 1, 0, $timer, 4, 'System', 'Anti Matter Order',
+        'Allopass payment was successful. <br>' . $bonus . ' Anti Matter Units have been credited to ' . $userId);
+}
+
+// Main
+$userId   = $_GET['user_id']       ?? null;
+$pay      = $_GET['amount']        ?? null;
+$realpay  = $_GET['paid']          ?? null;
+$received = $_GET['payout_amount'] ?? null;
+$credits  = $_GET['virtual_amount']?? null;
+$type     = $_GET['type']          ?? null;
+$transac  = $_GET['transaction_id']?? null;
+$code     = $_GET['code']          ?? null;
 
 if (isset($code)) {
-
-        $result = true;
-        _rewardPurchase($userId, $pay, $realpay, $received, $credits, $type, $transac, $code, $timer);
-    
-
-}
-
-if ($result) {
+    _rewardPurchase($pdo, $userId, $pay, $realpay, $received, $credits, $type, $transac, $code, time());
     echo 'OK';
 }
-
-//Close Connection
-mysql_close();
-
 ?>
