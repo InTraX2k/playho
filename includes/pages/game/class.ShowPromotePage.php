@@ -44,11 +44,13 @@ class ShowPromotePage extends AbstractPage
                 } else {
 					
                     header("Location: " . $link);
+                exit;
                 }
             } else {
 				// $USER['bonus_point'] += $cautare['prize'];
                 
                 header("Location: " . $link);
+                exit;
             }
         
                }

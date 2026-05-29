@@ -56,7 +56,7 @@ function ShowRightsPage()
 				}
 				
 				$Rights	= $GLOBALS['DATABASE']->getFirstRow("SELECT rights FROM ".USERS." WHERE `id` = '".$id."';");
-				if(($Rights['rights'] = unserialize($Rights['rights'])) === false) {
+				if(($Rights['rights'] = unserialize($Rights['rights'], ["allowed_classes" => false])) === false) {
 					$Rights['rights']	= array();
 				}
 				

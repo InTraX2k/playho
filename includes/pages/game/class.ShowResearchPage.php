@@ -45,7 +45,7 @@ class ShowResearchPage extends AbstractPage
 			
 		
 			
-			$CurrentQueue  = unserialize($USER['b_tech_queue']);
+			$CurrentQueue  = unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 		$Element             	= $CurrentQueue[0][0];
 		$Element1             	= $USER['b_tech_id'];
 		
@@ -74,7 +74,7 @@ class ShowResearchPage extends AbstractPage
 		if ($PLANET['b_building'] == 0)
 			return true;
 			
-		$CurrentQueue		= unserialize($PLANET['b_building_id']);
+		$CurrentQueue		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 		foreach($CurrentQueue as $ListIDArray) {
 			if($ListIDArray[0] == 6 || $ListIDArray[0] == 31)
 				return false;
@@ -86,7 +86,7 @@ class ShowResearchPage extends AbstractPage
 	private function CancelBuildingFromQueue()
 	{
 		global $PLANET, $USER, $resource;
-		$CurrentQueue  = unserialize($USER['b_tech_queue']);
+		$CurrentQueue  = unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 		if (empty($CurrentQueue) || empty($USER['b_tech']))
 		{
 			$USER['b_tech_queue']	= '';
@@ -171,7 +171,7 @@ class ShowResearchPage extends AbstractPage
 	{
 		global $USER, $PLANET, $resource;
 		
-		$CurrentQueue  = unserialize($USER['b_tech_queue']);
+		$CurrentQueue  = unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 		if ($QueueID <= 1 || empty($CurrentQueue))
 			return;
 			
@@ -241,7 +241,7 @@ class ShowResearchPage extends AbstractPage
 		)
 			return;
 			
-		$CurrentQueue  		= unserialize($USER['b_tech_queue']);
+		$CurrentQueue  		= unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 		
 		if (!empty($CurrentQueue)) {
 			$ActualCount   	= count($CurrentQueue);
@@ -314,7 +314,7 @@ class ShowResearchPage extends AbstractPage
 		if ($USER['b_tech'] == 0)
 		return array('queue' => $scriptData, 'quickinfo' => $quickinfo);
 		
-		$CurrentQueue   = unserialize($USER['b_tech_queue']);
+		$CurrentQueue   = unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 		
 		foreach($CurrentQueue as $BuildArray) {
 			if ($BuildArray[3] < TIMESTAMP)

@@ -13,21 +13,8 @@ class AJAXChatDataBase {
 	var $_db;
 
 	function __construct(&$dbConnectionConfig) {
-		switch($dbConnectionConfig['type']) {
-			case 'mysqli':
-				$this->_db = new AJAXChatDataBaseMySQLi($dbConnectionConfig);
-				break;
-			case 'mysql':
-				$this->_db = new AJAXChatDataBaseMySQL($dbConnectionConfig);
-				break;
-			default:
-				// Use MySQLi if available, else MySQL (and check the type of a given database connection object):
-				if(function_exists('mysqli_connect') && (!$dbConnectionConfig['link'] || is_object($dbConnectionConfig['link']))) {
-					$this->_db = new AJAXChatDataBaseMySQLi($dbConnectionConfig);
-				} else {
-					$this->_db = new AJAXChatDataBaseMySQL($dbConnectionConfig);	
-				}
-		}
+		// mysql_* extension removed in PHP 7.0 — always use MySQLi
+		$this->_db = new AJAXChatDataBaseMySQLi($dbConnectionConfig);
 	}
 	
 	// Method to connect to the DataBase server:

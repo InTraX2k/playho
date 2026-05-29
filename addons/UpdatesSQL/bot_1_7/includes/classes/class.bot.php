@@ -534,7 +534,7 @@ class Bot
 	
 	function GetBuildQueueInfo()
 	{
-		$CurrentQueue  = unserialize($this->PLANET['b_building_id']);
+		$CurrentQueue  = unserialize($this->PLANET['b_building_id'], ["allowed_classes" => false]);
 
 		if (!empty($CurrentQueue))
 			return count($CurrentQueue);
@@ -609,7 +609,7 @@ class Bot
 	
 	function GetTechQueueInfo()
 	{
-        $CurrentQueue  = unserialize($this->USER['b_tech_queue']);
+        $CurrentQueue  = unserialize($this->USER['b_tech_queue'], ["allowed_classes" => false]);
 
 		if (!empty($CurrentQueue))
 			return count($CurrentQueue);
@@ -699,7 +699,7 @@ class Bot
 
 	function GetHangerQueueInfo()
 	{
-		$CurrentQueue  = unserialize($this->PLANET['b_hangar_id']);
+		$CurrentQueue  = unserialize($this->PLANET['b_hangar_id'], ["allowed_classes" => false]);
 
 		if (!empty($CurrentQueue))
 			return count($CurrentQueue);

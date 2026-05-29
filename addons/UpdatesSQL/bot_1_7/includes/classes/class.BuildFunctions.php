@@ -245,7 +245,7 @@ class BuildFunctions
 			}
 		}
 		
-		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id']) : array();
+		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]) : array();
 		$MaxMissiles   		= $PLANET[$resource[44]] * 10 * max(Config::get('silo_factor'), 1);
 
 		foreach($BuildArray as $ElementArray) {
@@ -293,7 +293,7 @@ class BuildFunctions
         )
             return;
 
-        $CurrentQueue  		= unserialize($PLANET['b_building_id']);
+        $CurrentQueue  		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 
 
         if (!empty($CurrentQueue)) {
@@ -382,7 +382,7 @@ class BuildFunctions
             $Count 			= max(min($Count, Config::get('max_fleet_per_build')), 0);
             $Count 			= min($Count, $MaxElements);
 
-            $BuildArray    	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id']) : array();
+            $BuildArray    	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]) : array();
             if (in_array($Element, $reslist['missile']))
             {
                 $MaxMissiles		= BuildFunctions::getMaxConstructibleRockets($USER, $PLANET, $Missiles);
@@ -426,7 +426,7 @@ class BuildFunctions
         if ($PLANET['b_building'] == 0)
             return true;
 
-        $CurrentQueue		= unserialize($PLANET['b_building_id']);
+        $CurrentQueue		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
         foreach($CurrentQueue as $ListIDArray) {
             if($ListIDArray[0] == 6 || $ListIDArray[0] == 31)
                 return false;
@@ -447,7 +447,7 @@ class BuildFunctions
             return;
         }
 
-        $CurrentQueue  		= unserialize($USER['b_tech_queue']);
+        $CurrentQueue  		= unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 
         if (!empty($CurrentQueue)) {
             $ActualCount   	= count($CurrentQueue);

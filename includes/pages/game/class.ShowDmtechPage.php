@@ -42,7 +42,7 @@ class ShowDmtechPage extends AbstractPage
 		if ($PLANET['b_building'] == 0)
 			return true;
 			
-		$CurrentQueue		= unserialize($PLANET['b_building_id']);
+		$CurrentQueue		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 		foreach($CurrentQueue as $ListIDArray) {
 			if($ListIDArray[0] == 6 || $ListIDArray[0] == 31)
 				return false;
@@ -61,7 +61,7 @@ class ShowDmtechPage extends AbstractPage
 		)
 			return;
 			
-		$CurrentQueue  		= unserialize($USER['b_tech_queue']);
+		$CurrentQueue  		= unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 		
 		if (!empty($CurrentQueue)) {
 			$ActualCount   	= count($CurrentQueue);
@@ -96,7 +96,7 @@ class ShowDmtechPage extends AbstractPage
 		if ($USER['b_tech'] == 0)
 		return array('queue' => $scriptData, 'quickinfo' => $quickinfo);
 		
-		$CurrentQueue   = unserialize($USER['b_tech_queue']);
+		$CurrentQueue   = unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 		
 		foreach($CurrentQueue as $BuildArray) {
 			if ($BuildArray[3] < TIMESTAMP)

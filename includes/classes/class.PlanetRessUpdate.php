@@ -515,7 +515,7 @@ class ResourceUpdate
 	{
 		global $resource;
 
-		$BuildQueue 	= unserialize($this->PLANET['b_hangar_id']);
+		$BuildQueue 	= unserialize($this->PLANET['b_hangar_id'], ["allowed_classes" => false]);
 		if (!$BuildQueue) {
 			$this->PLANET['b_hangar'] = 0;
 			$this->PLANET['b_hangar_id'] = '';
@@ -590,7 +590,7 @@ class ResourceUpdate
 		if (empty($this->PLANET['b_building_id']) || $this->PLANET['b_building'] > $this->TIME)
 			return false;
 		
-		$CurrentQueue	= unserialize($this->PLANET['b_building_id']);
+		$CurrentQueue	= unserialize($this->PLANET['b_building_id'], ["allowed_classes" => false]);
 
 		$Element      	= $CurrentQueue[0][0];
 		$Level      	= $CurrentQueue[0][1];
@@ -639,7 +639,7 @@ class ResourceUpdate
 			return false;
 		}
 
-		$CurrentQueue 	= unserialize($this->PLANET['b_building_id']);
+		$CurrentQueue 	= unserialize($this->PLANET['b_building_id'], ["allowed_classes" => false]);
 		$Loop       	= true;
 		while ($Loop == true)
 		{
@@ -730,7 +730,7 @@ class ResourceUpdate
 		$this->USER[$resource[$this->USER['b_tech_id']]]	+= 1;
 	
 
-		$CurrentQueue	= unserialize($this->USER['b_tech_queue']);
+		$CurrentQueue	= unserialize($this->USER['b_tech_queue'], ["allowed_classes" => false]);
 		array_shift($CurrentQueue);		
 			
 		$this->USER['b_tech_id']		= 0;
@@ -759,7 +759,7 @@ class ResourceUpdate
 			return false;
 		}
 
-		$CurrentQueue 	= unserialize($this->USER['b_tech_queue']);
+		$CurrentQueue 	= unserialize($this->USER['b_tech_queue'], ["allowed_classes" => false]);
 		$Loop       	= true;
 		while ($Loop == true)
 		{

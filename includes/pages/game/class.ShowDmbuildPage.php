@@ -49,7 +49,7 @@ class ShowDmbuildPage extends AbstractPage
 		)
 			return;
 		
-		$CurrentQueue  		= unserialize($PLANET['b_building_id']);
+		$CurrentQueue  		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 
 				
 		if (!empty($CurrentQueue)) {
@@ -97,7 +97,7 @@ class ShowDmbuildPage extends AbstractPage
 		if ($PLANET['b_building'] == 0 || $PLANET['b_building_id'] == "")
 			return array('queue' => $scriptData, 'quickinfo' => $quickinfo);
 		
-		$buildQueue		= unserialize($PLANET['b_building_id']);
+		$buildQueue		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 		
 		foreach($buildQueue as $BuildArray) {
 			if ($BuildArray[3] < TIMESTAMP)

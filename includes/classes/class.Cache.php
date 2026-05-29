@@ -70,7 +70,7 @@ class Cache {
 		if($cacheData === false)
 			return false;
 			
-		$cacheData	= unserialize($cacheData);
+		$cacheData	= unserialize($cacheData, ["allowed_classes" => false]);
 		if($cacheData === false)
 			return false;
 		

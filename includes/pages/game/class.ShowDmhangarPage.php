@@ -63,7 +63,7 @@ class ShowDmhangarPage extends AbstractPage
 			$Count 			= max(min($Count, Config::get('max_fleet_per_build')), 0);
 			$Count 			= min($Count, $MaxElements);
 			
-			$BuildArray    	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id']) : array();
+			$BuildArray    	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]) : array();
 			
 			if($Element == 407 || $Element == 408 || $Element == 409 || $Element == 411)
 			continue;
@@ -110,7 +110,7 @@ class ShowDmhangarPage extends AbstractPage
 		$NotBuilding = true;
 		if (!empty($PLANET['b_building_id']))
 		{
-			$CurrentQueue 	= unserialize($PLANET['b_building_id']);
+			$CurrentQueue 	= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 			foreach($CurrentQueue as $ElementArray) {
 				if($ElementArray[0] == 21 || $ElementArray[0] == 15) {
 					$NotBuilding = false;
@@ -119,7 +119,7 @@ class ShowDmhangarPage extends AbstractPage
 			}
 		}
 		
-		$ElementQueue 	= unserialize($PLANET['b_hangar_id']);
+		$ElementQueue 	= unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]);
 		if(empty($ElementQueue))
 			$Count	= 0;
 		else
@@ -141,7 +141,7 @@ class ShowDmhangarPage extends AbstractPage
 		
 		
 		$elementInQueue	= array();
-		$ElementQueue 	= unserialize($PLANET['b_hangar_id']);
+		$ElementQueue 	= unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]);
 		$Buildlist		= array();
 		if(!empty($ElementQueue))
 		{

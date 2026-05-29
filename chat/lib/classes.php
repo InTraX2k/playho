@@ -10,8 +10,7 @@
 // Include Class libraries:
 require(AJAX_CHAT_PATH.'lib/class/AJAXChat.php');
 require(AJAX_CHAT_PATH.'lib/class/AJAXChatDataBase.php');
-require(AJAX_CHAT_PATH.'lib/class/AJAXChatMySQLDataBase.php');
-require(AJAX_CHAT_PATH.'lib/class/AJAXChatMySQLQuery.php');
+// mysql_* extension removed in PHP 7.0 — only load MySQLi classes
 require(AJAX_CHAT_PATH.'lib/class/AJAXChatMySQLiDataBase.php');
 require(AJAX_CHAT_PATH.'lib/class/AJAXChatMySQLiQuery.php');
 require(AJAX_CHAT_PATH.'lib/class/AJAXChatEncoding.php');

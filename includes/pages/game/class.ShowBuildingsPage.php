@@ -40,7 +40,7 @@ class ShowBuildingsPage extends AbstractPage
 	private function CancelBuildingFromQueue()
 	{
 		global $PLANET, $USER, $resource;
-		$CurrentQueue  = unserialize($PLANET['b_building_id']);
+		$CurrentQueue  = unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 		if (empty($CurrentQueue))
 		{
 			$PLANET['b_building_id']	= '';
@@ -102,7 +102,7 @@ class ShowBuildingsPage extends AbstractPage
             return false;
         }
 
-		$CurrentQueue  = unserialize($PLANET['b_building_id']);
+		$CurrentQueue  = unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 		$ActualCount   = count($CurrentQueue);
 		if($ActualCount <= 1) {
 			return $this->CancelBuildingFromQueue();
@@ -165,7 +165,7 @@ class ShowBuildingsPage extends AbstractPage
 		)
 			return;
 		
-		$CurrentQueue  		= unserialize($PLANET['b_building_id']);
+		$CurrentQueue  		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 		
 				
 		if (!empty($CurrentQueue)) {
@@ -253,7 +253,7 @@ class ShowBuildingsPage extends AbstractPage
 		if ($PLANET['b_building'] == 0 || $PLANET['b_building_id'] == "")
 			return array('queue' => $scriptData, 'quickinfo' => $quickinfo);
 		
-		$buildQueue		= unserialize($PLANET['b_building_id']);
+		$buildQueue		= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 		
 		foreach($buildQueue as $BuildArray) {
 			if ($BuildArray[3] < TIMESTAMP)

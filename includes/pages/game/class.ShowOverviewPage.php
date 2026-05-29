@@ -367,7 +367,7 @@ Alle inaktiven Monde sind voll mit Resourcen</span>';
 				continue;
 
 			if (!empty($CPLANET['b_building']) && $CPLANET['b_building'] > TIMESTAMP) {
-				$Queue				= unserialize($CPLANET['b_building_id']);
+				$Queue				= unserialize($CPLANET['b_building_id'], ["allowed_classes" => false]);
 				$BuildPlanet		= $LNG['tech'][$Queue[0][0]]." (".$Queue[0][1].")<br><span style=\"color:#7F7F7F;\">(".pretty_time($Queue[0][3] - TIMESTAMP).")</span>";
 			} else {
 				$BuildPlanet     = $LNG['ov_free'];
@@ -387,7 +387,7 @@ Alle inaktiven Monde sind voll mit Resourcen</span>';
 		}
 			
 		if ($PLANET['b_building'] - TIMESTAMP > 0) {
-			$Queue			= unserialize($PLANET['b_building_id']);
+			$Queue			= unserialize($PLANET['b_building_id'], ["allowed_classes" => false]);
 			$buildInfo['buildings']	= array(
 				'id'		=> $Queue[0][0],
 				'level'		=> $Queue[0][1],
@@ -403,7 +403,7 @@ Alle inaktiven Monde sind voll mit Resourcen</span>';
 		/* As FR#206 (http://tracker.2moons.cc/view.php?id=206), i added the shipyard and research status here, but i add not them the template. */
 		
 		if (!empty($PLANET['b_hangar_id'])) {
-			$Queue	= unserialize($PLANET['b_hangar_id']);
+			$Queue	= unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]);
 			$time	= BuildFunctions::getBuildingTime($USER, $PLANET, $Queue[0][0]) * $Queue[0][1];
 			$buildInfo['fleet']	= array(
 				'id'		=> $Queue[0][0],
@@ -418,7 +418,7 @@ Alle inaktiven Monde sind voll mit Resourcen</span>';
 		}
 		
 		if ($USER['b_tech'] - TIMESTAMP > 0) {
-			$Queue			= unserialize($USER['b_tech_queue']);
+			$Queue			= unserialize($USER['b_tech_queue'], ["allowed_classes" => false]);
 			$buildInfo['tech']	= array(
 				'id'		=> $Queue[0][0],
 				'level'		=> $Queue[0][1],
