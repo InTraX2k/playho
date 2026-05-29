@@ -9,83 +9,112 @@ $db_user     = getenv('IPN_DB_USER') ?: '';
 $db_password = getenv('IPN_DB_PASS') ?: '';
 
 
-mysql_connect($host, $db_user, $db_password);
-mysql_select_db($db_name);
-function pretty_number($n, $dec = 0)
-{
-	return number_format(floattostring($n, $dec), $dec, ',', '.');
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8mb4", $db_user, $db_password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    exit('DB connection failed');
 }
-function floattostring($Numeric, $Pro = 0, $Output = false){
-	return ($Output) ? str_replace(",",".", sprintf("%.".$Pro."f", $Numeric)) : sprintf("%.".$Pro."f", $Numeric);
+
+if (!function_exists('floattostring')) {
+    function floattostring($Numeric, $Pro = 0, $Output = false) {
+        return ($Output) ? str_replace(',', '.', sprintf('%.'.$Pro.'f', $Numeric)) : sprintf('%.'.$Pro.'f', $Numeric);
+    }
 }
+if (!function_exists('pretty_number')) {
+    function pretty_number($n, $dec = 0) {
+        return number_format((float)$n, $dec, ',', '.');
+    }
+}
+
 function SendSimpleMessage($Owner, $Sender, $Time, $Type, $From, $Subject, $Message)
 {
-	$From    = mysql_real_escape_string($From);
-	$Subject = mysql_real_escape_string($Subject);
-	$Message = mysql_real_escape_string($Message);
+    global $pdo;
 
-	$SQL	= "INSERT INTO uni1_messages SET
-	message_owner = ".(int) $Owner.",
-	message_sender = ".(int) $Sender.",
-	message_time = ".(int) $Time.",
-	message_type = ".(int) $Type.",
-	message_from = '". $From ."',
-	message_subject = '". $Subject ."',
-	message_text = '".$Message."',
-	message_unread = '1',
-	message_universe = '1';";
-	$SQ	= "INSERT INTO uni1_messages_copy SET
-	message_owner = ".(int) $Owner.",
-	message_sender = ".(int) $Sender.",
-	message_time = ".(int) $Time.",
-	message_type = ".(int) $Type.",
-	message_from = '". $From ."',
-	message_subject = '". $Subject ."',
-	message_text = '".$Message."',
-	message_unread = '1',
-	message_universe = '1';";
+    $SQL = "INSERT INTO uni1_messages SET
+    message_owner = :owner,
+    message_sender = :sender,
+    message_time = :time,
+    message_type = :type,
+    message_from = :from,
+    message_subject = :subject,
+    message_text = :message,
+    message_unread = '1',
+    message_universe = '1'";
+    $stmt = $pdo->prepare($SQL);
+    $stmt->execute([
+        ':owner'   => (int) $Owner,
+        ':sender'  => (int) $Sender,
+        ':time'    => (int) $Time,
+        ':type'    => (int) $Type,
+        ':from'    => $From,
+        ':subject' => $Subject,
+        ':message' => $Message,
+    ]);
 
-	mysql_query($SQL);
-	mysql_query($SQ);
+    $SQ = "INSERT INTO uni1_messages_copy SET
+    message_owner = :owner,
+    message_sender = :sender,
+    message_time = :time,
+    message_type = :type,
+    message_from = :from,
+    message_subject = :subject,
+    message_text = :message,
+    message_unread = '1',
+    message_universe = '1'";
+    $stmt2 = $pdo->prepare($SQ);
+    $stmt2->execute([
+        ':owner'   => (int) $Owner,
+        ':sender'  => (int) $Sender,
+        ':time'    => (int) $Time,
+        ':type'    => (int) $Type,
+        ':from'    => $From,
+        ':subject' => $Subject,
+        ':message' => $Message,
+    ]);
 }
 
 function _rewardPurchase($userId, $currency, $mc_gross) {
+    global $pdo;
 
-    
+    $userId   = (int) $userId;
+    $timer    = time();
+    $stmt     = $pdo->prepare("SELECT * FROM `uni1_users` WHERE `id` = :id");
+    $stmt->execute([':id' => $userId]);
+    $INFO1    = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Make userid safe to use in query
-$userId = mysql_real_escape_string($userId);
-$timer = time();
-$INFO1 = mysql_fetch_array(mysql_query("SELECT * FROM `uni1_users` WHERE `id` = ".(int)$userId.";"));
+    $mc_gross = (float) $mc_gross;
+    $currency = (int) $currency;
 
-$mc_gross = (float) $mc_gross;
-$currency = (int) $currency;
+    if ($INFO1['lp_points'] >= 7000) {
+        $tex = 8;
+    } elseif ($INFO1['lp_points'] >= 2500) {
+        $tex = 6;
+    } elseif ($INFO1['lp_points'] >= 625) {
+        $tex = 4;
+    } elseif ($INFO1['lp_points'] >= 125) {
+        $tex = 2;
+    } else {
+        $tex = 1;
+    }
 
-if($INFO1['lp_points'] >= 7000)
-{ $tex = 8; }
-elseif($INFO1['lp_points'] >= 2500)
-{ $tex = 6; }
-elseif($INFO1['lp_points'] >= 625)
-{ $tex = 4; }
-elseif($INFO1['lp_points'] >= 125)
-{ $tex = 2; }
-else
-{ $tex = 1; }
+    $upd = $pdo->prepare("UPDATE `uni1_users` SET `lp_points` = `lp_points` + :lp, `antimatter` = `antimatter` + :am WHERE `id` = :id");
+    $upd->execute([
+        ':lp' => $mc_gross * $tex,
+        ':am' => $currency,
+        ':id' => $userId,
+    ]);
 
-mysql_query("UPDATE `uni1_users` SET `lp_points` = `lp_points` + ".($mc_gross * $tex).", `antimatter` = `antimatter` + ".$currency." WHERE `id` = '".$userId."';");
-if(!empty($INFO1['ref_id'])){
-mysql_query("UPDATE `uni1_users` SET `antimatter` = `antimatter` + ".intval($currency / 100 * 5)." WHERE `id` = '".(int)$INFO1['ref_id']."';");
-SendSimpleMessage($INFO1['ref_id'], '', $timer, 4, 'System', 'Anti Matter Order', 'Referal PayPal payment was successful. <br>'.pretty_number($currency / 100 * 5).' anti matter have been credited to your account.');
-}
-SendSimpleMessage($userId, '', $timer, 4, 'System', 'Anti Matter Order', 'PayPal payment was successful. <br>'.pretty_number($currency).' anti matter have been credited to your account.');
-SendSimpleMessage(1, '', $timer, 4, 'System', 'Anti Matter Order', 'PayPal payment was successful. <br>'.pretty_number($currency).' Anti Matter Units have been credited to '.$userId.' account.');
-if(DEBUG == true) {
-error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
-}
-        
-
-    
-
+    if (!empty($INFO1['ref_id'])) {
+        $refUpd = $pdo->prepare("UPDATE `uni1_users` SET `antimatter` = `antimatter` + :am WHERE `id` = :id");
+        $refUpd->execute([
+            ':am' => intval($currency / 100 * 5),
+            ':id' => (int) $INFO1['ref_id'],
+        ]);
+        SendSimpleMessage($INFO1['ref_id'], '', $timer, 4, 'System', 'Anti Matter Order', 'Referal PayPal payment was successful. <br>'.pretty_number($currency / 100 * 5).' anti matter have been credited to your account.');
+    }
+    SendSimpleMessage($userId, '', $timer, 4, 'System', 'Anti Matter Order', 'PayPal payment was successful. <br>'.pretty_number($currency).' anti matter have been credited to your account.');
+    SendSimpleMessage(1, '', $timer, 4, 'System', 'Anti Matter Order', 'PayPal payment was successful. <br>'.pretty_number($currency).' Anti Matter Units have been credited to '.$userId.' account.');
 }
 
 //-------------------------- Don't change anything below this! ----------------------------- //
@@ -145,7 +174,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 $res = curl_exec($ch);
 if (curl_errno($ch) != 0) // cURL error
 {
-if(DEBUG == true) {	
+if(DEBUG == true) {
 error_log(date('[Y-m-d H:i e] '). "Can't connect to PayPal to validate IPN message: " . curl_error($ch) . PHP_EOL, 3, LOG_FILE);
 }
 curl_close($ch);
@@ -201,6 +230,6 @@ if ($result) {
 }
 
 //Close Connection
-mysql_close();
+$pdo = null;
 
 ?>

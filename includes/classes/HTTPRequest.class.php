@@ -55,7 +55,13 @@ class HTTPRequest
 				"Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4",
 			));
 			
-			$this->content	= curl_exec($this->ch);
+			curl_setopt($this->ch, CURLOPT_TIMEOUT, 10);
+			curl_setopt($this->ch, CURLOPT_CONNECTTIMEOUT, 5);
+			$result = curl_exec($this->ch);
+			if ($result === false) {
+				error_log('[HTTPRequest] curl_exec failed: ' . curl_error($this->ch));
+			}
+			$this->content = $result;
 			curl_close($this->ch);
 		}
 	}

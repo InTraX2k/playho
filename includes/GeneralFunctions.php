@@ -812,15 +812,11 @@ a,a:hover {
 </style>
 
 <span class="neg">'.$errorType[$errno].'</span>
-<p>Seems something went wrong! Copy paste this error and send via Support Ticket, so we can fix this issue.</p>
+<p>An internal error occurred. Please contact support via ticket and describe what you were doing.</p>
 
 		<p class="left">
-			<b>Issue: </b>'.$exception->getMessage().'<br>
-			<b>File: </b>'.$exception->getFile().' (Line '.$exception->getLine().')<br>
-			<b>URL: </b>'.PROTOCOL.HTTP_HOST.$_SERVER['REQUEST_URI'].'<br>
-			<b>PHP: Version </b>'.PHP_VERSION.' [ '.php_sapi_name().' ]<br>
-			<b>MySQL: </b>'.mysqli_get_client_info().'<br><br>
-			<b>Debug Track:</b><br>'.makebr(htmlspecialchars($exception->getTraceAsString())).'
+			<b>Error Reference:</b> '.substr(md5($exception->getMessage().$exception->getLine()), 0, 8).'<br>
+			<b>URL: </b>'.htmlspecialchars(PROTOCOL.HTTP_HOST.$_SERVER['REQUEST_URI']).'<br>
 		</p>
 
 		<div class="menu">

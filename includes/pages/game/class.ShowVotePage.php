@@ -44,13 +44,14 @@ class ShowVotePage extends AbstractPage
 			$GLOBALS['DATABASE']->query("UPDATE ".USERS." SET vcount = vcount + '1' WHERE id = ".$USER['id']." ;");
 			$GLOBALS['DATABASE']->query("UPDATE `uni1_votesystem_log` set `time` = '".TIMESTAMP."' where `user_id` = ".$USER['id']." AND `vote_system_id` = ".$vote_id." ;");
 			header("Location: ".$cautare['link']);
+			exit;
 		}
 	}else{
 		/*============> nu a votat pe noul sistem , si ii punem insert <==============*/
-		//$GLOBALS['DATABASE']->query("Update ".USERS." set `darkmatter` = `darkmatter` + ".$cautare['prize']." where `id` = '".$USER['id']."' ; ");
 		$USER['darkmatter'] += $cautare['prize'];
 		$GLOBALS['DATABASE']->query("INSERT INTO `uni1_votesystem_log` VALUES (".$USER['id'].", ".TIMESTAMP.", ".$vote_id.")");
 			header("Location: ".$cautare['link']);
+			exit;
 	}
 }
 		

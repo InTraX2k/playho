@@ -53,7 +53,8 @@ class TickerCronJob
 		$f = fopen("tickercronjob.txt", "w");
 		fwrite($f, $content);
 		fclose($f);
-		while ((TIMESTAMP >= $horainicio) and (TIMESTAMP - $tick_last_time > 3599)){
+		$maxIterations = 100;
+		while ($maxIterations-- > 0 && (TIMESTAMP >= $horainicio) and (TIMESTAMP - $tick_last_time > 3599)){
 					
 				$GLOBALS['DATABASE']->query("UPDATE ".CONFIG." SET `tick` = `tick` + 1, `tick_last_time` = `tick_last_time` + 3600;");
 				$tick_last_time = $tick_last_time + 3600;

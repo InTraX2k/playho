@@ -1349,7 +1349,7 @@ class BBCode extends StringParser {
 			return !$result;
 		}
 		$attributes = array_keys ($this->_topNodeVar ('_attributes'));
-		$p = @$this->_codes[$name]['callback_params']['usecontent_param'];
+		$p = $this->_codes[$name]['callback_params']['usecontent_param'] ?? null;
 		if (is_array ($p)) {
 			foreach ($p as $param) {
 				if (in_array ($param, $attributes)) {

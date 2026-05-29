@@ -273,6 +273,7 @@ class BuildFunctions
 		$GetAllPrice = $GLOBALS['DATABASE']->query("SELECT dmprice FROM `uni1_vars` WHERE elementID = ".$Element." ;");
 		$GetAllPrice = $GLOBALS['DATABASE']->fetch_array($GetAllPrice);
 		$AllPrice = $GetAllPrice['dmprice'];
+		if (empty($AllPrice) || (int)$AllPrice <= 0) return 0;
 		$maxElement[]	= floor($USER['darkmatter'] / $AllPrice);
 		return min($maxElement);
 	}
@@ -312,12 +313,12 @@ class BuildFunctions
 	{
 		global $resource, $reslist;
 		if(!isset($Domes))
-		{		
-		$Domes	= array();
-		foreach($Domes as $elementID)
 		{
-		$Domes[$elementID]	= $PLANET[$resource[$elementID]];
-		}
+			$Domes = array(
+				407 => (int)($PLANET[$resource[407]] ?? 0),
+				408 => (int)($PLANET[$resource[408]] ?? 0),
+				409 => (int)($PLANET[$resource[409]] ?? 0),
+			);
 		}
 		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]) : array();
 		$MaxDomes   		= 25 + getbonusOneBis(1108,$USER['academy_1208']);
@@ -339,12 +340,10 @@ class BuildFunctions
 	{
 		global $resource, $reslist;
 		if(!isset($Orbits))
-		{		
-		$Orbits	= array();
-		foreach($Orbits as $elementID)
 		{
-		$Orbits[$elementID]	= $PLANET[$resource[$elementID]];
-		}
+			$Orbits = array(
+				411 => (int)($PLANET[$resource[411]] ?? 0),
+			);
 		}
 		$BuildArray  	  	= !empty($PLANET['b_hangar_id']) ? unserialize($PLANET['b_hangar_id'], ["allowed_classes" => false]) : array();
 		$MaxOrbits   		= 250 + getbonusOneBis(1309,$USER['academy_1309']);

@@ -56,7 +56,7 @@ if (isset($code)) {
 				$string_t .= $this->genToken(5,false)."-";
 			}
 			$string_t = substr($string_t,0,-1);
-			$GLOBALS['DATABASE']->query("INSERT INTO `uni1_allopass_log` VALUES ('".$orderid."', '".mysql_escape_string($userId)."', '".mysql_escape_string($code)."', '0','error', '".$string_t."', '0', '0', '0',  '".$timer."', '2')");
+			$GLOBALS['DATABASE']->query("INSERT INTO `uni1_allopass_log` VALUES ('".$orderid."', '".(int)$userId."', '".$GLOBALS['DATABASE']->sql_escape($code)."', '0','error', '".$string_t."', '0', '0', '0',  '".$timer."', '2')");
 }
 
 $query = $GLOBALS['DATABASE']->query("SELECT orderid FROM `uni1_allopass_log` where `code` = '".$code."' ;");

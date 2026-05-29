@@ -45,6 +45,8 @@ function calculateAttack(&$attackers, &$defenders, $FleetTF, $DefTF)
 		}
 	}
 
+	$STARTDEF = array();
+
 	foreach($CombatCaps as $e => $arr) {
 		if(!isset($arr['sd'])) continue;
 		
@@ -295,7 +297,12 @@ function calculateAttack(&$attackers, &$defenders, $FleetTF, $DefTF)
 						foreach($defArray as $fID => $rfdef) {
 							if(empty($rfdef[$shooter]['att']) || $attackAmount[$fleetID] <= 0) continue;
 
-							$defender_moc += $rfdef[$shooter]['att'] * $shots / ($amount / $attackAmount[$fleetID] * $attackPct[$fleetID]);
+							$rfDivisor = ($attackAmount[$fleetID] > 0 && $attackPct[$fleetID] > 0)
+								? ($amount / $attackAmount[$fleetID] * $attackPct[$fleetID])
+								: 0;
+							if ($rfDivisor > 0) {
+								$defender_moc += $rfdef[$shooter]['att'] * $shots / $rfDivisor;
+							}
 							$defenseAmount['total'] += $defenders[$fID]['unit'][$shooter] * $shots;
 						}
 					}
@@ -310,25 +317,25 @@ function calculateAttack(&$attackers, &$defenders, $FleetTF, $DefTF)
 				{
 					if ($defenseAmount[$fID] <= 0 ) continue;
 					//------CV
-					if(empty($defenders[$fID]['academy_1109']))
+					if(empty($defenders[$fID]['player']['academy_1109']))
 					{$CV = 0;}
 					else
-					{$CV += $defensePct[$fID] + getbonusOneBis(1109,$defenders['academy_1109']);}
+					{$CV += $defensePct[$fID] + getbonusOneBis(1109,$defenders[$fID]['player']['academy_1109']);}
 					//------CR
-					if(empty($defenders[$fID]['academy_1110']))					
+					if(empty($defenders[$fID]['player']['academy_1110']))
 					{$CR += 1;}
 					else
-					{$CR += $defensePct[$fID] * rand(1,(getbonusOneBis(1110,$defenders['academy_1110'])));}
+					{$CR += $defensePct[$fID] * rand(1,(getbonusOneBis(1110,$defenders[$fID]['player']['academy_1110'])));}
 					//------max destruction
-					if(empty($defenders[$fID]['academy_1108']))
+					if(empty($defenders[$fID]['player']['academy_1108']))
 					{$Max_dex += 0;}
 					else
-					{$Max_dex += $defensePct[$fID] * (getbonusOneBis(1108,$defenders['academy_1108']));}
+					{$Max_dex += $defensePct[$fID] * (getbonusOneBis(1108,$defenders[$fID]['player']['academy_1108']));}
 					//------skil_fcus
-					if(empty($defenders[$fID]['skil_fcus']))
+					if(empty($defenders[$fID]['player']['skil_fcus']))
 					{$Fcus -= 0;}
 					else
-					{$Fcus -= $defensePct[$fID] * ((getbonusOneBis(1111,$defenders['academy_1111'])));}
+					{$Fcus -= $defensePct[$fID] * ((getbonusOneBis(1111,$defenders[$fID]['player']['academy_1111'])));}
 				} 
 				
 				$defenderAttack	+= $defender_moc;
@@ -352,7 +359,10 @@ function calculateAttack(&$attackers, &$defenders, $FleetTF, $DefTF)
 				$attacker_shield += min($attArray[$fleetID][$element]['def'], $defender_moc);
 				$defender_moc 	 -= min($attArray[$fleetID][$element]['def'], $defender_moc);
 
-				$ile_removePoints = max(min($max_removePoints, $amount * min($defender_moc / $attArray[$fleetID][$element]['shield'] * (rand(0, 200) / 100), 1)), 0);
+				$attShield = $attArray[$fleetID][$element]['shield'] ?? 0;
+				$ile_removePoints = ($attShield > 0)
+					? max(min($max_removePoints, $amount * min($defender_moc / $attShield * (rand(0, 200) / 100), 1)), 0)
+					: 0;
 
 				$attacker_n[$fleetID][$element] = max(ceil($amount - $ile_removePoints), 0);
 			}
@@ -391,25 +401,25 @@ function calculateAttack(&$attackers, &$defenders, $FleetTF, $DefTF)
 				{
 					if ($attackAmount[$fID] <= 0 ) continue;
 					//------CV
-					if(empty($attackers[$fID]['academy_1109']))
+					if(empty($attackers[$fID]['player']['academy_1109']))
 					{$CV = 0;}
 					else
-					{$CV += $attackPct[$fID] + getbonusOneBis(1109,$attackers['academy_1109']);}
+					{$CV += $attackPct[$fID] + getbonusOneBis(1109,$attackers[$fID]['player']['academy_1109']);}
 					//------CR
-					if(empty($attackers[$fID]['academy_1110']))					
+					if(empty($attackers[$fID]['player']['academy_1110']))
 					{$CR += 1;}
 					else
-					{$CR += $attackPct[$fID] * rand(1,(getbonusOneBis(1110,$attackers['academy_1110'])));}
+					{$CR += $attackPct[$fID] * rand(1,(getbonusOneBis(1110,$attackers[$fID]['player']['academy_1110'])));}
 					//------max destruction
-					if(empty($attackers[$fID]['academy_1108']))
+					if(empty($attackers[$fID]['player']['academy_1108']))
 					{$Max_dex += 0;}
 					else
-					{$Max_dex += $attackPct[$fID] * (getbonusOneBis(1108,$attackers['academy_1108']));}
+					{$Max_dex += $attackPct[$fID] * (getbonusOneBis(1108,$attackers[$fID]['player']['academy_1108']));}
 					//------skil_fcus
-					if(empty($attackers[$fID]['skil_fcus']))
+					if(empty($attackers[$fID]['player']['skil_fcus']))
 					{$Fcus -= 0;}
 					else
-					{$Fcus -= $attackPct[$fID] * ((getbonusOneBis(1111,$attackers['academy_1111'])));}
+					{$Fcus -= $attackPct[$fID] * ((getbonusOneBis(1111,$attackers[$fID]['player']['academy_1111'])));}
 				} 
 				
 				
@@ -475,11 +485,13 @@ function calculateAttack(&$attackers, &$defenders, $FleetTF, $DefTF)
 
 	$DRESDefs = array('metal' => 0, 'crystal' => 0);
 	 //------Reductin defender
-	$RD		= 1;			
-	if(empty($defender['player']['academy_1313']))
-	{$RD = 0;}
-	else
-	{$RD = getbonusOneBis(1313,$defender['player']['academy_1313']);}	
+	$RD = 0; // Sicherer Standardwert falls kein Verteidiger vorhanden
+	foreach ($defenders as $fleetID => $defender) {
+		if(!empty($defender['player']['academy_1313'])) {
+			$RD = getbonusOneBis(1313, $defender['player']['academy_1313']);
+			break;
+		}
+	}	
 	//--------------------------------------------------------------------- 
 
 	$defs_point 	= 0;

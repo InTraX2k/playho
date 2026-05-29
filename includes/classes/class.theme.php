@@ -100,7 +100,10 @@ class Theme
 		{
 			if(file_exists(ROOT_PATH.'cache/cache.themes.php'))
 			{
-				self::$Themes	= unserialize(file_get_contents(ROOT_PATH.'cache/cache.themes.php'));
+				$_themeData = file_get_contents(ROOT_PATH.'cache/cache.themes.php');
+				if ($_themeData !== false) {
+					self::$Themes = unserialize($_themeData, ['allowed_classes' => false]);
+				}
 			} else {
 				$Skins	= array_diff(scandir(ROOT_PATH.'styles/theme/'), array('..', '.', '.svn', '.htaccess', 'index.htm'));
 				$Themes	= array();
