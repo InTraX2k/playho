@@ -15,12 +15,14 @@ See: http://docs.superrewards.com/v1.0/docs/notification-postbacks
 For more details, see our documentation at:
 http://docs.superrewards.com/v1.0/docs/getting-started
 */
-define('APP_SECRET', '26877d999e9925f97dc3b3112c2b83c5'); // App Secret Key. Find it by going to the Apps page, select Edit on the App of your choice, then Integrate.
-define('DB_USER', 'btgv5'); // Your database user.
-define('DB_PASSWORD', 'Series87!'); // Your database password.
-define('DB_HOST', 'localhost'); // Your database host (usually 127.0.0.1).
-define('DB_HOST_PORT', '3306'); // Your database host port (usually 3306).
-define('DB_NAME', 'btgv5'); // Your database name.
+// Load credentials from environment — never hardcode secrets in source files.
+// Set these in your server environment or a .env file excluded from version control.
+define('APP_SECRET', getenv('SR_APP_SECRET') ?: ''); // SuperRewards App Secret
+define('DB_USER',    getenv('SR_DB_USER')    ?: ''); // Database user
+define('DB_PASSWORD',getenv('SR_DB_PASSWORD')?: ''); // Database password
+define('DB_HOST',    getenv('SR_DB_HOST')    ?: 'localhost');
+define('DB_HOST_PORT',getenv('SR_DB_PORT')   ?: '3306');
+define('DB_NAME',    getenv('SR_DB_NAME')    ?: '');
 define('DB_PREFIX', 'uni_1'); // OPTIONAL: A database table prefix, such as 'app1_'. This easily allows multiple apps to be served from the same database.
 error_reporting(E_WARNING);
 // *** No more configuration below this line. ***

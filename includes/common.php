@@ -2,7 +2,7 @@
 
 /**
  *  2Moons
- *  Copyright (C) 2012 Jan Kröpke
+ *  Copyright (C) 2012 Jan Krï¿½pke
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,8 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @package 2Moons
- * @author Jan Kröpke <info@2moons.cc>
- * @copyright 2012 Jan Kröpke <info@2moons.cc>
+ * @author Jan Krï¿½pke <info@2moons.cc>
+ * @copyright 2012 Jan Krï¿½pke <info@2moons.cc>
  * @license http://www.gnu.org/licenses/gpl.html GNU GPLv3 License
  * @version 1.7.3 (2013-05-19)
  * @info $Id: common.php 2647 2013-03-26 19:10:46Z slaver7 $
@@ -55,7 +55,7 @@ error_reporting(E_ALL & ~E_STRICT);
 // If the guy forgot to set date.timezone on php.ini
 date_default_timezone_set(@date_default_timezone_get());
 
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 header('Content-Type: text/html; charset=UTF-8');
 define('TIMESTAMP',	time());
 	

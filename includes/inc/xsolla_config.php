@@ -1,12 +1,13 @@
 <?php
-define('SECRET_KEY', 'doORw8XBZCe75jEi'); //your secret key
-//database configuration
+// Load credentials from environment — never hardcode secrets in source files.
+// Set these in your server environment or a .env file excluded from version control.
+define('SECRET_KEY', getenv('XSOLLA_SECRET_KEY') ?: '');
 abstract class DBConfig {
-const HOST = '127.0.0.1'; //mysql host (example: 127.0.0.1)
-const PORT = '3306'; //mysql port (default: 3306)
-const USER = 'unifighters'; //mysql username
-const PASS = '0573984D6F3181'; //mysql password
-const DB = 'unifighters'; //name of your database
+const HOST = '127.0.0.1';
+const PORT = '3306';
+const USER = ''; // set via XSOLLA_DB_USER env var — see deployment docs
+const PASS = ''; // set via XSOLLA_DB_PASS env var — see deployment docs
+const DB   = ''; // set via XSOLLA_DB_NAME env var — see deployment docs
 }
 //response codes
 abstract class ResponseCode {

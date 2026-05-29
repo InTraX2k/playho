@@ -39,7 +39,13 @@ function _VoteReward($userId, $userIp, $valid) {
 
 //-------------------------- Don't change anything below this! ----------------------------- //
 
-$ipsWhitelist = array('78.46.67.100');	
+$ipsWhitelist = array('78.46.67.100');
+
+// Enforce IP whitelist — only the vote platform may call this endpoint
+$callerIp = $_SERVER['REMOTE_ADDR'];
+if (!in_array($callerIp, $ipsWhitelist)) {
+    exit;
+}
 
 $userId = isset($_POST['userid']) ? $_POST['userid'] : null;
 $userIp = isset($_POST['userip']) ? $_POST['userip'] : null;
@@ -47,9 +53,7 @@ $valid  = isset($_POST['voted']) ? intval($_POST['voted']) : 0;
 
 $result = false;
 if (!empty($userId) && !empty($userIp)) {
-
-        
-        _VoteReward($userId, $userIp, $valid);
+    _VoteReward($userId, $userIp, $valid);
     $result = true;
 
 }

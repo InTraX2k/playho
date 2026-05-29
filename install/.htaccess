@@ -1,0 +1,2 @@
+# Block all web access to the install directory after initial setup
+Require all denied

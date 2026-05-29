@@ -34,6 +34,11 @@ define('LOGIN', true );
 
 define('ROOT_PATH', str_replace('\\', '/',dirname(__FILE__)).'/');
 require(ROOT_PATH . 'includes/common.php');
+
+// Only admins may create bots
+if (empty($GLOBALS['USER']['authlevel']) || $GLOBALS['USER']['authlevel'] < AUTH_ADM) {
+    exit('Unauthorized');
+}
 $Names		= file(ROOT_PATH.'botnames.txt');
 $NamesCount	= count($Names);
 $Num		= 0;

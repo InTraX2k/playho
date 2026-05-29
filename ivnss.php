@@ -8,45 +8,42 @@ $db_password = '';
 
 mysql_connect($host, $db_user, $db_password);
 mysql_select_db($db_name);
-function _VoteReward($userId, $userIp, $valid) { 
-    if($valid == 1) { 
-        // Make userid safe to use in query
+
+function _VoteReward($userId, $valid) {
+    if($valid == 1) {
         $userId = mysql_real_escape_string($userId);
-   
-        // Check if that user voted already
-        // Adjust this query to match your table, column names etc
-      //  $voted = mysql_fetch_array(mysql_query("SELECT voted FROM vote_list WHERE user = '".$userId."'"));
-       // if(!$voted[0]) {
-            // User has not voted, grant him reward, for example points
-            mysql_query("UPDATE `uni1_users` SET `darkmatter` = `darkmatter` + '15000', v1 = '".TIMESTAMP."' WHERE `id` = '".mysql_escape_string($userId)."';");
-       // }
-       // else {
-            // Do whatever you want if he voted already. Maybe a log of false votes
-       // }
-
+        mysql_query("UPDATE `uni1_users` SET `darkmatter` = `darkmatter` + '15000', v1 = '".TIMESTAMP."' WHERE `id` = '".mysql_escape_string($userId)."';");
     }
-
 }
+
 //-------------------------- Don't change anything below this! ----------------------------- //
 
-$Whitelist = array('dksajdasjdwuudsak');
+// Enforce caller IP whitelist — only the vote platform may call this endpoint
+$ipsWhitelist = array(); // add trusted IPs here, e.g. '1.2.3.4'
+$callerIp = $_SERVER['REMOTE_ADDR'];
+if (!in_array($callerIp, $ipsWhitelist)) {
+    exit;
+}
 
-$userId = isset($_POST['userid']) ? $_POST['userid'] : null;
-$userIp = isset($_POST['userip']) ? $_POST['userip'] : null;
-$valid = isset($_POST['voted']) ? intval($_POST['voted']) : 0;
-$at_refc = isset($_POST['at_refc']) ? $_POST['at_refc'] : null; 
+// Validate shared secret token from environment — never hardcode in source
+$expectedToken = getenv('VOTESYSTEM_SECRET') ?: '';
+
+$userId  = isset($_POST['userid'])  ? $_POST['userid']  : null;
+$userIp  = isset($_POST['userip'])  ? $_POST['userip']  : null;
+$valid   = isset($_POST['voted'])   ? intval($_POST['voted']) : 0;
+$at_refc = isset($_POST['at_refc']) ? $_POST['at_refc'] : null;
+
 $result = false;
-if (!empty($userId) && !empty($at_refc)) { 
-{ 
- if (in_array($at_refc, $Whitelist)) {
-            $result = true;
-            _VoteReward($userId, $valid);
-      }
-} 	  
+if (!empty($userId) && !empty($at_refc) && !empty($expectedToken)) {
+    if (hash_equals($expectedToken, $at_refc)) {
+        $result = true;
+        _VoteReward($userId, $valid);
+    }
+}
+
 if ($result) {
     echo 'OK';
 }
-//Close Connection
-mysql_close();
 
+mysql_close();
 ?>

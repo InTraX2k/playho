@@ -283,6 +283,11 @@ function calculateAttack(&$attackers, &$defenders, $FleetTF, $DefTF)
 					continue;
 				}
 
+				if ($attackAmount[$fleetID] <= 0) {
+					$attacker_n[$fleetID][$element] = 0;
+					continue;
+				}
+
 				$defender_moc = $amount * ($defenseDamage['total'] * $attackPct[$fleetID]) / $attackAmount[$fleetID];
 			
 				if(isset($RF[$element])) {
@@ -427,7 +432,10 @@ function calculateAttack(&$attackers, &$defenders, $FleetTF, $DefTF)
 				$defender_shield += min($defArray[$fleetID][$element]['def'], $attacker_moc);
 				$attacker_moc 	 -= min($defArray[$fleetID][$element]['def'], $attacker_moc);
 				
-				$ile_removePoints = max(min($max_removePoints, $amount * min($attacker_moc / $defArray[$fleetID][$element]['shield'] * (rand(0, 200) / 100), 1)), 0);
+				$shield = $defArray[$fleetID][$element]['shield'];
+				$ile_removePoints = ($shield > 0)
+					? max(min($max_removePoints, $amount * min($attacker_moc / $shield * (rand(0, 200) / 100), 1)), 0)
+					: 0;
 
 				$defender_n[$fleetID][$element] = max(ceil($amount - $ile_removePoints), 0);
 			}

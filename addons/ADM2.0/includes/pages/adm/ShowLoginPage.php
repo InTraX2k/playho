@@ -37,10 +37,22 @@ function ShowLoginPage()
 	
 	if(isset($_REQUEST['admin_pw']))
 	{
-		$password	= md5($_REQUEST['admin_pw']);
+		$inputPw = $_REQUEST['admin_pw'];
+		$valid   = false;
 
-		if ($password == $USER['password']) {
-			$_SESSION['admin_login']	= $password;
+		if (password_verify($inputPw, $USER['password'])) {
+			// Modern bcrypt hash — direct verify
+			$valid = true;
+		} elseif (strlen($USER['password']) === 32 && hash_equals(md5($inputPw), $USER['password'])) {
+			// Legacy MD5 hash — verify and upgrade to bcrypt on the fly
+			$newHash = password_hash($inputPw, PASSWORD_DEFAULT);
+			$GLOBALS['DATABASE']->query("UPDATE ".USERS." SET `password` = '".addslashes($newHash)."' WHERE `id` = '".(int)$USER['id']."'");
+			$USER['password'] = $newHash;
+			$valid = true;
+		}
+
+		if ($valid) {
+			$_SESSION['admin_login'] = $USER['password'];
 			HTTP::redirectTo('admin.php');
 		}
 	}

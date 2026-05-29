@@ -20,26 +20,29 @@ function floattostring($Numeric, $Pro = 0, $Output = false){
 }
 function SendSimpleMessage($Owner, $Sender, $Time, $Type, $From, $Subject, $Message)
 {
-			
-	$SQL	= "INSERT INTO uni1_messages SET 
-	message_owner = ".(int) $Owner.", 
-	message_sender = ".(int) $Sender.", 
-	message_time = ".(int) $Time.", 
-	message_type = ".(int) $Type.", 
-	message_from = '". $From ."', 
-	message_subject = '". $Subject ."', 
-	message_text = '".$Message."', 
-	message_unread = '1', 
+	$From    = mysql_real_escape_string($From);
+	$Subject = mysql_real_escape_string($Subject);
+	$Message = mysql_real_escape_string($Message);
+
+	$SQL	= "INSERT INTO uni1_messages SET
+	message_owner = ".(int) $Owner.",
+	message_sender = ".(int) $Sender.",
+	message_time = ".(int) $Time.",
+	message_type = ".(int) $Type.",
+	message_from = '". $From ."',
+	message_subject = '". $Subject ."',
+	message_text = '".$Message."',
+	message_unread = '1',
 	message_universe = '1';";
-	$SQ	= "INSERT INTO uni1_messages_copy SET 
-	message_owner = ".(int) $Owner.", 
-	message_sender = ".(int) $Sender.", 
-	message_time = ".(int) $Time.", 
-	message_type = ".(int) $Type.", 
-	message_from = '". $From ."', 
-	message_subject = '". $Subject ."', 
-	message_text = '".$Message."', 
-	message_unread = '1', 
+	$SQ	= "INSERT INTO uni1_messages_copy SET
+	message_owner = ".(int) $Owner.",
+	message_sender = ".(int) $Sender.",
+	message_time = ".(int) $Time.",
+	message_type = ".(int) $Type.",
+	message_from = '". $From ."',
+	message_subject = '". $Subject ."',
+	message_text = '".$Message."',
+	message_unread = '1',
 	message_universe = '1';";
 
 	mysql_query($SQL);
@@ -53,24 +56,25 @@ function _rewardPurchase($userId, $currency, $mc_gross) {
         // Make userid safe to use in query
 $userId = mysql_real_escape_string($userId);
 $timer = time();
-$INFO1        =  mysql_query("SELECT * FROM `uni1_users` WHERE `id` = ".$userId.";");
+$INFO1 = mysql_fetch_array(mysql_query("SELECT * FROM `uni1_users` WHERE `id` = ".(int)$userId.";"));
 
-				
-if($INFO1['lp_points'] >= 0)
-{$tex = 1;}
-elseif($INFO1['lp_points'] >= 125)
-{$tex = 2;}
-elseif($INFO1['lp_points'] >= 625)
-{$tex = 4;}
+$mc_gross = (float) $mc_gross;
+$currency = (int) $currency;
+
+if($INFO1['lp_points'] >= 7000)
+{ $tex = 8; }
 elseif($INFO1['lp_points'] >= 2500)
-{$tex = 6;}
-elseif($INFO1['lp_points'] >= 7000)
-{$tex = 8;}
-      
+{ $tex = 6; }
+elseif($INFO1['lp_points'] >= 625)
+{ $tex = 4; }
+elseif($INFO1['lp_points'] >= 125)
+{ $tex = 2; }
+else
+{ $tex = 1; }
 
 mysql_query("UPDATE `uni1_users` SET `lp_points` = `lp_points` + ".($mc_gross * $tex).", `antimatter` = `antimatter` + ".$currency." WHERE `id` = '".$userId."';");
-if($INFO1['ref_id'] != 0){
-mysql_query("UPDATE `uni1_users` SET `antimatter` = `antimatter` + ".($currency / 100 * 5)." WHERE `id` = '".$INFO1['ref_id']."';");
+if(!empty($INFO1['ref_id'])){
+mysql_query("UPDATE `uni1_users` SET `antimatter` = `antimatter` + ".intval($currency / 100 * 5)." WHERE `id` = '".(int)$INFO1['ref_id']."';");
 SendSimpleMessage($INFO1['ref_id'], '', $timer, 4, 'System', 'Anti Matter Order', 'Referal PayPal payment was successful. <br>'.pretty_number($currency / 100 * 5).' anti matter have been credited to your account.');
 }
 SendSimpleMessage($userId, '', $timer, 4, 'System', 'Anti Matter Order', 'PayPal payment was successful. <br>'.pretty_number($currency).' anti matter have been credited to your account.');
@@ -187,13 +191,18 @@ $currency = isset($_POST['item_number']) ? $_POST['item_number'] : null;
 $mc_gross = isset($_POST['mc_gross']) ? $_POST['mc_gross'] : null;
 $payment_status = isset($_POST['payment_status']) ? $_POST['payment_status'] : null;
 
+// Verify PayPal responded with VERIFIED before granting any reward
+if (strpos($res, 'VERIFIED') === false) {
+    if (DEBUG) {
+        error_log(date('[Y-m-d H:i e] '). "IPN not verified by PayPal: $res" . PHP_EOL, 3, LOG_FILE);
+    }
+    exit;
+}
+
 $result = false;
 if ($payment_status == 'Completed') {
-
-        $result = true;
-        _rewardPurchase($userId, $currency, $mc_gross);
-    
-
+    $result = true;
+    _rewardPurchase($userId, $currency, $mc_gross);
 }
 
 if ($result) {

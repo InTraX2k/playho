@@ -29,11 +29,16 @@ AddCharset utf-8 .css .js .xml .json .rss .atom
 </IfModule>
 
 
-<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist)|~)$">
+<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|txt)|~)$">
   Order allow,deny
   Deny from all
   Satisfy All
 </FilesMatch>
+
+# Block web access to the install wizard
+<IfModule mod_rewrite.c>
+RewriteRule ^install/ - [F,L]
+</IfModule>
 
 # ----------------------------------------------------------------------
 # 2Moons: Multiuniverse support

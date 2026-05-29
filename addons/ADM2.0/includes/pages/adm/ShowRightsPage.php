@@ -26,7 +26,12 @@
  * @link http://2moons.cc/
  */
 
-if (!allowedTo(str_replace(array(dirname(__FILE__), '\\', '/', '.php'), '', __FILE__)) || $_GET['sid'] != session_id()) exit;
+// CSRF check via session-bound token (not session_id which leaks via Referer/logs)
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+$sid = isset($_GET['sid']) ? $_GET['sid'] : '';
+if (!allowedTo(str_replace(array(dirname(__FILE__), '\\', '/', '.php'), '', __FILE__)) || !hash_equals($_SESSION['csrf_token'], $sid)) exit;
 function ShowRightsPage()
 {
 	global $LNG, $CONF, $USER;
