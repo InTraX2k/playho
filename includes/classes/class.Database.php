@@ -68,7 +68,8 @@ class Database extends mysqli
 	 *
 	 * @return resource	Results of the query
 	 */
-	public function query($resource)
+    #[ReturnTypeWillChange]
+	public function query(string $resource, int $result_mode = MYSQLI_STORE_RESULT): mysqli_result|bool
 	{
 		if($result = parent::query($resource))
 		{
@@ -251,7 +252,8 @@ class Database extends mysqli
 		return $resource->close();
 	}
 	
-	public function multi_query($resource)
+    #[ReturnTypeWillChange]
+	public function multi_query(string $resource): bool
 	{	
 		$Timer	= microtime(true);
 		if(parent::multi_query($resource))

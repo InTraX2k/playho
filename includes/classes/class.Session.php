@@ -88,7 +88,7 @@ class Session
 		return self::$obj;
 	}
 	
-	function CreateSession($userID, $userName, $planetID = 0, $uni, $authlevel, $dpath)
+	function CreateSession($userID, $userName, $planetID, $uni, $authlevel, $dpath)
 	{
 		self::create($userID, $planetID = 0);
 		$_SESSIOn['authlevel']	= $authlevel;

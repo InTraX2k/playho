@@ -51,6 +51,17 @@ class template extends Smarty
 		$this->setCompileDir(is_writable(ROOT_PATH.'cache/') ? ROOT_PATH.'cache/' : $this->getTempPath());
 		$this->setCacheDir(ROOT_PATH.'cache/templates');
 		$this->setTemplateDir(ROOT_PATH.'styles/templates/');
+
+		// Register PHP functions as Smarty modifiers (Smarty 4.x no longer auto-loads them)
+		$phpModifiers = array(
+			'htmlspecialchars', 'nl2br', 'strip_tags', 'number_format', 'wordwrap',
+			'sprintf', 'round', 'ceil', 'floor', 'abs', 'trim', 'strlen',
+			'strtolower', 'strtoupper', 'ucfirst', 'ucwords', 'substr',
+			'str_repeat', 'str_replace', 'implode', 'count', 'intval', 'floatval',
+		);
+		foreach ($phpModifiers as $fn) {
+			$this->registerPlugin('modifier', $fn, $fn);
+		}
 	}
 	
 	public function loadscript($script)
@@ -134,11 +145,11 @@ class template extends Smarty
 		parent::display($file);
 	}
 	
-	public function display($file)
+	public function display($template = null, $cache_id = null, $compile_id = null, $parent = null)
 	{
 		global $LNG;
 		$this->compile_id	= $LNG->getLanguage();
-		parent::display($file);
+		parent::display($template);
 	}
 	
 	public function gotoside($dest, $time = 3)

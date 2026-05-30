@@ -159,6 +159,8 @@ abstract class AbstractPage
 			'bodyclass'			=> $this->getWindow(),
 			'basepath'			=> PROTOCOL.HTTP_HOST.HTTP_BASE,
 			'isMultiUniverse'	=> count($CONFIG) > 1,
+			'page'				=> HTTP::_GP('page', 'index'),
+			'code'				=> HTTP::_GP('code', 0),
 		));
 
 		$this->assign(array(

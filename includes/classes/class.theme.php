@@ -28,6 +28,10 @@
  
 class Theme
 {
+	public $skin = "";
+	public $skininfo = [];
+	public $template = "";
+	public $customtpls = [];
 	static public $Themes;
 	private $THEMESETTINGS;
 	

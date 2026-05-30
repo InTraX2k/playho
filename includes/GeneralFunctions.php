@@ -722,7 +722,9 @@ function exceptionHandler($exception)
 		E_USER_WARNING		=> 'USER WARNING',
 		E_USER_NOTICE		=> 'USER NOTICE',
 		E_STRICT			=> 'STRICT NOTICE',
-		E_RECOVERABLE_ERROR	=> 'RECOVERABLE ERROR'
+		E_RECOVERABLE_ERROR	=> 'RECOVERABLE ERROR',
+		E_DEPRECATED		=> 'DEPRECATED',
+		E_USER_DEPRECATED	=> 'USER DEPRECATED'
 	);
 	
 	try
@@ -846,7 +848,14 @@ function errorHandler($errno, $errstr, $errfile, $errline)
     if (!($errno & error_reporting())) {
         return;
     }
-	
+
+    // Warnings, Notices und Deprecations nur loggen — nicht als fatale Exception werfen
+    $logOnly = E_WARNING | E_NOTICE | E_USER_NOTICE | E_DEPRECATED | E_USER_DEPRECATED;
+    if ($errno & $logOnly) {
+        error_log(date('[d-M-Y H:i:s]').' '.($errno).': "'.$errstr.'"'.PHP_EOL.'File: '.$errfile.' | Line: '.$errline);
+        return;
+    }
+
 	throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
 }
 
