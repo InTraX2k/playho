@@ -71,7 +71,7 @@ class Session
 	{
 		self::$obj	= new self;
 		
-		if(!isset($_SESSION)) {
+		if (session_status() === PHP_SESSION_NONE) {
 			session_start();
 		}
 		
@@ -90,10 +90,10 @@ class Session
 	
 	function CreateSession($userID, $userName, $planetID, $uni, $authlevel, $dpath)
 	{
-		self::create($userID, $planetID = 0);
-		$_SESSIOn['authlevel']	= $authlevel;
-		$_SESSIOn['uni']		= $uni;
-		$_SESSIOn['dpath']		= $dpath;
+		self::create($userID, $planetID);
+		$_SESSION['authlevel']	= $authlevel;
+		$_SESSION['uni']		= $uni;
+		$_SESSION['dpath']		= $dpath;
 	}
 	
 	function IsUserLogin()
@@ -103,7 +103,7 @@ class Session
 		
 	function isActiveSession()
 	{
-		if(!isset($_SESSION)) {
+		if (session_status() === PHP_SESSION_NONE) {
 			session_start();
 		}
 		

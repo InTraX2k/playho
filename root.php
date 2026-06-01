@@ -36,11 +36,9 @@ if(isset($_POST['admin_pw']))
 	}
 
 	if ($valid) {
-		$_SESSION[$ipKey] = ['count' => 0, 'since' => time()];
 		$SESSION = new Session();
 		$SESSION->CreateSession($adminRow['id'], $adminRow['username'], $adminRow['id_planet'], $UNI, $adminRow['authlevel'], $adminRow['dpath']);
 		$_SESSION['admin_login'] = $adminRow['password'];
-		session_regenerate_id(true);
 		HTTP::redirectTo('admin.php');
 	} else {
 		$_SESSION[$ipKey]['count']++;
