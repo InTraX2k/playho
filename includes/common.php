@@ -98,60 +98,70 @@ date_default_timezone_set(Config::get('timezone'));
 require('includes/vars.php');
 
 if (MODE === 'INGAME' || MODE === 'ADMIN' || MODE === 'CHAT')
-{	
+{
 	if(!$SESSION->isActiveSession())
 	{
-		HTTP::redirectTo('index.php?code=3');
+		// ADMIN kann seine eigene Login-Seite zeigen ohne Redirect
+		if (MODE !== 'ADMIN') {
+			HTTP::redirectTo('index.php?code=3');
+		}
 	}
-	
-	$SESSION->UpdateSession();
+
+	if ($SESSION->isActiveSession()) {
+		$SESSION->UpdateSession();
+	}
 
 	require('includes/classes/class.BuildFunctions.php');
 	require('includes/classes/class.PlanetRessUpdate.php');
-	
+
 	if(!AJAX_REQUEST && MODE === 'INGAME' && isModulAvalible(MODULE_FLEET_EVENTS)) {
 		require('includes/FleetHandler.php');
 	}
-		
-	$USER	= $GLOBALS['DATABASE']->getFirstRow("SELECT	 
-	user.*, 
-	stat.total_points, 
-	stat.total_rank,
-	COUNT(message.message_id) as messages,
-	races.race_name,	
-	races.race_id
-	FROM ".USERS." as user 
-	LEFT JOIN ".STATPOINTS." as stat ON stat.id_owner = user.id AND stat.stat_type = '1' 
-	LEFT JOIN ".MESSAGES." as message ON message.message_owner = user.id AND message.message_unread = '1'
-	LEFT JOIN ".RACES." as races ON races.race_id = user.race
-	WHERE user.id = ".$_SESSION['id']."	GROUP BY message.message_owner;");
-	
-	if(empty($USER)) {
-		exit(header('Location: index.php'));
+
+	// USER nur laden wenn Session aktiv ist
+	$USER = [];
+	if ($SESSION->isActiveSession() && !empty($_SESSION['id'])) {
+		$USER = $GLOBALS['DATABASE']->getFirstRow("SELECT
+		user.*,
+		stat.total_points,
+		stat.total_rank,
+		COUNT(message.message_id) as messages,
+		races.race_name,
+		races.race_id
+		FROM ".USERS." as user
+		LEFT JOIN ".STATPOINTS." as stat ON stat.id_owner = user.id AND stat.stat_type = '1'
+		LEFT JOIN ".MESSAGES." as message ON message.message_owner = user.id AND message.message_unread = '1'
+		LEFT JOIN ".RACES." as races ON races.race_id = user.race
+		WHERE user.id = ".(int)$_SESSION['id']." GROUP BY message.message_owner;");
+
+		if (empty($USER) && MODE !== 'ADMIN') {
+			exit(header('Location: index.php'));
+		}
 	}
 	
-	$LNG	= new Language($USER['lang']);
-	$LNG->includeData(array('L18N', 'INGAME', 'TECH', 'CUSTOM'));
-	$THEME->setUserTheme($USER['dpath']);
-	
-	if(Config::get('game_disable') == 0 && $USER['authlevel'] == AUTH_USR) {
-		ShowErrorPage::printError($LNG['sys_closed_game'].'<br><br>'.Config::get('close_reason'), false);
+	if (!empty($USER)) {
+		$LNG = new Language($USER['lang']);
+		$LNG->includeData(array('L18N', 'INGAME', 'TECH', 'CUSTOM'));
+		$THEME->setUserTheme($USER['dpath']);
 	}
-	$bannedData = $GLOBALS['DATABASE']->getFirstRow("SELECT longer FROM uni1_banned WHERE who = '".$USER['username']."';");
-	if($USER['bana'] == 1 && $USER['banaday'] > TIMESTAMP) {
-		ShowErrorPage::printError("<font size=\"6px\">".$LNG['css_account_banned_message']."</font><br><br>".sprintf($LNG['css_account_banned_expire'], _date($LNG['php_tdformat'], $USER['banaday'], $USER['timezone']))."<br><br>".$LNG['css_goto_homeside'], false);
-		
-	}elseif($USER['bana'] == 1 && $USER['banaday'] < TIMESTAMP) {
-		$GLOBALS['DATABASE']->query("UPDATE uni1_users set bana = '0', banaday = '0' WHERE id = '".$USER['id']."';");
-		
-	}
-	
-	$bannedMessageData = $GLOBALS['DATABASE']->getFirstRow("SELECT longer FROM uni1_message_banned WHERE who = '".$USER['username']."';");
-	if($USER['message_ban'] == 1 && $USER['message_ban_time'] < TIMESTAMP) {
-		$GLOBALS['DATABASE']->query("UPDATE uni1_users set message_ban = '0', message_ban_time = '0' WHERE id = '".$USER['id']."';");
-		
-	}
-	
+
+	if (!empty($USER)) {
+		if(Config::get('game_disable') == 0 && $USER['authlevel'] == AUTH_USR) {
+			ShowErrorPage::printError($LNG['sys_closed_game'].'<br><br>'.Config::get('close_reason'), false);
+		}
+		$bannedData = $GLOBALS['DATABASE']->getFirstRow("SELECT longer FROM uni1_banned WHERE who = '".$USER['username']."';");
+		if($USER['bana'] == 1 && $USER['banaday'] > TIMESTAMP) {
+			ShowErrorPage::printError("<font size=\"6px\">".$LNG['css_account_banned_message']."</font><br><br>".sprintf($LNG['css_account_banned_expire'], _date($LNG['php_tdformat'], $USER['banaday'], $USER['timezone']))."<br><br>".$LNG['css_goto_homeside'], false);
+		}elseif($USER['bana'] == 1 && $USER['banaday'] < TIMESTAMP) {
+			$GLOBALS['DATABASE']->query("UPDATE uni1_users set bana = '0', banaday = '0' WHERE id = '".$USER['id']."';");
+		}
+
+		$bannedMessageData = $GLOBALS['DATABASE']->getFirstRow("SELECT longer FROM uni1_message_banned WHERE who = '".$USER['username']."';");
+		if($USER['message_ban'] == 1 && $USER['message_ban_time'] < TIMESTAMP) {
+			$GLOBALS['DATABASE']->query("UPDATE uni1_users set message_ban = '0', message_ban_time = '0' WHERE id = '".$USER['id']."';");
+		}
+	} // end !empty($USER)
+
 	if (MODE === 'INGAME')
 	{
 		if($UNI != $USER['universe'] && count($CONFIG) > 1)
@@ -175,9 +185,13 @@ if (MODE === 'INGAME' || MODE === 'ADMIN' || MODE === 'CHAT')
 		$USER['PLANETS']	= getPlanets($USER);
 	} elseif (MODE === 'ADMIN') {
 		error_reporting(E_ERROR | E_WARNING | E_PARSE);
-		
-		$USER['rights']		= unserialize($USER['rights'], ["allowed_classes" => false]);
-		$LNG->includeData(array('ADMIN', 'CUSTOM'));
+		if (!empty($USER)) {
+			$USER['rights'] = unserialize($USER['rights'] ?? '', ["allowed_classes" => false]);
+		}
+		if (empty($LNG)) {
+			$LNG = new Language();
+		}
+		$LNG->includeData(array('L18N', 'INGAME', 'ADMIN', 'CUSTOM'));
 	}
 }
 elseif(MODE === 'LOGIN')

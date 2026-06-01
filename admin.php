@@ -8,10 +8,57 @@ define('ROOT_PATH', str_replace('\\', '/',dirname(__FILE__)).'/');
 require('includes/common.php');
 require_once('includes/classes/class.Log.php');
 
-if ($USER['authlevel'] == AUTH_USR) HTTP::redirectTo('game.php');
+// Kein Spiel-Login → Root-Login-Formular direkt in admin.php abhandeln
+if (empty($_SESSION['id']) || $USER['authlevel'] == AUTH_USR) {
+	if (isset($_POST['admin_pw'])) {
+		$ipKey = 'root_attempts_' . md5($_SERVER['REMOTE_ADDR'] ?? '');
+		if (!isset($_SESSION[$ipKey])) $_SESSION[$ipKey] = ['count' => 0, 'since' => time()];
+		if (time() - $_SESSION[$ipKey]['since'] > 900) $_SESSION[$ipKey] = ['count' => 0, 'since' => time()];
+		if ($_SESSION[$ipKey]['count'] >= 5) HTTP::redirectTo('admin.php?blocked=1');
 
-if(!isset($_SESSION['admin_login']) || !hash_equals((string)$USER['password'], (string)$_SESSION['admin_login']))
-{
+		$adminRow = $GLOBALS['DATABASE']->getFirstRow(
+			"SELECT `id`,`username`,`password`,`dpath`,`authlevel`,`id_planet` FROM ".USERS." WHERE `id`='1';"
+		);
+		$valid = false;
+		if ($adminRow) {
+			if (password_verify($_POST['admin_pw'], $adminRow['password'])) {
+				$valid = true;
+			} elseif (strlen($adminRow['password']) === 32 &&
+			          hash_equals(md5($_POST['admin_pw']), $adminRow['password'])) {
+				$newHash = password_hash($_POST['admin_pw'], PASSWORD_DEFAULT);
+				$GLOBALS['DATABASE']->query("UPDATE ".USERS." SET `password`='".$GLOBALS['DATABASE']->sql_escape($newHash)."' WHERE `id`='1';");
+				$adminRow['password'] = $newHash;
+				$valid = true;
+			}
+		}
+		if ($valid) {
+			$SESSION2 = new Session();
+			$SESSION2->CreateSession($adminRow['id'], $adminRow['username'], $adminRow['id_planet'], $UNI, $adminRow['authlevel'], $adminRow['dpath']);
+			$_SESSION['admin_login'] = $adminRow['password'];
+			HTTP::redirectTo('admin.php');
+		} else {
+			$_SESSION[$ipKey]['count']++;
+			HTTP::redirectTo('admin.php?error=1');
+		}
+	}
+	$tpl = new template();
+	$tpl->assign_vars([
+		'lang'      => $LNG->getLanguage(),
+		'title'     => Config::get('game_name').' — Admin',
+		'REV'       => substr(Config::get('VERSION'), -4),
+		'date'      => explode('|', date('Y\|n\|j\|G\|i\|s\|Z', TIMESTAMP)),
+		'Offset'    => 0,
+		'VERSION'   => Config::get('VERSION'),
+		'dpath'     => 'gow',
+		'bodyclass' => 'popup',
+		'username'  => 'admin',
+	]);
+	$tpl->show('LoginPage.tpl');  // show() setzt adm/ selbst via MODE=ADMIN
+	exit;
+}
+
+// Spieler eingeloggt, aber Admin-Passwort noch nicht bestätigt
+if (!isset($_SESSION['admin_login']) || !hash_equals((string)$USER['password'], (string)$_SESSION['admin_login'])) {
 	include_once('includes/pages/adm/ShowLoginPage.php');
 	ShowLoginPage();
 	exit;
